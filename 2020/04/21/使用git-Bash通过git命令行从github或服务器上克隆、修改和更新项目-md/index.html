@@ -20,30 +20,37 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="我在人间凑数的日子">
-<meta property="og:type" content="website">
-<meta property="og:title" content="安酱紫">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="两个分类使用git-Bash操作gitee和gituub原理是一样的 1. 第一次建立本地仓库并上传内容到空白gitee仓库中2. 克隆gitee仓库项目到本地仓库并进行管理再上传  如题第一种情况1.打开git-bash输入个人信息(代码提交者) git config –global user.name “xxxx”  git config –global user.email xxxxx@qq">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用git-Bash通过git命令行从github或服务器上克隆、修改和更新项目.md">
+<meta property="og:url" content="http://yoursite.com/2020/04/21/%E4%BD%BF%E7%94%A8git-Bash%E9%80%9A%E8%BF%87git%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%BB%8Egithub%E6%88%96%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E5%85%8B%E9%9A%86%E3%80%81%E4%BF%AE%E6%94%B9%E5%92%8C%E6%9B%B4%E6%96%B0%E9%A1%B9%E7%9B%AE-md/index.html">
 <meta property="og:site_name" content="安酱紫">
-<meta property="og:description" content="我在人间凑数的日子">
+<meta property="og:description" content="两个分类使用git-Bash操作gitee和gituub原理是一样的 1. 第一次建立本地仓库并上传内容到空白gitee仓库中2. 克隆gitee仓库项目到本地仓库并进行管理再上传  如题第一种情况1.打开git-bash输入个人信息(代码提交者) git config –global user.name “xxxx”  git config –global user.email xxxxx@qq">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/git-bash/1.png">
+<meta property="og:image" content="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/git-bash/3.png">
+<meta property="og:image" content="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/git-bash/4.png">
+<meta property="article:published_time" content="2020-04-21T15:47:43.000Z">
+<meta property="article:modified_time" content="2020-04-22T08:44:28.088Z">
 <meta property="article:author" content="安酱紫">
+<meta property="article:tag" content="-git—Bash">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/git-bash/1.png">
 
-<link rel="canonical" href="http://yoursite.com/">
+<link rel="canonical" href="http://yoursite.com/2020/04/21/%E4%BD%BF%E7%94%A8git-Bash%E9%80%9A%E8%BF%87git%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%BB%8Egithub%E6%88%96%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E5%85%8B%E9%9A%86%E3%80%81%E4%BF%AE%E6%94%B9%E5%92%8C%E6%9B%B4%E6%96%B0%E9%A1%B9%E7%9B%AE-md/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>安酱紫</title>
+  <title>使用git-Bash通过git命令行从github或服务器上克隆、修改和更新项目.md | 安酱紫</title>
   
 
 
@@ -163,9 +170,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
+
+    
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
@@ -181,10 +189,9 @@
       <meta itemprop="name" content="安酱紫">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/04/21/%E4%BD%BF%E7%94%A8git-Bash%E9%80%9A%E8%BF%87git%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%BB%8Egithub%E6%88%96%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E5%85%8B%E9%9A%86%E3%80%81%E4%BF%AE%E6%94%B9%E5%92%8C%E6%9B%B4%E6%96%B0%E9%A1%B9%E7%9B%AE-md/" class="post-title-link" itemprop="url">使用git-Bash通过git命令行从github或服务器上克隆、修改和更新项目.md</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          使用git-Bash通过git命令行从github或服务器上克隆、修改和更新项目.md
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -220,6 +227,13 @@
               <span class="post-meta-item-text">阅读次数：</span>
               <span class="leancloud-visitors-count"></span>
             </span>
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
   
   <span class="post-meta-item">
     
@@ -244,7 +258,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="两个分类"><a href="#两个分类" class="headerlink" title="两个分类"></a>两个分类</h1><p>使用git-Bash操作gitee和gituub原理是一样的</p>
+        <h1 id="两个分类"><a href="#两个分类" class="headerlink" title="两个分类"></a>两个分类</h1><p>使用git-Bash操作gitee和gituub原理是一样的</p>
 <p><font size=5 color=red>1. 第一次建立本地仓库并上传内容到空白gitee仓库中</font><br><font size=5 color=red>2. 克隆gitee仓库项目到本地仓库并进行管理再上传</font></p>
 <hr>
 <h2 id="如题第一种情况"><a href="#如题第一种情况" class="headerlink" title="如题第一种情况"></a>如题第一种情况</h2><h3 id="1-打开git-bash"><a href="#1-打开git-bash" class="headerlink" title="1.打开git-bash"></a>1.打开git-bash</h3><p>输入个人信息(代码提交者)</p>
@@ -308,353 +322,54 @@
 <p>下面是整个操作过程<br><img src="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/git-bash/4.png" alt="4.jpg" style="zoom:50%;" /></p>
 <hr>
 
-      
     </div>
 
     
     
     
+      
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
+          <div class="post-tags">
+              <a href="/tags/git%E2%80%94Bash/" rel="tag"># -git—Bash</a>
+          </div>
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/20/Hexo-%E6%B7%BB%E5%8A%A0%E5%88%86%E7%B1%BB%E5%8F%8A%E6%A0%87%E7%AD%BE/">
+        
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="安酱紫">
-      <meta itemprop="description" content="我在人间凑数的日子">
-    </span>
 
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="安酱紫">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/04/20/Hexo-%E6%B7%BB%E5%8A%A0%E5%88%86%E7%B1%BB%E5%8F%8A%E6%A0%87%E7%AD%BE/" class="post-title-link" itemprop="url">Hexo-添加分类及标签</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-04-20 21:41:26" itemprop="dateCreated datePublished" datetime="2020-04-20T21:41:26+08:00">2020-04-20</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-04-21 21:17:01" itemprop="dateModified" datetime="2020-04-21T21:17:01+08:00">2020-04-21</time>
-              </span>
-
-          
-            <span id="/2020/04/20/Hexo-%E6%B7%BB%E5%8A%A0%E5%88%86%E7%B1%BB%E5%8F%8A%E6%A0%87%E7%AD%BE/" class="post-meta-item leancloud_visitors" data-flag-title="Hexo-添加分类及标签" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2020/04/20/Hexo-%E6%B7%BB%E5%8A%A0%E5%88%86%E7%B1%BB%E5%8F%8A%E6%A0%87%E7%AD%BE/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/04/20/Hexo-%E6%B7%BB%E5%8A%A0%E5%88%86%E7%B1%BB%E5%8F%8A%E6%A0%87%E7%AD%BE/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="1-hexo添加分类及标签"><a href="#1-hexo添加分类及标签" class="headerlink" title="1.hexo添加分类及标签"></a>1.hexo添加分类及标签</h1><hr>
-<h2 id="1-创建“分类”选项"><a href="#1-创建“分类”选项" class="headerlink" title="1. 创建“分类”选项"></a>1. 创建“分类”选项</h2><p>生成“分类”页并添加tpye属性,进入博客目录。执行命令下方命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new page categories</span><br></pre></td></tr></table></figure>
-<p>会在source文件下生成categories文件，<br>categories文件夹下会有index.md这个文件，打开后默认内容是这样的：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: categories</span><br><span class="line">date: 2019-04-22 14:47:40</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-<p>添加type: “categories”到内容中，添加后是这样的：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">--</span><br><span class="line">title: 分类</span><br><span class="line">date: 2019-04-24 15:30:30</span><br><span class="line">type: categories</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-<p>保存并关闭文件。</p>
-<p>给文章添加“categories”属性</p>
-<p>打开需要添加分类的文章，为其添加categories属性。下方的categories:Hexo表示这篇文章添加到到“Hexo”这个分类。注意：一篇文章只会添加到一个分类中，如果是多个默认放到第一个分类中。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hexo 添加分类及标签</span><br><span class="line">date: 2017-05-26 12:12:57</span><br><span class="line">categories: Hexo</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-<h2 id="2-创建“标签”选项"><a href="#2-创建“标签”选项" class="headerlink" title="2. 创建“标签”选项"></a>2. 创建“标签”选项</h2><p>生成“标签”页并添加tpye属性</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new page tags</span><br></pre></td></tr></table></figure>
-<p>在tags文件夹下，找到index.md这个文件，打开后默认内容是这样的：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 标签</span><br><span class="line">date: 2019-04-22 14:22:08</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-<p>添加type: “tags”到内容中，添加后是这样的：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 标签</span><br><span class="line">date: 2019-04-24 15:40:24</span><br><span class="line">type: tags</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-<p>保存并关闭文件。</p>
-<p>给文章添加“tags”属性,打开需要添加标签的文章，为其添加tags属性。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hexo 添加分类及标签</span><br><span class="line">date: 2019-04-24 15:40:24</span><br><span class="line">categories: </span><br><span class="line">          - Hexo</span><br><span class="line">tags:</span><br><span class="line">          - 博客</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-
-<hr>
-
-      
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/04/20/Hexo-%E6%B7%BB%E5%8A%A0%E5%88%86%E7%B1%BB%E5%8F%8A%E6%A0%87%E7%AD%BE/" rel="prev" title="Hexo-添加分类及标签">
+      <i class="fa fa-chevron-left"></i> Hexo-添加分类及标签
+    </a></div>
+      <div class="post-nav-item"></div>
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
+    
   </article>
   
   
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/20/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E5%B9%B6%E9%83%A8%E7%BD%B2%E5%88%B0github/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="安酱紫">
-      <meta itemprop="description" content="我在人间凑数的日子">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="安酱紫">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/04/20/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E5%B9%B6%E9%83%A8%E7%BD%B2%E5%88%B0github/" class="post-title-link" itemprop="url">hexo搭建博客并部署到github</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-04-20 17:01:04" itemprop="dateCreated datePublished" datetime="2020-04-20T17:01:04+08:00">2020-04-20</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-04-21 21:14:33" itemprop="dateModified" datetime="2020-04-21T21:14:33+08:00">2020-04-21</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" itemprop="url" rel="index"><span itemprop="name">-博客搭建</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2020/04/20/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E5%B9%B6%E9%83%A8%E7%BD%B2%E5%88%B0github/" class="post-meta-item leancloud_visitors" data-flag-title="hexo搭建博客并部署到github" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2020/04/20/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E5%B9%B6%E9%83%A8%E7%BD%B2%E5%88%B0github/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/04/20/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E5%B9%B6%E9%83%A8%E7%BD%B2%E5%88%B0github/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="环境要求"><a href="#环境要求" class="headerlink" title="环境要求"></a>环境要求</h2><ul>
-<li>windows系统电脑(Mac和Linux略有区别)</li>
-<li>Git</li>
-<li>Note.js</li>
-</ul>
-<h2 id="安装配置git并与github相连"><a href="#安装配置git并与github相连" class="headerlink" title="安装配置git并与github相连"></a>安装配置git并与github相连</h2><p>在git-Bash进行</p>
-<hr>
-<h2 id="安装nodejs并配置环境"><a href="#安装nodejs并配置环境" class="headerlink" title="安装nodejs并配置环境"></a>安装nodejs并配置环境</h2><hr>
-<h2 id="安装hexo框架，进行项目"><a href="#安装hexo框架，进行项目" class="headerlink" title="安装hexo框架，进行项目"></a>安装hexo框架，进行项目</h2><p>在 cmd终端进行</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">node -v   #查看node版本</span><br><span class="line">npm -v    #查看npm版本</span><br><span class="line">npm install -g cnpm --registry&#x3D;http:&#x2F;&#x2F;registry.npm.taobao.org </span><br><span class="line">#使用淘宝镜像安装cnpm</span><br><span class="line">cnpm -v   #查看cnpm版本</span><br><span class="line">cnpm install -g hexo-cli #安装hexo框架</span><br><span class="line">hexo -v #查看hexo版本,验证是否安装成功</span><br><span class="line">mkdir blog #创建blog目录</span><br><span class="line">cd blog #进入blog目录</span><br><span class="line">hexo init #在blog目录下生成博客 初始化博客 mac或者linux系统要在前面加sudo</span><br><span class="line">hexo s #启动服务</span><br><span class="line">http:&#x2F;&#x2F;localhost:4000&#x2F; #本地访问地址</span><br><span class="line">hexo n &quot;我的第一篇文章&quot; #创建新的文章</span><br><span class="line">#返回blog目录</span><br><span class="line">hexo clean #清理</span><br><span class="line">hexo g #生成静态网页</span><br><span class="line">hexo s #启动服务 去本地查看</span><br></pre></td></tr></table></figure>
-<p><strong>Github创建一个新的仓库 YourGithubName.github.io</strong><br><strong>不管使用github还是gitee创建仓库，仓库名和账户名相同时，在进入自己的平台网站时<a href="https://username.gitee/github.io/仓库名" target="_blank" rel="noopener">https://username.gitee/github.io/仓库名</a> 才可以省略后缀仓库名</strong></p>
-<hr>
-<h2 id="配置-config-yml"><a href="#配置-config-yml" class="headerlink" title="配置_config.yml"></a>配置_config.yml</h2><h3 id="Deployment"><a href="#Deployment" class="headerlink" title="Deployment"></a>Deployment</h3><h3 id="Docs-https-hexo-io-docs-deployment-html"><a href="#Docs-https-hexo-io-docs-deployment-html" class="headerlink" title="Docs: https://hexo.io/docs/deployment.html"></a>Docs: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">https://hexo.io/docs/deployment.html</a></h3><p>deploy:<br>type: git<br>repo: <a href="https://github.com/YourGithubName/YourGithubName.github.io.git" target="_blank" rel="noopener">https://github.com/YourGithubName/YourGithubName.github.io.git</a><br>branch: master</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d #部署到Github仓库里</span><br></pre></td></tr></table></figure>
-
-<p><strong>如需部署到gitee仓库，repo填写gitee项目ssh地址并且每次上传都要点击服务的gitee pags 中的更新</strong></p>
-<hr>
-<h2 id="在blog目录下安装git部署插件"><a href="#在blog目录下安装git部署插件" class="headerlink" title="在blog目录下安装git部署插件"></a>在blog目录下安装git部署插件</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save#在blog目录下安装git部署插件  </span><br><span class="line">mac&#x2F;linux 输入 npm install  --save hexo-deployer-git</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h2 id="更换theme"><a href="#更换theme" class="headerlink" title="更换theme"></a>更换theme</h2><p>git clone <a href="https://github.com/litten/hexo-theme-yilia.git" target="_blank" rel="noopener">https://github.com/litten/hexo-theme-yilia.git</a> themes/yilia #下载yilia主题到本地</p>
-<p>#修改hexo根目录下的 _config.yml 文件 ： theme: yilia</p>
-<p>hexo c #清理一下<br>hexo g #生成<br>hexo d #部署到远程Github仓库<br><a href="https://YourGithubName.github.io/" target="_blank" rel="noopener">https://YourGithubName.github.io/</a> #查看博客</p>
-<hr>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/20/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.jpg">
-      <meta itemprop="name" content="安酱紫">
-      <meta itemprop="description" content="我在人间凑数的日子">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="安酱紫">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/04/20/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-04-20 15:13:20 / 修改时间：21:33:08" itemprop="dateCreated datePublished" datetime="2020-04-20T15:13:20+08:00">2020-04-20</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%B5%8B%E8%AF%95/" itemprop="url" rel="index"><span itemprop="name">测试</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2020/04/20/hello-world/" class="post-meta-item leancloud_visitors" data-flag-title="Hello World" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2020/04/20/hello-world/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/04/20/hello-world/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-
   
 
 
 
           </div>
           
+      <div class="tabs tabs-comment">
+        <ul class="nav-tabs">
+            <li class="tab"><a href="#comment-gitalk">gitalk</a></li>
+            <li class="tab"><a href="#comment-valine">valine</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane gitalk" id="comment-gitalk">
+              <div class="comments" id="gitalk-container"></div>
+            </div>
+            <div class="tab-pane valine" id="comment-valine">
+              <div class="comments" id="valine-comments"></div>
+            </div>
+        </div>
+      </div>
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -701,6 +416,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#两个分类"><span class="nav-number">1.</span> <span class="nav-text">两个分类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#如题第一种情况"><span class="nav-number">1.1.</span> <span class="nav-text">如题第一种情况</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-打开git-bash"><span class="nav-number">1.1.1.</span> <span class="nav-text">1.打开git-bash</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-在本地建立一个文件夹-并初始化"><span class="nav-number">1.1.2.</span> <span class="nav-text">2.在本地建立一个文件夹 并初始化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-在本地仓库建立README-md-并上传到指定gitee仓库"><span class="nav-number">1.1.3.</span> <span class="nav-text">3.在本地仓库建立README.md,并上传到指定gitee仓库</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二种情况"><span class="nav-number">1.2.</span> <span class="nav-text">第二种情况</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-打开git-bash-1"><span class="nav-number">1.2.1.</span> <span class="nav-text">1.打开git-bash</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-在本地建立一个文件夹-并初始化-1"><span class="nav-number">1.2.2.</span> <span class="nav-text">2.在本地建立一个文件夹 并初始化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-克隆项目进行修改再传入自己的gitee仓库"><span class="nav-number">1.2.3.</span> <span class="nav-text">3.克隆项目进行修改再传入自己的gitee仓库</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -927,6 +643,25 @@
 
   
 
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : '',
+      clientSecret: '',
+      repo        : '',
+      owner       : '',
+      admin       : [''],
+      id          : '316de82d9c2fccd17abedca04b2feea4',
+        language: '',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
 
 
 <script>
