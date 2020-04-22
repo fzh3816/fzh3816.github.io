@@ -22,8 +22,8 @@
 
   <meta name="description" content="两个分类使用git-Bash操作gitee和gituub原理是一样的 1. 第一次建立本地仓库并上传内容到空白gitee仓库中2. 克隆gitee仓库项目到本地仓库并进行管理再上传  如题第一种情况1.打开git-bash输入个人信息(代码提交者) git config –global user.name “xxxx”  git config –global user.email xxxxx@qq">
 <meta property="og:type" content="article">
-<meta property="og:title" content="使用git-Bash从github或gitee上克隆、修改和更新项目.md">
-<meta property="og:url" content="http://yoursite.com/2020/04/21/%E4%BD%BF%E7%94%A8git-Bash%E9%80%9A%E8%BF%87git%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%BB%8Egithub%E6%88%96%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E5%85%8B%E9%9A%86%E3%80%81%E4%BF%AE%E6%94%B9%E5%92%8C%E6%9B%B4%E6%96%B0%E9%A1%B9%E7%9B%AE-md/index.html">
+<meta property="og:title" content="使用git-Bash克隆、修改和更新项目.md">
+<meta property="og:url" content="http://yoursite.com/2020/04/21/%E4%BD%BF%E7%94%A8git-Bash%E5%85%8B%E9%9A%86%E3%80%81%E4%BF%AE%E6%94%B9%E5%92%8C%E6%9B%B4%E6%96%B0%E9%A1%B9%E7%9B%AE/index.html">
 <meta property="og:site_name" content="安酱紫">
 <meta property="og:description" content="两个分类使用git-Bash操作gitee和gituub原理是一样的 1. 第一次建立本地仓库并上传内容到空白gitee仓库中2. 克隆gitee仓库项目到本地仓库并进行管理再上传  如题第一种情况1.打开git-bash输入个人信息(代码提交者) git config –global user.name “xxxx”  git config –global user.email xxxxx@qq">
 <meta property="og:locale" content="zh_CN">
@@ -31,13 +31,13 @@
 <meta property="og:image" content="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/git-bash/3.png">
 <meta property="og:image" content="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/git-bash/4.png">
 <meta property="article:published_time" content="2020-04-21T15:47:43.000Z">
-<meta property="article:modified_time" content="2020-04-22T09:30:00.807Z">
+<meta property="article:modified_time" content="2020-04-22T11:38:10.513Z">
 <meta property="article:author" content="安酱紫">
 <meta property="article:tag" content="-git—Bash">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/git-bash/1.png">
 
-<link rel="canonical" href="http://yoursite.com/2020/04/21/%E4%BD%BF%E7%94%A8git-Bash%E9%80%9A%E8%BF%87git%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%BB%8Egithub%E6%88%96%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E5%85%8B%E9%9A%86%E3%80%81%E4%BF%AE%E6%94%B9%E5%92%8C%E6%9B%B4%E6%96%B0%E9%A1%B9%E7%9B%AE-md/">
+<link rel="canonical" href="http://yoursite.com/2020/04/21/%E4%BD%BF%E7%94%A8git-Bash%E5%85%8B%E9%9A%86%E3%80%81%E4%BF%AE%E6%94%B9%E5%92%8C%E6%9B%B4%E6%96%B0%E9%A1%B9%E7%9B%AE/">
 
 
 <script id="page-configurations">
@@ -50,7 +50,7 @@
   };
 </script>
 
-  <title>使用git-Bash从github或gitee上克隆、修改和更新项目.md | 安酱紫</title>
+  <title>使用git-Bash克隆、修改和更新项目.md | 安酱紫</title>
   
 
 
@@ -177,7 +177,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/21/%E4%BD%BF%E7%94%A8git-Bash%E9%80%9A%E8%BF%87git%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%BB%8Egithub%E6%88%96%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E5%85%8B%E9%9A%86%E3%80%81%E4%BF%AE%E6%94%B9%E5%92%8C%E6%9B%B4%E6%96%B0%E9%A1%B9%E7%9B%AE-md/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/21/%E4%BD%BF%E7%94%A8git-Bash%E5%85%8B%E9%9A%86%E3%80%81%E4%BF%AE%E6%94%B9%E5%92%8C%E6%9B%B4%E6%96%B0%E9%A1%B9%E7%9B%AE/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -190,7 +190,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          使用git-Bash从github或gitee上克隆、修改和更新项目.md
+          使用git-Bash克隆、修改和更新项目.md
         </h1>
 
         <div class="post-meta">
@@ -207,7 +207,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-04-22 17:30:00" itemprop="dateModified" datetime="2020-04-22T17:30:00+08:00">2020-04-22</time>
+                <time title="修改时间：2020-04-22 19:38:10" itemprop="dateModified" datetime="2020-04-22T19:38:10+08:00">2020-04-22</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -220,7 +220,7 @@
             </span>
 
           
-            <span id="/2020/04/21/%E4%BD%BF%E7%94%A8git-Bash%E9%80%9A%E8%BF%87git%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%BB%8Egithub%E6%88%96%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E5%85%8B%E9%9A%86%E3%80%81%E4%BF%AE%E6%94%B9%E5%92%8C%E6%9B%B4%E6%96%B0%E9%A1%B9%E7%9B%AE-md/" class="post-meta-item leancloud_visitors" data-flag-title="使用git-Bash从github或gitee上克隆、修改和更新项目.md" title="阅读次数">
+            <span id="/2020/04/21/%E4%BD%BF%E7%94%A8git-Bash%E5%85%8B%E9%9A%86%E3%80%81%E4%BF%AE%E6%94%B9%E5%92%8C%E6%9B%B4%E6%96%B0%E9%A1%B9%E7%9B%AE/" class="post-meta-item leancloud_visitors" data-flag-title="使用git-Bash克隆、修改和更新项目.md" title="阅读次数">
               <span class="post-meta-item-icon">
                 <i class="fa fa-eye"></i>
               </span>
@@ -242,8 +242,8 @@
       </span>
       <span class="post-meta-item-text">Valine：</span>
     
-    <a title="valine" href="/2020/04/21/%E4%BD%BF%E7%94%A8git-Bash%E9%80%9A%E8%BF%87git%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%BB%8Egithub%E6%88%96%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E5%85%8B%E9%9A%86%E3%80%81%E4%BF%AE%E6%94%B9%E5%92%8C%E6%9B%B4%E6%96%B0%E9%A1%B9%E7%9B%AE-md/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2020/04/21/%E4%BD%BF%E7%94%A8git-Bash%E9%80%9A%E8%BF%87git%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%BB%8Egithub%E6%88%96%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A%E5%85%8B%E9%9A%86%E3%80%81%E4%BF%AE%E6%94%B9%E5%92%8C%E6%9B%B4%E6%96%B0%E9%A1%B9%E7%9B%AE-md/" itemprop="commentCount"></span>
+    <a title="valine" href="/2020/04/21/%E4%BD%BF%E7%94%A8git-Bash%E5%85%8B%E9%9A%86%E3%80%81%E4%BF%AE%E6%94%B9%E5%92%8C%E6%9B%B4%E6%96%B0%E9%A1%B9%E7%9B%AE/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/04/21/%E4%BD%BF%E7%94%A8git-Bash%E5%85%8B%E9%9A%86%E3%80%81%E4%BF%AE%E6%94%B9%E5%92%8C%E6%9B%B4%E6%96%B0%E9%A1%B9%E7%9B%AE/" itemprop="commentCount"></span>
     </a>
   </span>
   
@@ -275,7 +275,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">asus@LAPTOP-78V1DGVI MINGW64 &#x2F;d&#x2F;project&#x2F;GiteePhotos2 (master)</span><br><span class="line">$ git commit -m &quot;添加README和图片&quot;</span><br><span class="line">[master (root-commit) dcf5299] 添加README和图片</span><br><span class="line"> 2 files changed, 0 insertions(+), 0 deletions(-)</span><br><span class="line"> create mode 100644 README.md</span><br><span class="line"> create mode 100644 images&#x2F;MdImage&#x2F;1.png</span><br></pre></td></tr></table></figure>
 <p>git commit -m “添加README和图片”  记录修改的日志 并给日志取名</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">asus@LAPTOP-78V1DGVI MINGW64 &#x2F;d&#x2F;project&#x2F;GiteePhotos2 (master)</span><br><span class="line">$ git remote add origin https:&#x2F;&#x2F;gitee.com&#x2F;fzh3816&#x2F;photos.git</span><br></pre></td></tr></table></figure>
-<p>连接gitee仓库 连接为ssh<br><img src="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/git-bash/1.png" width = 600 height = 200 style="float: left; zoom: 67%;"/><br>当上传文件以后链接会出现在 服务-&gt;gitee pages-&gt;</p>
+<p>连接gitee仓库 连接为ssh<br><img src="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/git-bash/1.png" alt="1.jpg" style="zoom: 67%;" /><br>当上传文件以后链接会出现在 服务-&gt;gitee pages-&gt;</p>
 <p>点击更新就会出来图片地址</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">asus@LAPTOP-78V1DGVI MINGW64 &#x2F;d&#x2F;project&#x2F;GiteePhotos2 (master)</span><br><span class="line">$ git push -u origin master</span><br></pre></td></tr></table></figure>
 
@@ -654,7 +654,7 @@ NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
       repo        : '',
       owner       : '',
       admin       : [''],
-      id          : '316de82d9c2fccd17abedca04b2feea4',
+      id          : '14c3f2653c52531c26be817b6d6d0668',
         language: '',
       distractionFreeMode: true
     });
