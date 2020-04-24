@@ -46,6 +46,11 @@
 <p>在git-Bash进行<br>还要记得配置SSH key 这样就不会每次都要输入账号密码</p>
 <p>配置完后</p>
 <p>测试是否与github连通<code>ssh -T git@github.com</code><br>测试是否与gitee连通<code>ssh -T git@gitee.com</code></p>
+<p>如果是第一次上传，需要配置一下用户名和用户邮箱</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git config --global user.name [username]</span><br><span class="line"> </span><br><span class="line">git config --global user.email[email.address]</span><br></pre></td></tr></table></figure>
+
+
+
 <hr>
 <h2 id="安装nodejs并配置环境"><a href="#安装nodejs并配置环境" class="headerlink" title="安装nodejs并配置环境"></a>安装nodejs并配置环境</h2><hr>
 <h2 id="安装hexo框架，进行项目"><a href="#安装hexo框架，进行项目" class="headerlink" title="安装hexo框架，进行项目"></a>安装hexo框架，进行项目</h2><p>在git-Bash进行 在cmd终端进行也可以 建议在git-Bash下</p>
