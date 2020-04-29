@@ -26,8 +26,7 @@
 <p>点击更新就会出来图片地址</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">asus@LAPTOP-78V1DGVI MINGW64 &#x2F;d&#x2F;project&#x2F;GiteePhotos2 (master)</span><br><span class="line">$ git push -u origin master</span><br></pre></td></tr></table></figure>
 
-
-<p> git push -u origin master 将本地仓库项目推送到连接的gitee仓库</p>
+<p> git push -u origin master 将本地仓库项目推送到连接的gitee仓库<br><code>git pull --rebase origin master</code>     // 合并<br><code>git status</code>         //状态查询</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Enumerating objects: 6, done.</span><br><span class="line">Counting objects: 100% (6&#x2F;6), done.</span><br><span class="line">Delta compression using up to 4 threads</span><br><span class="line">Compressing objects: 100% (3&#x2F;3), done.</span><br><span class="line">Writing objects: 100% (6&#x2F;6), 79.44 KiB | 19.86 MiB&#x2F;s, done.</span><br><span class="line">Total 6 (delta 0), reused 0 (delta 0), pack-reused 0</span><br><span class="line">remote: Powered by GITEE.COM [GNK-5.0]</span><br><span class="line">To https:&#x2F;&#x2F;gitee.com&#x2F;fzh3816&#x2F;photos.git</span><br><span class="line"></span><br><span class="line"> * [new branch]      master -&gt; master</span><br><span class="line">   Branch &#39;master&#39; set up to track remote branch &#39;master&#39; from &#39;origin&#39;.</span><br><span class="line"></span><br><span class="line">asus@LAPTOP-78V1DGVI MINGW64 &#x2F;d&#x2F;project&#x2F;GiteePhotos2 (master)</span><br><span class="line">$</span><br></pre></td></tr></table></figure>
 
 
@@ -41,32 +40,50 @@
 <h2 id="第二种情况"><a href="#第二种情况" class="headerlink" title="第二种情况"></a>第二种情况</h2><h3 id="1-打开git-bash-1"><a href="#1-打开git-bash-1" class="headerlink" title="1.打开git-bash"></a>1.打开git-bash</h3><p>输入个人信息(代码提交者)</p>
 <p>git config –global user.name “xxxx” </p>
 <p>git config –global user.email <a href="mailto:xxxxx@qq.com">xxxxx@qq.com</a><br>注意：提交到github是输入用户名和密码<br>嫌每次都需要输入用户名和密码可以使用公匙连接gitee和github这里就不啰嗦了</p>
-<h3 id="2-在本地建立一个文件夹-并初始化-1"><a href="#2-在本地建立一个文件夹-并初始化-1" class="headerlink" title="2.在本地建立一个文件夹 并初始化"></a>2.在本地建立一个文件夹 并初始化</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">asus@LAPTOP-78V1DGVI MINGW64 &#x2F;</span><br><span class="line">$ cd D:&#x2F;project&#x2F;GiteePhotos2</span><br><span class="line"></span><br><span class="line">asus@LAPTOP-78V1DGVI MINGW64 &#x2F;d&#x2F;project&#x2F;GiteePhotos2</span><br><span class="line">$ git init</span><br><span class="line">Initialized empty Git repository in D:&#x2F;project&#x2F;GiteePhotos2&#x2F;.git&#x2F;</span><br></pre></td></tr></table></figure>
+<h3 id="2-在本地建立一个文件夹"><a href="#2-在本地建立一个文件夹" class="headerlink" title="2.在本地建立一个文件夹"></a>2.在本地建立一个文件夹</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ cd D:&#x2F;project</span><br><span class="line">$ mkdir GiteePhotos2</span><br><span class="line">asus@LAPTOP-78V1DGVI MINGW64 &#x2F;</span><br><span class="line">$ cd D:&#x2F;project&#x2F;GiteePhotos2</span><br></pre></td></tr></table></figure>
 
-<h3 id="3-克隆项目进行修改再传入自己的gitee仓库"><a href="#3-克隆项目进行修改再传入自己的gitee仓库" class="headerlink" title="3.克隆项目进行修改再传入自己的gitee仓库"></a>3.克隆项目进行修改再传入自己的gitee仓库</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">asus@LAPTOP-78V1DGVI MINGW64 &#x2F;d&#x2F;project&#x2F;GiteePhotos2 (master)</span><br><span class="line">$ git clone https:&#x2F;&#x2F;gitee.com&#x2F;fzh3816&#x2F;photos.git</span><br></pre></td></tr></table></figure>
+<h3 id="3-克隆项目进行修改"><a href="#3-克隆项目进行修改" class="headerlink" title="3.克隆项目进行修改"></a>3.克隆项目进行修改</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">asus@LAPTOP-78V1DGVI MINGW64 &#x2F;d&#x2F;project&#x2F;GiteePhotos2 </span><br><span class="line">$ git clone https:&#x2F;&#x2F;gitee.com&#x2F;fzh3816&#x2F;photos.git</span><br></pre></td></tr></table></figure>
 
 <p>git clone <a href="https://gitee.com/fzh3816/photos.git" target="_blank" rel="noopener">https://gitee.com/fzh3816/photos.git</a> 克隆gitee项目</p>
 <p>下面是显示的结果</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Cloning into &#39;photos&#39;...</span><br><span class="line">remote: Enumerating objects: 6, done.</span><br><span class="line">remote: Counting objects: 100% (6&#x2F;6), done.</span><br><span class="line">remote: Compressing objects: 100% (3&#x2F;3), done.</span><br><span class="line">remote: Total 6 (delta 0), reused 0 (delta 0), pack-reused 0</span><br><span class="line">Receiving objects: 100% (6&#x2F;6), 79.44 KiB | 968.00 KiB&#x2F;s, done.</span><br></pre></td></tr></table></figure>
 
 <hr>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">asus@LAPTOP-78V1DGVI MINGW64 &#x2F;d&#x2F;project&#x2F;GiteePhotos2 (master)</span><br><span class="line">$ ls</span><br><span class="line">photos&#x2F;</span><br><span class="line"></span><br><span class="line">asus@LAPTOP-78V1DGVI MINGW64 &#x2F;d&#x2F;project&#x2F;GiteePhotos2 (master)</span><br><span class="line">$ cd photos</span><br><span class="line"></span><br><span class="line">asus@LAPTOP-78V1DGVI MINGW64 &#x2F;d&#x2F;project&#x2F;GiteePhotos2&#x2F;photos (master)</span><br><span class="line">$ ls</span><br><span class="line">images&#x2F;  README.md</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">asus@LAPTOP-78V1DGVI MINGW64 &#x2F;d&#x2F;project&#x2F;GiteePhotos2 (master)</span><br><span class="line">$ ls</span><br><span class="line">photos&#x2F;</span><br><span class="line"></span><br><span class="line">asus@LAPTOP-78V1DGVI MINGW64 &#x2F;d&#x2F;project&#x2F;GiteePhotos2 (master)</span><br><span class="line">$ cd photos</span><br></pre></td></tr></table></figure>
 
 <p>cd photos   ls  mac/linux指令打开photos文件 查看里面的文件有哪些</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">asus@LAPTOP-78V1DGVI MINGW64 &#x2F;d&#x2F;project&#x2F;GiteePhotos2&#x2F;photos (master)</span><br><span class="line">$ git status</span><br><span class="line">On branch master</span><br><span class="line">Your branch is up to date with &#39;origin&#x2F;master&#39;.</span><br><span class="line"></span><br><span class="line">Untracked files:</span><br><span class="line">  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)</span><br><span class="line">        images&#x2F;MdImage&#x2F;2.png</span><br><span class="line"></span><br><span class="line">nothing added to commit but untracked files present (use &quot;git add&quot; to track)</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">asus@LAPTOP-78V1DGVI MINGW64 &#x2F;d&#x2F;project&#x2F;GiteePhotos2&#x2F;photos (master)</span><br><span class="line">$ git add .</span><br><span class="line"></span><br><span class="line">asus@LAPTOP-78V1DGVI MINGW64 &#x2F;d&#x2F;project&#x2F;GiteePhotos2&#x2F;photos (master)</span><br><span class="line">$ git commit -m &quot;添加了图片2.png&quot;</span><br><span class="line">git: &#39;commit&#39; is not a git command. See &#39;git --help&#39;.</span><br><span class="line"></span><br><span class="line">The most similar command is</span><br><span class="line">        commit</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">asus@LAPTOP-78V1DGVI MINGW64 &#x2F;d&#x2F;project&#x2F;GiteePhotos2&#x2F;photos (master)</span><br><span class="line">$ git add .</span><br></pre></td></tr></table></figure>
 
-<p><font color=red  size=4.5>这里在克隆你自己gitee账号的仓库的前提下，可以不用在次连接你的仓库，因为在克隆时已经完成，除非你克隆的不是你自己的仓库,这时才要使用<br>git remote add origin url 连接你自己的仓库</font></p>
+
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">asus@LAPTOP-78V1DGVI MINGW64 &#x2F;d&#x2F;project&#x2F;GiteePhotos2&#x2F;photos (master)</span><br><span class="line">$ git commit -m &quot;添加了图片2.png&quot;</span><br><span class="line">[master fd9599a] 添加了图片2.png</span><br><span class="line"> 1 file changed, 0 insertions(+), 0 deletions(-)</span><br><span class="line"> create mode 100644 images&#x2F;MdImage&#x2F;2.png</span><br></pre></td></tr></table></figure>
+<h3 id="4-修改配置文件-连接项目仓库"><a href="#4-修改配置文件-连接项目仓库" class="headerlink" title="4.修改配置文件,连接项目仓库"></a>4.修改配置文件,连接项目仓库</h3><p>因为你克隆的是别人的仓库，所以你需要修改config文件 修改方法</p>
+<blockquote>
+<p>两种方法：</p>
+<blockquote>
+<ol>
+<li>进入项目中的隐藏文件.git，打开config文件修改 URL的值为你的项目仓库文件</li>
+<li>在项目路径下输入 <code>cd .git</code>    <code>vim  config</code> 然后修改URL</li>
+</ol>
+</blockquote>
+</blockquote>
+<h3 id="5-把本地项目推送到远程仓库"><a href="#5-把本地项目推送到远程仓库" class="headerlink" title="5.把本地项目推送到远程仓库"></a>5.把本地项目推送到远程仓库</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">asus@LAPTOP-78V1DGVI MINGW64 &#x2F;d&#x2F;project&#x2F;GiteePhotos2&#x2F;photos (master)</span><br><span class="line">$ git push</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">asus@LAPTOP-78V1DGVI MINGW64 &#x2F;d&#x2F;project&#x2F;GiteePhotos2&#x2F;photos (master)</span><br><span class="line">$ git push</span><br></pre></td></tr></table></figure>
-
-<p><font color=red size=4.5>注意：git push 的前提是前面你克隆的仓库是你自己的已连接的gitee账号的仓库 就可以不用这样成  git push -u origin master</font></p>
+<p>$ git push origin</p>
+<p>上面命令表示，将当前分支推送到origin主机的对应分支。 </p>
+<p>如果当前分支只有一个追踪分支，那么主机名都可以省略。 </p>
+<p>$ git push 如果当前分支与多个主机存在追踪关系，那么这个时候-u选项会指定一个默认主机，这样后面就可以不加任何参数使用git push。</p>
+<p>$ git push -u origin master 上面命令将本地的master分支推送到origin主机，同时指定origin为默认主机，后面就可以不加任何参数使用git push了。</p>
+<p>不带任何参数的git push，默认只推送当前分支，这叫做simple方式。此外，还有一种matching方式，会推送所有有对应的远程分支的本地分支。Git 2.0版本之前，默认采用matching方法，现在改为默认采用simple方式。</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Enumerating objects: 8, done.</span><br><span class="line">Counting objects: 100% (8&#x2F;8), done.</span><br><span class="line">Delta compression using up to 4 threads</span><br><span class="line">Compressing objects: 100% (4&#x2F;4), done.</span><br><span class="line">Writing objects: 100% (5&#x2F;5), 43.30 KiB | 14.43 MiB&#x2F;s, done.</span><br><span class="line">Total 5 (delta 0), reused 0 (delta 0), pack-reused 0</span><br><span class="line">remote: Powered by GITEE.COM [GNK-5.0]</span><br><span class="line">To https:&#x2F;&#x2F;gitee.com&#x2F;fzh3816&#x2F;photos.git</span><br><span class="line">   dcf5299..fd9599a  master -&gt; master</span><br><span class="line"></span><br><span class="line">asus@LAPTOP-78V1DGVI MINGW64 &#x2F;d&#x2F;project&#x2F;GiteePhotos2&#x2F;photos (master)</span><br><span class="line">$</span><br></pre></td></tr></table></figure>
 
 <p>上传成功的结果</p>
-<p>下面是整个操作过程<br><img src="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/git-bash/4.png" alt="4.jpg" style="zoom:50%;" /></p>
+<p>下面是整个操作过程，但是我这里克隆的是我自己的远程仓库，所以并不需要进行修改配置文件</p>
+<img src="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/git-bash/4.png" alt="4.jpg" style="zoom:50%;" />
+
+
+
 <hr>
 ]]></content>
       <categories>
@@ -74,6 +91,100 @@
       </categories>
       <tags>
         <tag>-git—Bash</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>hexo搭建博客并部署到github</title>
+    <url>/2020/04/20/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E5%B9%B6%E9%83%A8%E7%BD%B2%E5%88%B0github/</url>
+    <content><![CDATA[<h2 id="环境要求"><a href="#环境要求" class="headerlink" title="环境要求"></a>环境要求</h2><ul>
+<li>windows系统电脑(Mac和Linux略有区别)</li>
+<li>Git</li>
+<li>Note.js<a id="more"></a>
+<h2 id="安装配置git并与github相连"><a href="#安装配置git并与github相连" class="headerlink" title="安装配置git并与github相连"></a>安装配置git并与github相连</h2></li>
+</ul>
+<p>在git-Bash进行<br>还要记得配置SSH key 这样就不会每次都要输入账号密码</p>
+<p>配置完后</p>
+<p>测试是否与github连通<code>ssh -T git@github.com</code><br>测试是否与gitee连通<code>ssh -T git@gitee.com</code></p>
+<p>如果是第一次上传，需要配置一下用户名和用户邮箱</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git config --global user.name [username]</span><br><span class="line"> </span><br><span class="line">git config --global user.email[email.address]</span><br></pre></td></tr></table></figure>
+
+
+
+<hr>
+<h2 id="安装nodejs并配置环境"><a href="#安装nodejs并配置环境" class="headerlink" title="安装nodejs并配置环境"></a>安装nodejs并配置环境</h2><hr>
+<h2 id="安装hexo框架，进行项目"><a href="#安装hexo框架，进行项目" class="headerlink" title="安装hexo框架，进行项目"></a>安装hexo框架，进行项目</h2><p>在git-Bash进行 在cmd终端进行也可以 建议在git-Bash下</p>
+<ul>
+<li>查看node版本  <code>node -v</code> </li>
+<li>查看npm版本    <code>npm -v</code></li>
+<li>使用淘宝镜像安装cnpm  <code>npm install -g cnpm --registry=http://registry.npm.taobao.org</code></li>
+<li>查看cnpm版本 <code>cnpm -v</code></li>
+<li>安装hexo框架 <code>cnpm install -g hexo-cli</code></li>
+<li>查看hexo版本,验证是否安装成功 <code>hexo -v</code></li>
+<li>创建blog目录  <code>mkdir blog</code></li>
+<li>进入blog目录 <code>cd blog</code></li>
+<li>在blog目录下生成博客 初始化博客 mac或者linux系统要在前面加sudo  <code>hexo init</code></li>
+<li>启动服务 <code>hexo s</code></li>
+<li>本地访问地址 <code>http://localhost:4000/</code></li>
+<li>创建新的文章 <code>hexo n &quot;我的第一篇文章&quot;</code></li>
+<li>返回blog目录</li>
+<li>清理 <code>hexo clean</code></li>
+<li>生成静态网页<code>hexo g</code></li>
+<li>启动服务 <code>hexo s</code></li>
+</ul>
+<p><strong>新建一个名为你的 用户名.github.io的仓库，比如说，如果你的github用户名是test，那么你就新建test.github.io的仓库（必须是你的用户名，其它名称无效），将来你的网站访问地址就是 <a href="http://test.github.io" target="_blank" rel="noopener">http://test.github.io</a> 了</strong></p>
+<hr>
+<h2 id="配置-config-yml"><a href="#配置-config-yml" class="headerlink" title="配置_config.yml"></a>配置_config.yml</h2><h3 id="Deployment"><a href="#Deployment" class="headerlink" title="Deployment"></a>Deployment</h3><h3 id="Docs-https-hexo-io-docs-deployment-html"><a href="#Docs-https-hexo-io-docs-deployment-html" class="headerlink" title="Docs: https://hexo.io/docs/deployment.html"></a>Docs: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">https://hexo.io/docs/deployment.html</a></h3><p>deploy:<br>type: git<br>repo: <a href="https://github.com/YourGithubName/YourGithubName.github.io.git" target="_blank" rel="noopener">https://github.com/YourGithubName/YourGithubName.github.io.git</a><br>branch: master</p>
+<p><strong>如需部署到gitee仓库，repo填写gitee项目ssh地址并且每次上传都要点击服务的gitee pags 中的更新</strong></p>
+<hr>
+<h2 id="在blog目录下安装git部署插件"><a href="#在blog目录下安装git部署插件" class="headerlink" title="在blog目录下安装git部署插件"></a>在blog目录下安装git部署插件</h2><p>在blog目录下安装git部署插        <code>npm install hexo-deployer-git --save件</code><br> mac/linux 输入                     <code>npm install  --save hexo-deployer-git</code></p>
+<ul>
+<li>部署到Github仓库里 <code>hexo d</code></li>
+</ul>
+<hr>
+<h2 id="更换theme"><a href="#更换theme" class="headerlink" title="更换theme"></a>更换theme</h2><p>git clone <a href="https://github.com/litten/hexo-theme-yilia.git" target="_blank" rel="noopener">https://github.com/litten/hexo-theme-yilia.git</a> themes/yilia #下载yilia主题到本地</p>
+<p>#修改hexo根目录下的 _config.yml 文件 ： theme: yilia</p>
+<p>hexo c #清理一下<br>hexo g #生成<br>hexo d #部署到远程Github仓库<br><a href="https://YourGithubName.github.io/" target="_blank" rel="noopener">https://YourGithubName.github.io/</a> #查看博客</p>
+<hr>
+]]></content>
+      <categories>
+        <category>-博客搭建</category>
+      </categories>
+      <tags>
+        <tag>-Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo-添加分类及标签</title>
+    <url>/2020/04/20/Hexo-%E6%B7%BB%E5%8A%A0%E5%88%86%E7%B1%BB%E5%8F%8A%E6%A0%87%E7%AD%BE/</url>
+    <content><![CDATA[<h1 id="hexo添加分类及标签"><a href="#hexo添加分类及标签" class="headerlink" title="hexo添加分类及标签"></a>hexo添加分类及标签</h1><hr>
+<h2 id="1-创建“分类”选项"><a href="#1-创建“分类”选项" class="headerlink" title="1. 创建“分类”选项"></a>1. 创建“分类”选项</h2><p>生成“分类”页并添加tpye属性,进入博客目录。执行命令下方命令</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo new page categories</span><br></pre></td></tr></table></figure>
+<p>会在source文件下生成categories文件，<br>categories文件夹下会有index.md这个文件，打开后默认内容是这样的：</p>
+<a id="more"></a>
+
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: categories</span><br><span class="line">date: 2019-04-22 14:47:40</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<p>添加type: “categories”到内容中，添加后是这样的：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">--</span><br><span class="line">title: 分类</span><br><span class="line">date: 2019-04-24 15:30:30</span><br><span class="line">type: categories</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<p>保存并关闭文件。</p>
+<p>给文章添加“categories”属性</p>
+<p>打开需要添加分类的文章，为其添加categories属性。下方的categories:Hexo表示这篇文章添加到到“Hexo”这个分类。注意：一篇文章只会添加到一个分类中，如果是多个默认放到第一个分类中。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hexo 添加分类及标签</span><br><span class="line">date: 2017-05-26 12:12:57</span><br><span class="line">categories: Hexo</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<h2 id="2-创建“标签”选项"><a href="#2-创建“标签”选项" class="headerlink" title="2. 创建“标签”选项"></a>2. 创建“标签”选项</h2><p>生成“标签”页并添加tpye属性</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo new page tags</span><br></pre></td></tr></table></figure>
+<p>在tags文件夹下，找到index.md这个文件，打开后默认内容是这样的：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 标签</span><br><span class="line">date: 2019-04-22 14:22:08</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<p>添加type: “tags”到内容中，添加后是这样的：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 标签</span><br><span class="line">date: 2019-04-24 15:40:24</span><br><span class="line">type: tags</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<p>保存并关闭文件。</p>
+<p>给文章添加“tags”属性,打开需要添加标签的文章，为其添加tags属性。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hexo 添加分类及标签</span><br><span class="line">date: 2019-04-24 15:40:24</span><br><span class="line">categories: </span><br><span class="line">          - Hexo</span><br><span class="line">tags:</span><br><span class="line">          - 博客</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<hr>
+]]></content>
+      <tags>
+        <tag>-md</tag>
       </tags>
   </entry>
   <entry>
@@ -146,100 +257,6 @@
       </categories>
       <tags>
         <tag>-安装配置</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo-添加分类及标签</title>
-    <url>/2020/04/20/Hexo-%E6%B7%BB%E5%8A%A0%E5%88%86%E7%B1%BB%E5%8F%8A%E6%A0%87%E7%AD%BE/</url>
-    <content><![CDATA[<h1 id="hexo添加分类及标签"><a href="#hexo添加分类及标签" class="headerlink" title="hexo添加分类及标签"></a>hexo添加分类及标签</h1><hr>
-<h2 id="1-创建“分类”选项"><a href="#1-创建“分类”选项" class="headerlink" title="1. 创建“分类”选项"></a>1. 创建“分类”选项</h2><p>生成“分类”页并添加tpye属性,进入博客目录。执行命令下方命令</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo new page categories</span><br></pre></td></tr></table></figure>
-<p>会在source文件下生成categories文件，<br>categories文件夹下会有index.md这个文件，打开后默认内容是这样的：</p>
-<a id="more"></a>
-
-
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: categories</span><br><span class="line">date: 2019-04-22 14:47:40</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-
-<p>添加type: “categories”到内容中，添加后是这样的：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">--</span><br><span class="line">title: 分类</span><br><span class="line">date: 2019-04-24 15:30:30</span><br><span class="line">type: categories</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-<p>保存并关闭文件。</p>
-<p>给文章添加“categories”属性</p>
-<p>打开需要添加分类的文章，为其添加categories属性。下方的categories:Hexo表示这篇文章添加到到“Hexo”这个分类。注意：一篇文章只会添加到一个分类中，如果是多个默认放到第一个分类中。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hexo 添加分类及标签</span><br><span class="line">date: 2017-05-26 12:12:57</span><br><span class="line">categories: Hexo</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-<h2 id="2-创建“标签”选项"><a href="#2-创建“标签”选项" class="headerlink" title="2. 创建“标签”选项"></a>2. 创建“标签”选项</h2><p>生成“标签”页并添加tpye属性</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo new page tags</span><br></pre></td></tr></table></figure>
-<p>在tags文件夹下，找到index.md这个文件，打开后默认内容是这样的：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 标签</span><br><span class="line">date: 2019-04-22 14:22:08</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-<p>添加type: “tags”到内容中，添加后是这样的：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 标签</span><br><span class="line">date: 2019-04-24 15:40:24</span><br><span class="line">type: tags</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-<p>保存并关闭文件。</p>
-<p>给文章添加“tags”属性,打开需要添加标签的文章，为其添加tags属性。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hexo 添加分类及标签</span><br><span class="line">date: 2019-04-24 15:40:24</span><br><span class="line">categories: </span><br><span class="line">          - Hexo</span><br><span class="line">tags:</span><br><span class="line">          - 博客</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-
-<hr>
-]]></content>
-      <tags>
-        <tag>-md</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>hexo搭建博客并部署到github</title>
-    <url>/2020/04/20/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E5%B9%B6%E9%83%A8%E7%BD%B2%E5%88%B0github/</url>
-    <content><![CDATA[<h2 id="环境要求"><a href="#环境要求" class="headerlink" title="环境要求"></a>环境要求</h2><ul>
-<li>windows系统电脑(Mac和Linux略有区别)</li>
-<li>Git</li>
-<li>Note.js<a id="more"></a>
-<h2 id="安装配置git并与github相连"><a href="#安装配置git并与github相连" class="headerlink" title="安装配置git并与github相连"></a>安装配置git并与github相连</h2></li>
-</ul>
-<p>在git-Bash进行<br>还要记得配置SSH key 这样就不会每次都要输入账号密码</p>
-<p>配置完后</p>
-<p>测试是否与github连通<code>ssh -T git@github.com</code><br>测试是否与gitee连通<code>ssh -T git@gitee.com</code></p>
-<p>如果是第一次上传，需要配置一下用户名和用户邮箱</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git config --global user.name [username]</span><br><span class="line"> </span><br><span class="line">git config --global user.email[email.address]</span><br></pre></td></tr></table></figure>
-
-
-
-<hr>
-<h2 id="安装nodejs并配置环境"><a href="#安装nodejs并配置环境" class="headerlink" title="安装nodejs并配置环境"></a>安装nodejs并配置环境</h2><hr>
-<h2 id="安装hexo框架，进行项目"><a href="#安装hexo框架，进行项目" class="headerlink" title="安装hexo框架，进行项目"></a>安装hexo框架，进行项目</h2><p>在git-Bash进行 在cmd终端进行也可以 建议在git-Bash下</p>
-<ul>
-<li>查看node版本  <code>node -v</code> </li>
-<li>查看npm版本    <code>npm -v</code></li>
-<li>使用淘宝镜像安装cnpm  <code>npm install -g cnpm --registry=http://registry.npm.taobao.org</code></li>
-<li>查看cnpm版本 <code>cnpm -v</code></li>
-<li>安装hexo框架 <code>cnpm install -g hexo-cli</code></li>
-<li>查看hexo版本,验证是否安装成功 <code>hexo -v</code></li>
-<li>创建blog目录  <code>mkdir blog</code></li>
-<li>进入blog目录 <code>cd blog</code></li>
-<li>在blog目录下生成博客 初始化博客 mac或者linux系统要在前面加sudo  <code>hexo init</code></li>
-<li>启动服务 <code>hexo s</code></li>
-<li>本地访问地址 <code>http://localhost:4000/</code></li>
-<li>创建新的文章 <code>hexo n &quot;我的第一篇文章&quot;</code></li>
-<li>返回blog目录</li>
-<li>清理 <code>hexo clean</code></li>
-<li>生成静态网页<code>hexo g</code></li>
-<li>启动服务 <code>hexo s</code></li>
-</ul>
-<p><strong>新建一个名为你的 用户名.github.io的仓库，比如说，如果你的github用户名是test，那么你就新建test.github.io的仓库（必须是你的用户名，其它名称无效），将来你的网站访问地址就是 <a href="http://test.github.io" target="_blank" rel="noopener">http://test.github.io</a> 了</strong></p>
-<hr>
-<h2 id="配置-config-yml"><a href="#配置-config-yml" class="headerlink" title="配置_config.yml"></a>配置_config.yml</h2><h3 id="Deployment"><a href="#Deployment" class="headerlink" title="Deployment"></a>Deployment</h3><h3 id="Docs-https-hexo-io-docs-deployment-html"><a href="#Docs-https-hexo-io-docs-deployment-html" class="headerlink" title="Docs: https://hexo.io/docs/deployment.html"></a>Docs: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">https://hexo.io/docs/deployment.html</a></h3><p>deploy:<br>type: git<br>repo: <a href="https://github.com/YourGithubName/YourGithubName.github.io.git" target="_blank" rel="noopener">https://github.com/YourGithubName/YourGithubName.github.io.git</a><br>branch: master</p>
-<p><strong>如需部署到gitee仓库，repo填写gitee项目ssh地址并且每次上传都要点击服务的gitee pags 中的更新</strong></p>
-<hr>
-<h2 id="在blog目录下安装git部署插件"><a href="#在blog目录下安装git部署插件" class="headerlink" title="在blog目录下安装git部署插件"></a>在blog目录下安装git部署插件</h2><p>在blog目录下安装git部署插        <code>npm install hexo-deployer-git --save件</code><br> mac/linux 输入                     <code>npm install  --save hexo-deployer-git</code></p>
-<ul>
-<li>部署到Github仓库里 <code>hexo d</code></li>
-</ul>
-<hr>
-<h2 id="更换theme"><a href="#更换theme" class="headerlink" title="更换theme"></a>更换theme</h2><p>git clone <a href="https://github.com/litten/hexo-theme-yilia.git" target="_blank" rel="noopener">https://github.com/litten/hexo-theme-yilia.git</a> themes/yilia #下载yilia主题到本地</p>
-<p>#修改hexo根目录下的 _config.yml 文件 ： theme: yilia</p>
-<p>hexo c #清理一下<br>hexo g #生成<br>hexo d #部署到远程Github仓库<br><a href="https://YourGithubName.github.io/" target="_blank" rel="noopener">https://YourGithubName.github.io/</a> #查看博客</p>
-<hr>
-]]></content>
-      <categories>
-        <category>-博客搭建</category>
-      </categories>
-      <tags>
-        <tag>-Hexo</tag>
       </tags>
   </entry>
 </search>
