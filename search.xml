@@ -1,6 +1,112 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>多节点Linux操作系统环境</title>
+    <url>/2020/04/23/%E5%A4%9A%E8%8A%82%E7%82%B9Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%8E%AF%E5%A2%83/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ul>
+<li><p>主要内容在Linux系统配置静态ip，利用xshell实现与宿主机的互相通信，还可以连接网络</p>
+</li>
+<li><p>配置静态ip的原因是防止每次开启虚拟机，linux系统中的IP地址变换</p>
+</li>
+<li><p>多节点Linux操作系统环境打造，基于Linux CentOS操作系统（Linux操作系统安装配置教程）（Ubuntu操作系统安装也基本类似）。这也将是后续学Linux、用Linux、Linux环境编程、项目部署、工具实验等等一系列学习和实践的基石</p>
+<a id="more"></a>
+</li>
+<li><p>用VM虚拟机的原因是可以实现多节点，win自带的WSL只能单节点</p>
+</li>
+</ul>
+<hr>
+<h2 id="进入linux系统的终端"><a href="#进入linux系统的终端" class="headerlink" title="进入linux系统的终端"></a>进入linux系统的终端</h2><p>网络适配用桥接模式<br>刚开始时：ping <a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a> 或者ping 宿主机 都是不可达的<br>既网络不可用与宿主机之间也不连通</p>
+<p>1、查看网络</p>
+<ul>
+<li>查看网络输入<code>ifconfig</code><br>有些版本是<code>ip addr</code><br>可以看到 ens33中没有ip地址与掩码等<br><img src="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/%E8%99%9A%E6%8B%9F%E6%9C%BA%E9%9D%99%E6%80%81ip/1.png" alt="1.jpg"></li>
+</ul>
+<p>2、利用dhclient分配可用的ip地址</p>
+<ul>
+<li><p>输入 <code>su</code>切换到 root模式</p>
+</li>
+<li><p>输入<code>dhclient</code> 为虚拟机自动分配网络类可用的ip地址</p>
+</li>
+<li><p>输入<code>ip addr</code>查看分配的ip 和掩码 ，记住ip</p>
+<p>可以看到分配的是 192.168.124.10</p>
+</li>
+</ul>
+<p>  <img src="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/%E8%99%9A%E6%8B%9F%E6%9C%BA%E9%9D%99%E6%80%81ip/2.png" alt="2.jpg"></p>
+<p>3、把ip地址固定成静态ip</p>
+<ul>
+<li>输入<code>ls /etc/sysconfig/network-scripts</code>查看该虚拟机的网络信息<br><img src="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/%E8%99%9A%E6%8B%9F%E6%9C%BA%E9%9D%99%E6%80%81ip/3.png" alt="3.jpg"><br>可以看到 ifcfg-ens33 每个人的不一定一样</li>
+<li>输入 <code>vi /etc/sysconfig/network-scripts/ifcfg-ensXXXX</code><br>有些版本是输入<code>vim /etc/sysconfig/network-scripts/ifcfg-ensXXXX</code></li>
+</ul>
+<p>4、改成如下内容<br><img src="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/%E8%99%9A%E6%8B%9F%E6%9C%BA%E9%9D%99%E6%80%81ip/4.png" alt="4.jpg" style="zoom: 67%;" /></p>
+<ul>
+<li>i 开启编辑模式<br>改成以下内容<br>BOOTPROTO=static<br>ONBOOT=YES<br>添加<br>IPADDR=192.168.124.10   即刚才或取得ip地址<br>NETMASK=255.255.255.0  配置子网掩码<br>GATEWAY=192.168.124.1  网关<br>DNS1=119.29.29.29  这是个知名的公网dns 好像腾讯的</li>
+<li>ESC退出编辑  输入冒号 ：再输入wq 保存并退出</li>
+</ul>
+<p>5、重启网卡服务</p>
+<ul>
+<li>输入<code>service network restart</code><br>有些版本是输入 <code>systemctl restart network.service</code></li>
+</ul>
+<p>6、检查安装配置的结果</p>
+<ul>
+<li>查看网络输入<code>ifconfig</code><br>有些版本是<code>ip addr</code></li>
+</ul>
+<p>7、测试与外网和宿主机的连通性</p>
+<ul>
+<li>输入<code>ping www.baidu.com</code></li>
+<li>输入<code>ping 宿主机ip地址</code></li>
+</ul>
+<h2 id="使用xshell使宿主机与linux连通"><a href="#使用xshell使宿主机与linux连通" class="headerlink" title="使用xshell使宿主机与linux连通"></a>使用xshell使宿主机与linux连通</h2><p>1、即在新建连接处的主机处填写你在虚拟机建立的ip地址(如我上面创的192.168.24.10)</p>
+<p>2、创建并连接好后，右击会话处你创建的会话，点击–&gt;用fxtp打开，这时就可以管理你虚拟机里的系统了</p>
+<p>要想能上传和下载文件到虚拟机需要下载一个插件</p>
+<ul>
+<li>yum安装一款工具<code>yum install  lrzsz -y</code></li>
+<li>检查是否安装成功 <code>rpm -qa |grep lrzsz</code></li>
+<li>上传到虚拟机 <code>rz</code></li>
+<li>如果想上传到虚拟机并覆盖原文件<code>rz -y</code></li>
+<li>下载到宿主机<code>sz</code></li>
+</ul>
+]]></content>
+      <categories>
+        <category>-Linux</category>
+      </categories>
+      <tags>
+        <tag>-安装配置</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo-添加分类及标签</title>
+    <url>/2020/04/20/Hexo-%E6%B7%BB%E5%8A%A0%E5%88%86%E7%B1%BB%E5%8F%8A%E6%A0%87%E7%AD%BE/</url>
+    <content><![CDATA[<h1 id="hexo添加分类及标签"><a href="#hexo添加分类及标签" class="headerlink" title="hexo添加分类及标签"></a>hexo添加分类及标签</h1><hr>
+<h2 id="1-创建“分类”选项"><a href="#1-创建“分类”选项" class="headerlink" title="1. 创建“分类”选项"></a>1. 创建“分类”选项</h2><p>生成“分类”页并添加tpye属性,进入博客目录。执行命令下方命令</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo new page categories</span><br></pre></td></tr></table></figure>
+<p>会在source文件下生成categories文件，<br>categories文件夹下会有index.md这个文件，打开后默认内容是这样的：</p>
+<a id="more"></a>
+
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: categories</span><br><span class="line">date: 2019-04-22 14:47:40</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<p>添加type: “categories”到内容中，添加后是这样的：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">--</span><br><span class="line">title: 分类</span><br><span class="line">date: 2019-04-24 15:30:30</span><br><span class="line">type: categories</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<p>保存并关闭文件。</p>
+<p>给文章添加“categories”属性</p>
+<p>打开需要添加分类的文章，为其添加categories属性。下方的categories:Hexo表示这篇文章添加到到“Hexo”这个分类。注意：一篇文章只会添加到一个分类中，如果是多个默认放到第一个分类中。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hexo 添加分类及标签</span><br><span class="line">date: 2017-05-26 12:12:57</span><br><span class="line">categories: Hexo</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<h2 id="2-创建“标签”选项"><a href="#2-创建“标签”选项" class="headerlink" title="2. 创建“标签”选项"></a>2. 创建“标签”选项</h2><p>生成“标签”页并添加tpye属性</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo new page tags</span><br></pre></td></tr></table></figure>
+<p>在tags文件夹下，找到index.md这个文件，打开后默认内容是这样的：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 标签</span><br><span class="line">date: 2019-04-22 14:22:08</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<p>添加type: “tags”到内容中，添加后是这样的：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 标签</span><br><span class="line">date: 2019-04-24 15:40:24</span><br><span class="line">type: tags</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<p>保存并关闭文件。</p>
+<p>给文章添加“tags”属性,打开需要添加标签的文章，为其添加tags属性。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hexo 添加分类及标签</span><br><span class="line">date: 2019-04-24 15:40:24</span><br><span class="line">categories: </span><br><span class="line">          - Hexo</span><br><span class="line">tags:</span><br><span class="line">          - 博客</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<hr>
+]]></content>
+      <tags>
+        <tag>-md</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>使用git-Bash克隆、修改和更新项目</title>
     <url>/2020/04/21/%E4%BD%BF%E7%94%A8git-Bash%E5%85%8B%E9%9A%86%E3%80%81%E4%BF%AE%E6%94%B9%E5%92%8C%E6%9B%B4%E6%96%B0%E9%A1%B9%E7%9B%AE/</url>
     <content><![CDATA[<h1 id="可分为两种情况"><a href="#可分为两种情况" class="headerlink" title="可分为两种情况"></a>可分为两种情况</h1><p>使用git-Bash操作gitee和gituub原理是一样的</p>
@@ -151,112 +257,6 @@
       </categories>
       <tags>
         <tag>-Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo-添加分类及标签</title>
-    <url>/2020/04/20/Hexo-%E6%B7%BB%E5%8A%A0%E5%88%86%E7%B1%BB%E5%8F%8A%E6%A0%87%E7%AD%BE/</url>
-    <content><![CDATA[<h1 id="hexo添加分类及标签"><a href="#hexo添加分类及标签" class="headerlink" title="hexo添加分类及标签"></a>hexo添加分类及标签</h1><hr>
-<h2 id="1-创建“分类”选项"><a href="#1-创建“分类”选项" class="headerlink" title="1. 创建“分类”选项"></a>1. 创建“分类”选项</h2><p>生成“分类”页并添加tpye属性,进入博客目录。执行命令下方命令</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo new page categories</span><br></pre></td></tr></table></figure>
-<p>会在source文件下生成categories文件，<br>categories文件夹下会有index.md这个文件，打开后默认内容是这样的：</p>
-<a id="more"></a>
-
-
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: categories</span><br><span class="line">date: 2019-04-22 14:47:40</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-
-<p>添加type: “categories”到内容中，添加后是这样的：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">--</span><br><span class="line">title: 分类</span><br><span class="line">date: 2019-04-24 15:30:30</span><br><span class="line">type: categories</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-<p>保存并关闭文件。</p>
-<p>给文章添加“categories”属性</p>
-<p>打开需要添加分类的文章，为其添加categories属性。下方的categories:Hexo表示这篇文章添加到到“Hexo”这个分类。注意：一篇文章只会添加到一个分类中，如果是多个默认放到第一个分类中。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hexo 添加分类及标签</span><br><span class="line">date: 2017-05-26 12:12:57</span><br><span class="line">categories: Hexo</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-<h2 id="2-创建“标签”选项"><a href="#2-创建“标签”选项" class="headerlink" title="2. 创建“标签”选项"></a>2. 创建“标签”选项</h2><p>生成“标签”页并添加tpye属性</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo new page tags</span><br></pre></td></tr></table></figure>
-<p>在tags文件夹下，找到index.md这个文件，打开后默认内容是这样的：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 标签</span><br><span class="line">date: 2019-04-22 14:22:08</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-<p>添加type: “tags”到内容中，添加后是这样的：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 标签</span><br><span class="line">date: 2019-04-24 15:40:24</span><br><span class="line">type: tags</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-<p>保存并关闭文件。</p>
-<p>给文章添加“tags”属性,打开需要添加标签的文章，为其添加tags属性。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hexo 添加分类及标签</span><br><span class="line">date: 2019-04-24 15:40:24</span><br><span class="line">categories: </span><br><span class="line">          - Hexo</span><br><span class="line">tags:</span><br><span class="line">          - 博客</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-
-<hr>
-]]></content>
-      <tags>
-        <tag>-md</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>多节点Linux操作系统环境</title>
-    <url>/2020/04/23/%E5%A4%9A%E8%8A%82%E7%82%B9Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%8E%AF%E5%A2%83/</url>
-    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ul>
-<li><p>主要内容在Linux系统配置静态ip，利用xshell实现与宿主机的互相通信，还可以连接网络</p>
-</li>
-<li><p>配置静态ip的原因是防止每次开启虚拟机，linux系统中的IP地址变换</p>
-</li>
-<li><p>多节点Linux操作系统环境打造，基于Linux CentOS操作系统（Linux操作系统安装配置教程）（Ubuntu操作系统安装也基本类似）。这也将是后续学Linux、用Linux、Linux环境编程、项目部署、工具实验等等一系列学习和实践的基石</p>
-<a id="more"></a>
-</li>
-<li><p>用VM虚拟机的原因是可以实现多节点，win自带的WSL只能单节点</p>
-</li>
-</ul>
-<hr>
-<h2 id="进入linux系统的终端"><a href="#进入linux系统的终端" class="headerlink" title="进入linux系统的终端"></a>进入linux系统的终端</h2><p>网络适配用桥接模式<br>刚开始时：ping <a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a> 或者ping 宿主机 都是不可达的<br>既网络不可用与宿主机之间也不连通</p>
-<p>1、查看网络</p>
-<ul>
-<li>查看网络输入<code>ifconfig</code><br>有些版本是<code>ip addr</code><br>可以看到 ens33中没有ip地址与掩码等<br><img src="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/%E8%99%9A%E6%8B%9F%E6%9C%BA%E9%9D%99%E6%80%81ip/1.png" alt="1.jpg"></li>
-</ul>
-<p>2、利用dhclient分配可用的ip地址</p>
-<ul>
-<li><p>输入 <code>su</code>切换到 root模式</p>
-</li>
-<li><p>输入<code>dhclient</code> 为虚拟机自动分配网络类可用的ip地址</p>
-</li>
-<li><p>输入<code>ip addr</code>查看分配的ip 和掩码 ，记住ip</p>
-<p>可以看到分配的是 192.168.124.10</p>
-</li>
-</ul>
-<p>  <img src="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/%E8%99%9A%E6%8B%9F%E6%9C%BA%E9%9D%99%E6%80%81ip/2.png" alt="2.jpg"></p>
-<p>3、把ip地址固定成静态ip</p>
-<ul>
-<li>输入<code>ls /etc/sysconfig/network-scripts</code>查看该虚拟机的网络信息<br><img src="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/%E8%99%9A%E6%8B%9F%E6%9C%BA%E9%9D%99%E6%80%81ip/3.png" alt="3.jpg"><br>可以看到 ifcfg-ens33 每个人的不一定一样</li>
-<li>输入 <code>vi /etc/sysconfig/network-scripts/ifcfg-ensXXXX</code><br>有些版本是输入<code>vim /etc/sysconfig/network-scripts/ifcfg-ensXXXX</code></li>
-</ul>
-<p>4、改成如下内容<br><img src="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/%E8%99%9A%E6%8B%9F%E6%9C%BA%E9%9D%99%E6%80%81ip/4.png" alt="4.jpg" style="zoom: 67%;" /></p>
-<ul>
-<li>i 开启编辑模式<br>改成以下内容<br>BOOTPROTO=static<br>ONBOOT=YES<br>添加<br>IPADDR=192.168.124.10   即刚才或取得ip地址<br>NETMASK=255.255.255.0  配置子网掩码<br>GATEWAY=192.168.124.1  网关<br>DNS1=119.29.29.29  这是个知名的公网dns 好像腾讯的</li>
-<li>ESC退出编辑  输入冒号 ：再输入wq 保存并退出</li>
-</ul>
-<p>5、重启网卡服务</p>
-<ul>
-<li>输入<code>service network restart</code><br>有些版本是输入 <code>systemctl restart network.service</code></li>
-</ul>
-<p>6、检查安装配置的结果</p>
-<ul>
-<li>查看网络输入<code>ifconfig</code><br>有些版本是<code>ip addr</code></li>
-</ul>
-<p>7、测试与外网和宿主机的连通性</p>
-<ul>
-<li>输入<code>ping www.baidu.com</code></li>
-<li>输入<code>ping 宿主机ip地址</code></li>
-</ul>
-<h2 id="使用xshell使宿主机与linux连通"><a href="#使用xshell使宿主机与linux连通" class="headerlink" title="使用xshell使宿主机与linux连通"></a>使用xshell使宿主机与linux连通</h2><p>1、即在新建连接处的主机处填写你在虚拟机建立的ip地址(如我上面创的192.168.24.10)</p>
-<p>2、创建并连接好后，右击会话处你创建的会话，点击–&gt;用fxtp打开，这时就可以管理你虚拟机里的系统了</p>
-<p>要想能上传和下载文件到虚拟机需要下载一个插件</p>
-<ul>
-<li>yum安装一款工具<code>yum install  lrzsz -y</code></li>
-<li>检查是否安装成功 <code>rpm -qa |grep lrzsz</code></li>
-<li>上传到虚拟机 <code>rz</code></li>
-<li>如果想上传到虚拟机并覆盖原文件<code>rz -y</code></li>
-<li>下载到宿主机<code>sz</code></li>
-</ul>
-]]></content>
-      <categories>
-        <category>-Linux</category>
-      </categories>
-      <tags>
-        <tag>-安装配置</tag>
       </tags>
   </entry>
 </search>
