@@ -84,7 +84,7 @@
 <hr>
 <h2 id="更换theme"><a href="#更换theme" class="headerlink" title="更换theme"></a>更换theme</h2><p>git clone <a href="https://github.com/litten/hexo-theme-yilia.git" target="_blank" rel="noopener">https://github.com/litten/hexo-theme-yilia.git</a> themes/yilia #下载yilia主题到本地</p>
 <p>#修改hexo根目录下的 _config.yml 文件 ： theme: yilia</p>
-<p>hexo c #清理一下<br>hexo g #生成<br>hexo d #部署到远程Github仓库<br><a href="https://YourGithubName.github.io/" target="_blank" rel="noopener">https://YourGithubName.github.io/</a> #查看博客</p>
+<p>hexo clean #清理<br>hexo g #生成<br>hexo s 启动服务<br>hexo d #部署到远程Github仓库<br><a href="https://YourGithubName.github.io/" target="_blank" rel="noopener">https://YourGithubName.github.io/</a> #查看博客</p>
 <hr>
 ]]></content>
       <categories>
@@ -267,9 +267,11 @@
 <li>在排除父类pom.xml是否引用子model项目的情况下</li>
 <li>发现右边菜单子maven虽然存在架包，但是呈现灰色   <div align=left ><img  src="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/maven/1.png" /></div>
 
-
 </li>
 </ul>
+<a id="more"></a>
+
+
 <ul>
 <li><p>经过百度发现设置中 maven的ignored files被勾选上了</p>
 <div align=left><img  src="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/maven/2.png"/></div>
