@@ -1,6 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>hexo搭建博客并部署到github</title>
+    <url>/2020/04/20/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E5%B9%B6%E9%83%A8%E7%BD%B2%E5%88%B0github/</url>
+    <content><![CDATA[<h2 id="环境要求"><a href="#环境要求" class="headerlink" title="环境要求"></a>环境要求</h2><ul>
+<li>windows系统电脑(Mac和Linux略有区别)</li>
+<li>Git</li>
+<li>Note.js<a id="more"></a>
+<h2 id="安装配置git并与github相连"><a href="#安装配置git并与github相连" class="headerlink" title="安装配置git并与github相连"></a>安装配置git并与github相连</h2></li>
+</ul>
+<p>在git-Bash进行<br>还要记得配置SSH key 这样就不会每次都要输入账号密码</p>
+<p>配置完后</p>
+<p>测试是否与github连通<code>ssh -T git@github.com</code><br>测试是否与gitee连通<code>ssh -T git@gitee.com</code></p>
+<p>如果是第一次上传，需要配置一下用户名和用户邮箱</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git config --global user.name [username]</span><br><span class="line"> </span><br><span class="line">git config --global user.email[email.address]</span><br></pre></td></tr></table></figure>
+
+
+
+<hr>
+<h2 id="安装nodejs并配置环境"><a href="#安装nodejs并配置环境" class="headerlink" title="安装nodejs并配置环境"></a>安装nodejs并配置环境</h2><hr>
+<h2 id="安装hexo框架，进行项目"><a href="#安装hexo框架，进行项目" class="headerlink" title="安装hexo框架，进行项目"></a>安装hexo框架，进行项目</h2><p>在git-Bash进行 在cmd终端进行也可以 建议在git-Bash下</p>
+<ul>
+<li>查看node版本  <code>node -v</code> </li>
+<li>查看npm版本    <code>npm -v</code></li>
+<li>使用淘宝镜像安装cnpm  <code>npm install -g cnpm --registry=http://registry.npm.taobao.org</code></li>
+<li>查看cnpm版本 <code>cnpm -v</code></li>
+<li>安装hexo框架 <code>cnpm install -g hexo-cli</code></li>
+<li>查看hexo版本,验证是否安装成功 <code>hexo -v</code></li>
+<li>创建blog目录  <code>mkdir blog</code></li>
+<li>进入blog目录 <code>cd blog</code></li>
+<li>在blog目录下生成博客 初始化博客 mac或者linux系统要在前面加sudo  <code>hexo init</code></li>
+<li>启动服务 <code>hexo s</code></li>
+<li>本地访问地址 <code>http://localhost:4000/</code></li>
+<li>创建新的文章 <code>hexo n &quot;我的第一篇文章&quot;</code></li>
+<li>返回blog目录</li>
+<li>清理 <code>hexo clean</code></li>
+<li>生成静态网页<code>hexo g</code></li>
+<li>启动服务 <code>hexo s</code></li>
+</ul>
+<p><strong>新建一个名为你的 用户名.github.io的仓库，比如说，如果你的github用户名是test，那么你就新建test.github.io的仓库（必须是你的用户名，其它名称无效），将来你的网站访问地址就是 <a href="http://test.github.io" target="_blank" rel="noopener">http://test.github.io</a> 了</strong></p>
+<hr>
+<h2 id="配置-config-yml"><a href="#配置-config-yml" class="headerlink" title="配置_config.yml"></a>配置_config.yml</h2><h3 id="Deployment"><a href="#Deployment" class="headerlink" title="Deployment"></a>Deployment</h3><h3 id="Docs-https-hexo-io-docs-deployment-html"><a href="#Docs-https-hexo-io-docs-deployment-html" class="headerlink" title="Docs: https://hexo.io/docs/deployment.html"></a>Docs: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">https://hexo.io/docs/deployment.html</a></h3><p>deploy:<br>type: git<br>repo: <a href="https://github.com/YourGithubName/YourGithubName.github.io.git" target="_blank" rel="noopener">https://github.com/YourGithubName/YourGithubName.github.io.git</a><br>branch: master</p>
+<p><strong>如需部署到gitee仓库，repo填写gitee项目ssh地址并且每次上传都要点击服务的gitee pags 中的更新</strong></p>
+<hr>
+<h2 id="在blog目录下安装git部署插件"><a href="#在blog目录下安装git部署插件" class="headerlink" title="在blog目录下安装git部署插件"></a>在blog目录下安装git部署插件</h2><p>在blog目录下安装git部署插        <code>npm install hexo-deployer-git --save件</code><br> mac/linux 输入                     <code>npm install  --save hexo-deployer-git</code></p>
+<ul>
+<li>部署到Github仓库里 <code>hexo d</code></li>
+</ul>
+<hr>
+<h2 id="更换theme"><a href="#更换theme" class="headerlink" title="更换theme"></a>更换theme</h2><p>git clone <a href="https://github.com/litten/hexo-theme-yilia.git" target="_blank" rel="noopener">https://github.com/litten/hexo-theme-yilia.git</a> themes/yilia #下载yilia主题到本地</p>
+<p>#修改hexo根目录下的 _config.yml 文件 ： theme: yilia</p>
+<p>hexo clean #清理<br>hexo g #生成<br>hexo s 启动服务<br>hexo d #部署到远程Github仓库<br><a href="https://YourGithubName.github.io/" target="_blank" rel="noopener">https://YourGithubName.github.io/</a> #查看博客</p>
+<hr>
+]]></content>
+      <categories>
+        <category>-博客搭建</category>
+      </categories>
+      <tags>
+        <tag>-Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>idea重装不同版本后打不开问题</title>
+    <url>/2020/06/08/idea%E9%87%8D%E8%A3%85%E4%B8%8D%E5%90%8C%E7%89%88%E6%9C%AC%E5%90%8E%E6%89%93%E4%B8%8D%E5%BC%80%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<blockquote>
+<p>原创</p>
+</blockquote>
+<h2 id="两个解决方法，本质是一样的"><a href="#两个解决方法，本质是一样的" class="headerlink" title="两个解决方法，本质是一样的"></a>两个解决方法，本质是一样的</h2><p>idea重装后打不开的原因是 破解 jar包位置改变了，而C盘原idea配置文件扔然指向原来的jar包</p>
+<p>如我的 idea2020.1.1更新到idea2020.1.2就经历了闪退打不开问题</p>
+<h3 id="方法一、"><a href="#方法一、" class="headerlink" title="方法一、"></a>方法一、</h3><p>Windows系统 不同系统文件位置不一样</p>
+<p>idea2020+版本    C盘的配置文件位置发生了改变 </p>
+<blockquote>
+<p>C:\Users\用户名\AppData\Roaming\JetBrains\IntelliJIdea2020.1</p>
+</blockquote>
+<p>首先就应该找到idea64.exe.vmoptions 你会发现在IntelliJIdea2020.1文件夹下找不到</p>
+<p>而是应该直接在文件夹框直接搜索打开</p>
+<blockquote>
+<p>C:\Users\用户名\AppData\Roaming\JetBrains\IntelliJIdea2020.1\idea64.exe.vmoptions</p>
+</blockquote>
+<p>打开文件修改你新版本破解 jar 包的位置</p>
+<blockquote>
+<p>-javaagent:D:\IDEA\IntelliJ IDEA 2020.1.2\bin\jetbrains-agent.jar</p>
+</blockquote>
+<p>或者直接把这里原先添加的一行直接删除，进入idea后在 help-&gt;edit custom vm options里添加</p>
+<p>这时你就能进入idea了</p>
+<h3 id="方法二、"><a href="#方法二、" class="headerlink" title="方法二、"></a>方法二、</h3><p>适用于记得原先破解 jar 包位置在哪里的食用</p>
+<p>一般情况下jar包都放在idea的bin目录下 ，直接卸载idea时也会剩下bin目录和仅有的破解jar包</p>
+<p>这种情况打不开就是因为你把卸载idea删除后，文件目录也被手动删除   ，idea通过C盘的配置文件找不到破解jar包</p>
+<p>这时你就应该把文件目录建立 再把jar包放回 如图</p>
+<div  align="left"><img src="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/problem/1.png"></div>
+
+<p>做好这些后你就能打开idea了 ，当然方法二不仅鸡肋且麻烦 ，建议使用方法一</p>
+<p>进入idea后在 help-&gt;edit custom vm options里添加你架包的位置</p>
+<p>同时给喜欢更新idea的小伙伴一些建议 把设置导出 以备不测</p>
+<p>file-&gt;manage ide settings–&gt;exprot settings</p>
+<p>==如果文章有错请小伙伴指正 马上更改==</p>
+]]></content>
+      <categories>
+        <category>解决问题</category>
+      </categories>
+      <tags>
+        <tag>idean</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>多节点Linux操作系统环境</title>
     <url>/2020/04/23/%E5%A4%9A%E8%8A%82%E7%82%B9Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%8E%AF%E5%A2%83/</url>
     <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ul>
@@ -70,6 +173,95 @@
       </categories>
       <tags>
         <tag>-安装配置</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>遇到的坑爹的坑</title>
+    <url>/2020/05/11/%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%E7%88%B9%E7%9A%84%E5%9D%91/</url>
+    <content><![CDATA[<h3 id="1-idea-maven项目中pom-xml文件中包导入不进来"><a href="#1-idea-maven项目中pom-xml文件中包导入不进来" class="headerlink" title="1. idea maven项目中pom.xml文件中包导入不进来"></a>1. idea maven项目中pom.xml文件中包导入不进来</h3><p>问题：在父maven下建立子maven项目，但是父类pom.xml架包却导入不进来</p>
+<ul>
+<li>在排除父类pom.xml是否引用子model项目的情况下</li>
+<li>发现右边菜单子maven虽然存在架包，但是呈现灰色   <div align=left ><img  src="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/maven/1.png" /></div>
+
+</li>
+</ul>
+<a id="more"></a>
+
+
+<ul>
+<li><p>经过百度发现设置中 maven的ignored files被勾选上了</p>
+<div align=left><img  src="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/maven/2.png"/></div>
+</li>
+<li><p>取消勾选后 重启或者 File-&gt;invalidate catchs/restart 重启和清理缓冲</p>
+</li>
+<li><p>如果还有问题就在右边maven菜单点击重新导入(第一张图片的第二个图标)</p>
+</li>
+</ul>
+<h3 id="2、idea中建立webapp项目"><a href="#2、idea中建立webapp项目" class="headerlink" title="2、idea中建立webapp项目"></a>2、idea中建立webapp项目</h3><ul>
+<li>继承javax.servlet-api依赖任然报错</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Error:(<span class="number">3</span>, <span class="number">21</span>) java: 程序包javax.servlet不存在</span><br><span class="line">Error:(<span class="number">4</span>, <span class="number">26</span>) java: 程序包javax.servlet.http不存在</span><br><span class="line">Error:(<span class="number">5</span>, <span class="number">26</span>) java: 程序包javax.servlet.http不存在</span><br><span class="line">Error:(<span class="number">6</span>, <span class="number">26</span>) java: 程序包javax.servlet.http不存在</span><br></pre></td></tr></table></figure>
+
+<p>解决办法 :<a href="https://blog.csdn.net/feibendexiaoma/article/details/86233635" target="_blank" rel="noopener">解决办法</a></p>
+<p>即 project structure  –&gt;  Libraries–&gt; + (添加依赖 这个界面有两个+号 是右边那个)  –&gt; 添加tomcat/lib目录下的servlet-api.jar架包</p>
+<ul>
+<li>webapp文件没有小蓝点</li>
+</ul>
+<p>以文件  D:\IDEA\Code\javaweb-servlet\servlet-02  为例</p>
+<ol>
+<li>点击 project structuer -&gt; maven可以看到</li>
+</ol>
+<p><img src="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/problem/2.png" alt="2.jpg"></p>
+<ol start="2">
+<li>然后选中 servlet-02 再点击添加 web  </li>
+</ol>
+<p>需要修改两处路径 第一处</p>
+<p><img src="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/problem/3.png" alt="3.jpg"></p>
+<p><code>D:\IDEA\Code\javaweb-servlet\servlet-02\src\main\webapp\WEB-INF\web.xml</code></p>
+<p>第二处 修改 路径为就 ok 了</p>
+<p><code>D:\IDEA\Code\javaweb-servlet\servlet-02\src\main\webapp</code></p>
+<p><img src="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/problem/4.png" alt="4.jpg"></p>
+<ul>
+<li><p>tomcat找不到 servlet-02 的war</p>
+<ol>
+<li>点击 project structuer -&gt; Artifacts可以看到</li>
+</ol>
+<p><img src="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/problem/5.png" alt="5.jpg"></p>
+<ol start="2">
+<li>点击添加  Web application :Exploded  -&gt;from Modules</li>
+</ol>
+<p><img src="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/problem/6.png" alt="6.jpg"></p>
+<ol start="3">
+<li>修改 output directory 路径</li>
+</ol>
+<p><code>D:\IDEA\Code\javaweb-servlet\servlet-02\target\servlet-02</code></p>
+<p><img src="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/problem/7.png" alt="7.jpg"></p>
+<ol start="4">
+<li>点击添加  Web application :Archive  -&gt; from ‘servlet-02:war exploded’</li>
+</ol>
+<p><img src="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/problem/8.png" alt="8.jpg"></p>
+<ol start="5">
+<li><p>修改  output directory 路径</p>
+<p><code>D:\IDEA\Code\javaweb-servlet\servlet-02\target</code></p>
+</li>
+</ol>
+</li>
+</ul>
+<p>  应用后就可以在tomcat中配置war了</p>
+<h3 id="idea运行jsp项目中文乱码问题"><a href="#idea运行jsp项目中文乱码问题" class="headerlink" title="idea运行jsp项目中文乱码问题"></a>idea运行jsp项目中文乱码问题</h3><p> jsp里声明的编码（UTF-8和utf8是一样的） 在java项目的 index.jsp 最上面加上</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">&lt;%@ page contentType=<span class="string">"text/html;charset=UTF-8"</span> language=<span class="string">"java"</span> %&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="tomcat运行时控制台乱码解决办法："><a href="#tomcat运行时控制台乱码解决办法：" class="headerlink" title="tomcat运行时控制台乱码解决办法："></a>tomcat运行时控制台乱码解决办法：</h3><p>在目录tomcat/conf/logging.properties修改配置</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">java.util.logging.ConsoleHandler.encoding = GBK</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>解决问题</category>
+      </categories>
+      <tags>
+        <tag>idean 的死坑</tag>
       </tags>
   </entry>
   <entry>
@@ -197,190 +389,6 @@
 ]]></content>
       <tags>
         <tag>-md</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>hexo搭建博客并部署到github</title>
-    <url>/2020/04/20/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E5%B9%B6%E9%83%A8%E7%BD%B2%E5%88%B0github/</url>
-    <content><![CDATA[<h2 id="环境要求"><a href="#环境要求" class="headerlink" title="环境要求"></a>环境要求</h2><ul>
-<li>windows系统电脑(Mac和Linux略有区别)</li>
-<li>Git</li>
-<li>Note.js<a id="more"></a>
-<h2 id="安装配置git并与github相连"><a href="#安装配置git并与github相连" class="headerlink" title="安装配置git并与github相连"></a>安装配置git并与github相连</h2></li>
-</ul>
-<p>在git-Bash进行<br>还要记得配置SSH key 这样就不会每次都要输入账号密码</p>
-<p>配置完后</p>
-<p>测试是否与github连通<code>ssh -T git@github.com</code><br>测试是否与gitee连通<code>ssh -T git@gitee.com</code></p>
-<p>如果是第一次上传，需要配置一下用户名和用户邮箱</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git config --global user.name [username]</span><br><span class="line"> </span><br><span class="line">git config --global user.email[email.address]</span><br></pre></td></tr></table></figure>
-
-
-
-<hr>
-<h2 id="安装nodejs并配置环境"><a href="#安装nodejs并配置环境" class="headerlink" title="安装nodejs并配置环境"></a>安装nodejs并配置环境</h2><hr>
-<h2 id="安装hexo框架，进行项目"><a href="#安装hexo框架，进行项目" class="headerlink" title="安装hexo框架，进行项目"></a>安装hexo框架，进行项目</h2><p>在git-Bash进行 在cmd终端进行也可以 建议在git-Bash下</p>
-<ul>
-<li>查看node版本  <code>node -v</code> </li>
-<li>查看npm版本    <code>npm -v</code></li>
-<li>使用淘宝镜像安装cnpm  <code>npm install -g cnpm --registry=http://registry.npm.taobao.org</code></li>
-<li>查看cnpm版本 <code>cnpm -v</code></li>
-<li>安装hexo框架 <code>cnpm install -g hexo-cli</code></li>
-<li>查看hexo版本,验证是否安装成功 <code>hexo -v</code></li>
-<li>创建blog目录  <code>mkdir blog</code></li>
-<li>进入blog目录 <code>cd blog</code></li>
-<li>在blog目录下生成博客 初始化博客 mac或者linux系统要在前面加sudo  <code>hexo init</code></li>
-<li>启动服务 <code>hexo s</code></li>
-<li>本地访问地址 <code>http://localhost:4000/</code></li>
-<li>创建新的文章 <code>hexo n &quot;我的第一篇文章&quot;</code></li>
-<li>返回blog目录</li>
-<li>清理 <code>hexo clean</code></li>
-<li>生成静态网页<code>hexo g</code></li>
-<li>启动服务 <code>hexo s</code></li>
-</ul>
-<p><strong>新建一个名为你的 用户名.github.io的仓库，比如说，如果你的github用户名是test，那么你就新建test.github.io的仓库（必须是你的用户名，其它名称无效），将来你的网站访问地址就是 <a href="http://test.github.io" target="_blank" rel="noopener">http://test.github.io</a> 了</strong></p>
-<hr>
-<h2 id="配置-config-yml"><a href="#配置-config-yml" class="headerlink" title="配置_config.yml"></a>配置_config.yml</h2><h3 id="Deployment"><a href="#Deployment" class="headerlink" title="Deployment"></a>Deployment</h3><h3 id="Docs-https-hexo-io-docs-deployment-html"><a href="#Docs-https-hexo-io-docs-deployment-html" class="headerlink" title="Docs: https://hexo.io/docs/deployment.html"></a>Docs: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">https://hexo.io/docs/deployment.html</a></h3><p>deploy:<br>type: git<br>repo: <a href="https://github.com/YourGithubName/YourGithubName.github.io.git" target="_blank" rel="noopener">https://github.com/YourGithubName/YourGithubName.github.io.git</a><br>branch: master</p>
-<p><strong>如需部署到gitee仓库，repo填写gitee项目ssh地址并且每次上传都要点击服务的gitee pags 中的更新</strong></p>
-<hr>
-<h2 id="在blog目录下安装git部署插件"><a href="#在blog目录下安装git部署插件" class="headerlink" title="在blog目录下安装git部署插件"></a>在blog目录下安装git部署插件</h2><p>在blog目录下安装git部署插        <code>npm install hexo-deployer-git --save件</code><br> mac/linux 输入                     <code>npm install  --save hexo-deployer-git</code></p>
-<ul>
-<li>部署到Github仓库里 <code>hexo d</code></li>
-</ul>
-<hr>
-<h2 id="更换theme"><a href="#更换theme" class="headerlink" title="更换theme"></a>更换theme</h2><p>git clone <a href="https://github.com/litten/hexo-theme-yilia.git" target="_blank" rel="noopener">https://github.com/litten/hexo-theme-yilia.git</a> themes/yilia #下载yilia主题到本地</p>
-<p>#修改hexo根目录下的 _config.yml 文件 ： theme: yilia</p>
-<p>hexo clean #清理<br>hexo g #生成<br>hexo s 启动服务<br>hexo d #部署到远程Github仓库<br><a href="https://YourGithubName.github.io/" target="_blank" rel="noopener">https://YourGithubName.github.io/</a> #查看博客</p>
-<hr>
-]]></content>
-      <categories>
-        <category>-博客搭建</category>
-      </categories>
-      <tags>
-        <tag>-Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>遇到的坑爹的坑</title>
-    <url>/2020/05/11/%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%E7%88%B9%E7%9A%84%E5%9D%91/</url>
-    <content><![CDATA[<h3 id="1-idea-maven项目中pom-xml文件中包导入不进来"><a href="#1-idea-maven项目中pom-xml文件中包导入不进来" class="headerlink" title="1. idea maven项目中pom.xml文件中包导入不进来"></a>1. idea maven项目中pom.xml文件中包导入不进来</h3><p>问题：在父maven下建立子maven项目，但是父类pom.xml架包却导入不进来</p>
-<ul>
-<li>在排除父类pom.xml是否引用子model项目的情况下</li>
-<li>发现右边菜单子maven虽然存在架包，但是呈现灰色   <div align=left ><img  src="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/maven/1.png" /></div>
-
-</li>
-</ul>
-<a id="more"></a>
-
-
-<ul>
-<li><p>经过百度发现设置中 maven的ignored files被勾选上了</p>
-<div align=left><img  src="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/maven/2.png"/></div>
-</li>
-<li><p>取消勾选后 重启或者 File-&gt;invalidate catchs/restart 重启和清理缓冲</p>
-</li>
-<li><p>如果还有问题就在右边maven菜单点击重新导入(第一张图片的第二个图标)</p>
-</li>
-</ul>
-<h3 id="2、idea中建立webapp项目"><a href="#2、idea中建立webapp项目" class="headerlink" title="2、idea中建立webapp项目"></a>2、idea中建立webapp项目</h3><ul>
-<li>继承javax.servlet-api依赖任然报错</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Error:(<span class="number">3</span>, <span class="number">21</span>) java: 程序包javax.servlet不存在</span><br><span class="line">Error:(<span class="number">4</span>, <span class="number">26</span>) java: 程序包javax.servlet.http不存在</span><br><span class="line">Error:(<span class="number">5</span>, <span class="number">26</span>) java: 程序包javax.servlet.http不存在</span><br><span class="line">Error:(<span class="number">6</span>, <span class="number">26</span>) java: 程序包javax.servlet.http不存在</span><br></pre></td></tr></table></figure>
-
-<p>解决办法 :<a href="https://blog.csdn.net/feibendexiaoma/article/details/86233635" target="_blank" rel="noopener">解决办法</a></p>
-<p>即 project structure  –&gt;  Libraries–&gt; + (添加依赖 这个界面有两个+号 是右边那个)  –&gt; 添加tomcat/lib目录下的servlet-api.jar架包</p>
-<ul>
-<li>webapp文件没有小蓝点</li>
-</ul>
-<p>以文件  D:\IDEA\Code\javaweb-servlet\servlet-02  为例</p>
-<ol>
-<li>点击 project structuer -&gt; maven可以看到</li>
-</ol>
-<p><img src="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/problem/2.png" alt="2.jpg"></p>
-<ol start="2">
-<li>然后选中 servlet-02 再点击添加 web  </li>
-</ol>
-<p>需要修改两处路径 第一处</p>
-<p><img src="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/problem/3.png" alt="3.jpg"></p>
-<p><code>D:\IDEA\Code\javaweb-servlet\servlet-02\src\main\webapp\WEB-INF\web.xml</code></p>
-<p>第二处 修改 路径为就 ok 了</p>
-<p><code>D:\IDEA\Code\javaweb-servlet\servlet-02\src\main\webapp</code></p>
-<p><img src="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/problem/4.png" alt="4.jpg"></p>
-<ul>
-<li><p>tomcat找不到 servlet-02 的war</p>
-<ol>
-<li>点击 project structuer -&gt; Artifacts可以看到</li>
-</ol>
-<p><img src="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/problem/5.png" alt="5.jpg"></p>
-<ol start="2">
-<li>点击添加  Web application :Exploded  -&gt;from Modules</li>
-</ol>
-<p><img src="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/problem/6.png" alt="6.jpg"></p>
-<ol start="3">
-<li>修改 output directory 路径</li>
-</ol>
-<p><code>D:\IDEA\Code\javaweb-servlet\servlet-02\target\servlet-02</code></p>
-<p><img src="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/problem/7.png" alt="7.jpg"></p>
-<ol start="4">
-<li>点击添加  Web application :Archive  -&gt; from ‘servlet-02:war exploded’</li>
-</ol>
-<p><img src="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/problem/8.png" alt="8.jpg"></p>
-<ol start="5">
-<li><p>修改  output directory 路径</p>
-<p><code>D:\IDEA\Code\javaweb-servlet\servlet-02\target</code></p>
-</li>
-</ol>
-</li>
-</ul>
-<p>  应用后就可以在tomcat中配置war了</p>
-]]></content>
-      <categories>
-        <category>解决问题</category>
-      </categories>
-      <tags>
-        <tag>idean 的死坑</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>idea重装不同版本后打不开问题</title>
-    <url>/2020/06/08/idea%E9%87%8D%E8%A3%85%E4%B8%8D%E5%90%8C%E7%89%88%E6%9C%AC%E5%90%8E%E6%89%93%E4%B8%8D%E5%BC%80%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<blockquote>
-<p>原创</p>
-</blockquote>
-<h2 id="两个解决方法，本质是一样的"><a href="#两个解决方法，本质是一样的" class="headerlink" title="两个解决方法，本质是一样的"></a>两个解决方法，本质是一样的</h2><p>idea重装后打不开的原因是 破解 jar包位置改变了，而C盘原idea配置文件扔然指向原来的jar包</p>
-<p>如我的 idea2020.1.1更新到idea2020.1.2就经历了闪退打不开问题</p>
-<h3 id="方法一、"><a href="#方法一、" class="headerlink" title="方法一、"></a>方法一、</h3><p>Windows系统 不同系统文件位置不一样</p>
-<p>idea2020+版本    C盘的配置文件位置发生了改变 </p>
-<blockquote>
-<p>C:\Users\用户名\AppData\Roaming\JetBrains\IntelliJIdea2020.1</p>
-</blockquote>
-<p>首先就应该找到idea64.exe.vmoptions 你会发现在IntelliJIdea2020.1文件夹下找不到</p>
-<p>而是应该直接在文件夹框直接搜索打开</p>
-<blockquote>
-<p>C:\Users\用户名\AppData\Roaming\JetBrains\IntelliJIdea2020.1\idea64.exe.vmoptions</p>
-</blockquote>
-<p>打开文件修改你新版本破解 jar 包的位置</p>
-<blockquote>
-<p>-javaagent:D:\IDEA\IntelliJ IDEA 2020.1.2\bin\jetbrains-agent.jar</p>
-</blockquote>
-<p>或者直接把这里原先添加的一行直接删除，进入idea后在 help-&gt;edit custom vm options里添加</p>
-<p>这时你就能进入idea了</p>
-<h3 id="方法二、"><a href="#方法二、" class="headerlink" title="方法二、"></a>方法二、</h3><p>适用于记得原先破解 jar 包位置在哪里的食用</p>
-<p>一般情况下jar包都放在idea的bin目录下 ，直接卸载idea时也会剩下bin目录和仅有的破解jar包</p>
-<p>这种情况打不开就是因为你把卸载idea删除后，文件目录也被手动删除   ，idea通过C盘的配置文件找不到破解jar包</p>
-<p>这时你就应该把文件目录建立 再把jar包放回 如图</p>
-<div  align="left"><img src="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/problem/1.png"></div>
-
-<p>做好这些后你就能打开idea了 ，当然方法二不仅鸡肋且麻烦 ，建议使用方法一</p>
-<p>进入idea后在 help-&gt;edit custom vm options里添加你架包的位置</p>
-<p>同时给喜欢更新idea的小伙伴一些建议 把设置导出 以备不测</p>
-<p>file-&gt;manage ide settings–&gt;exprot settings</p>
-<p>==如果文章有错请小伙伴指正 马上更改==</p>
-]]></content>
-      <categories>
-        <category>解决问题</category>
-      </categories>
-      <tags>
-        <tag>idean</tag>
       </tags>
   </entry>
 </search>
