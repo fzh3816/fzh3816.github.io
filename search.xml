@@ -1,49 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hexo-添加分类及标签</title>
-    <url>/2020/04/20/Hexo-%E6%B7%BB%E5%8A%A0%E5%88%86%E7%B1%BB%E5%8F%8A%E6%A0%87%E7%AD%BE/</url>
-    <content><![CDATA[<h1 id="hexo添加分类及标签"><a href="#hexo添加分类及标签" class="headerlink" title="hexo添加分类及标签"></a>hexo添加分类及标签</h1><hr>
-<h2 id="1-创建“分类”选项"><a href="#1-创建“分类”选项" class="headerlink" title="1. 创建“分类”选项"></a>1. 创建“分类”选项</h2><p>生成“分类”页并添加tpye属性,进入博客目录。执行命令下方命令</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo new page categories</span><br></pre></td></tr></table></figure>
-<p>会在source文件下生成categories文件，<br>categories文件夹下会有index.md这个文件，打开后默认内容是这样的：</p>
-<a id="more"></a>
-
-
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: categories</span><br><span class="line">date: 2019-04-22 14:47:40</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-
-<p>添加type: “categories”到内容中，添加后是这样的：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">--</span><br><span class="line">title: 分类</span><br><span class="line">date: 2019-04-24 15:30:30</span><br><span class="line">type: categories</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-<p>保存并关闭文件。</p>
-<p>给文章添加“categories”属性</p>
-<p>打开需要添加分类的文章，为其添加categories属性。下方的categories:Hexo表示这篇文章添加到到“Hexo”这个分类。注意：一篇文章只会添加到一个分类中，如果是多个默认放到第一个分类中。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hexo 添加分类及标签</span><br><span class="line">date: 2017-05-26 12:12:57</span><br><span class="line">categories: Hexo</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-<h2 id="2-创建“标签”选项"><a href="#2-创建“标签”选项" class="headerlink" title="2. 创建“标签”选项"></a>2. 创建“标签”选项</h2><p>生成“标签”页并添加tpye属性</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo new page tags</span><br></pre></td></tr></table></figure>
-<p>在tags文件夹下，找到index.md这个文件，打开后默认内容是这样的：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 标签</span><br><span class="line">date: 2019-04-22 14:22:08</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-<p>添加type: “tags”到内容中，添加后是这样的：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 标签</span><br><span class="line">date: 2019-04-24 15:40:24</span><br><span class="line">type: tags</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-<p>保存并关闭文件。</p>
-<p>给文章添加“tags”属性,打开需要添加标签的文章，为其添加tags属性。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hexo 添加分类及标签</span><br><span class="line">date: 2019-04-24 15:40:24</span><br><span class="line">categories: </span><br><span class="line">          - Hexo</span><br><span class="line">tags:</span><br><span class="line">          - 博客</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-
-<hr>
-]]></content>
-      <tags>
-        <tag>-md</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>hexo引用本地图片无法显示</title>
     <url>/2020/06/18/hexo%E5%BC%95%E7%94%A8%E6%9C%AC%E5%9C%B0%E5%9B%BE%E7%89%87%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA/</url>
-    <content><![CDATA[<p>首先我们需要安装一个图片路径转换的插件，这个插件名字是hexo-asset-image</p>
+    <content><![CDATA[<h4 id="一、hexo安装图片插件-上传后无法显示"><a href="#一、hexo安装图片插件-上传后无法显示" class="headerlink" title="一、hexo安装图片插件 上传后无法显示"></a>一、hexo安装图片插件 上传后无法显示</h4><p>首先我们需要安装一个图片路径转换的插件，这个插件名字是hexo-asset-image</p>
+<p>hexo n “md文件” 后  会在_posts文件中生成md文件和对应名字的文件用来存放图片</p>
 <p>这两种方式都可有安装，不过版本不一样</p>
 <p><code>npm install hexo-asset-image --save</code></p>
 <p><code>npm install https://github.com/CodeFalling/hexo-asset-image --save</code></p>
 <p>但是这个插件的内容需要修改【不然可能会出Bug】</p>
 <p>打开  博客下的/node_modules/hexo-asset-image/index.js，</p>
 <p>我的位置为 D:\project\blog\node_modules\hexo-asset-image\index.js</p>
+<a id="more"></a>
+
 <p>将内容更换为下面的代码</p>
 <figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line"><span class="string">'use strict'</span>;</span><br><span class="line"><span class="keyword">var</span> cheerio = require(<span class="string">'cheerio'</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// http://stackoverflow.com/questions/14480345/how-to-get-the-nth-occurrence-in-a-string</span></span><br><span class="line"><span class="function">function <span class="title">getPosition</span><span class="params">(str, m, i)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> str.split(m, i).join(m).length;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> version = String(hexo.version).split(<span class="string">'.'</span>);</span><br><span class="line">hexo.extend.filter.register(<span class="string">'after_post_render'</span>, function(data)&#123;</span><br><span class="line">  <span class="keyword">var</span> config = hexo.config;</span><br><span class="line">  <span class="keyword">if</span>(config.post_asset_folder)&#123;</span><br><span class="line">    	<span class="keyword">var</span> link = data.permalink;</span><br><span class="line">	<span class="keyword">if</span>(version.length &gt; <span class="number">0</span> &amp;&amp; Number(version[<span class="number">0</span>]) == <span class="number">3</span>)</span><br><span class="line">	   <span class="keyword">var</span> beginPos = getPosition(link, <span class="string">'/'</span>, <span class="number">1</span>) + <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	   <span class="keyword">var</span> beginPos = getPosition(link, <span class="string">'/'</span>, <span class="number">3</span>) + <span class="number">1</span>;</span><br><span class="line">	<span class="comment">// In hexo 3.1.1, the permalink of "about" page is like ".../about/index.html".</span></span><br><span class="line">	<span class="keyword">var</span> endPos = link.lastIndexOf(<span class="string">'/'</span>) + <span class="number">1</span>;</span><br><span class="line">    link = link.substring(beginPos, endPos);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> toprocess = [<span class="string">'excerpt'</span>, <span class="string">'more'</span>, <span class="string">'content'</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; toprocess.length; i++)&#123;</span><br><span class="line">      <span class="keyword">var</span> key = toprocess[i];</span><br><span class="line">     </span><br><span class="line">      <span class="keyword">var</span> $ = cheerio.load(data[key], &#123;</span><br><span class="line">        ignoreWhitespace: <span class="keyword">false</span>,</span><br><span class="line">        xmlMode: <span class="keyword">false</span>,</span><br><span class="line">        lowerCaseTags: <span class="keyword">false</span>,</span><br><span class="line">        decodeEntities: <span class="keyword">false</span></span><br><span class="line">      &#125;);</span><br><span class="line">    </span><br><span class="line">      $(<span class="string">'img'</span>).each(function()&#123;</span><br><span class="line">    	<span class="keyword">if</span> ($(<span class="keyword">this</span>).attr(<span class="string">'src'</span>))&#123;</span><br><span class="line">    		<span class="comment">// For windows style path, we replace '\' to '/'.</span></span><br><span class="line">    		<span class="keyword">var</span> src = $(<span class="keyword">this</span>).attr(<span class="string">'src'</span>).replace(<span class="string">'\\'</span>, <span class="string">'/'</span>);</span><br><span class="line">    		<span class="keyword">if</span>(!/http[s]*.*|\/\/.*/.test(src) &amp;&amp;</span><br><span class="line">    		   !/^\s*\<span class="comment">//.test(src)) &#123;</span></span><br><span class="line">    		  <span class="comment">// For "about" page, the first part of "src" can't be removed.</span></span><br><span class="line">    		  <span class="comment">// In addition, to support multi-level local directory.</span></span><br><span class="line">    		  <span class="keyword">var</span> linkArray = link.split(<span class="string">'/'</span>).filter(function(elem)&#123;</span><br><span class="line">    			<span class="keyword">return</span> elem != <span class="string">''</span>;</span><br><span class="line">    		  &#125;);</span><br><span class="line">    		  <span class="keyword">var</span> srcArray = src.split(<span class="string">'/'</span>).filter(function(elem)&#123;</span><br><span class="line">    			<span class="keyword">return</span> elem != <span class="string">''</span> &amp;&amp; elem != <span class="string">'.'</span>;</span><br><span class="line">    		  &#125;);</span><br><span class="line">    		  <span class="keyword">if</span>(srcArray.length &gt; <span class="number">1</span>)</span><br><span class="line">    			srcArray.shift();</span><br><span class="line">    		  src = srcArray.join(<span class="string">'/'</span>);</span><br><span class="line">    		  $(<span class="keyword">this</span>).attr(<span class="string">'src'</span>, config.root + link + src);</span><br><span class="line">    		  console.info&amp;&amp;console.info(<span class="string">"update link as:--&gt;"</span>+config.root + link + src);</span><br><span class="line">    		&#125;</span><br><span class="line">    	&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    		console.info&amp;&amp;console.info(<span class="string">"no src attr, skipped..."</span>);</span><br><span class="line">    		console.info&amp;&amp;console.info($(<span class="keyword">this</span>));</span><br><span class="line">    	&#125;</span><br><span class="line">      &#125;);</span><br><span class="line">      data[key] = $.html();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
@@ -114,6 +83,40 @@
       </categories>
       <tags>
         <tag>idean</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo-添加分类及标签</title>
+    <url>/2020/04/20/Hexo-%E6%B7%BB%E5%8A%A0%E5%88%86%E7%B1%BB%E5%8F%8A%E6%A0%87%E7%AD%BE/</url>
+    <content><![CDATA[<h1 id="hexo添加分类及标签"><a href="#hexo添加分类及标签" class="headerlink" title="hexo添加分类及标签"></a>hexo添加分类及标签</h1><hr>
+<h2 id="1-创建“分类”选项"><a href="#1-创建“分类”选项" class="headerlink" title="1. 创建“分类”选项"></a>1. 创建“分类”选项</h2><p>生成“分类”页并添加tpye属性,进入博客目录。执行命令下方命令</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo new page categories</span><br></pre></td></tr></table></figure>
+<p>会在source文件下生成categories文件，<br>categories文件夹下会有index.md这个文件，打开后默认内容是这样的：</p>
+<a id="more"></a>
+
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: categories</span><br><span class="line">date: 2019-04-22 14:47:40</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<p>添加type: “categories”到内容中，添加后是这样的：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">--</span><br><span class="line">title: 分类</span><br><span class="line">date: 2019-04-24 15:30:30</span><br><span class="line">type: categories</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<p>保存并关闭文件。</p>
+<p>给文章添加“categories”属性</p>
+<p>打开需要添加分类的文章，为其添加categories属性。下方的categories:Hexo表示这篇文章添加到到“Hexo”这个分类。注意：一篇文章只会添加到一个分类中，如果是多个默认放到第一个分类中。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hexo 添加分类及标签</span><br><span class="line">date: 2017-05-26 12:12:57</span><br><span class="line">categories: Hexo</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<h2 id="2-创建“标签”选项"><a href="#2-创建“标签”选项" class="headerlink" title="2. 创建“标签”选项"></a>2. 创建“标签”选项</h2><p>生成“标签”页并添加tpye属性</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo new page tags</span><br></pre></td></tr></table></figure>
+<p>在tags文件夹下，找到index.md这个文件，打开后默认内容是这样的：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 标签</span><br><span class="line">date: 2019-04-22 14:22:08</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<p>添加type: “tags”到内容中，添加后是这样的：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 标签</span><br><span class="line">date: 2019-04-24 15:40:24</span><br><span class="line">type: tags</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<p>保存并关闭文件。</p>
+<p>给文章添加“tags”属性,打开需要添加标签的文章，为其添加tags属性。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hexo 添加分类及标签</span><br><span class="line">date: 2019-04-24 15:40:24</span><br><span class="line">categories: </span><br><span class="line">          - Hexo</span><br><span class="line">tags:</span><br><span class="line">          - 博客</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<hr>
+]]></content>
+      <tags>
+        <tag>-md</tag>
       </tags>
   </entry>
   <entry>
@@ -267,169 +270,6 @@
       </categories>
       <tags>
         <tag>-git—Bash</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>多节点Linux操作系统环境</title>
-    <url>/2020/04/23/%E5%A4%9A%E8%8A%82%E7%82%B9Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%8E%AF%E5%A2%83/</url>
-    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ul>
-<li><p>主要内容在Linux系统配置静态ip，利用xshell实现与宿主机的互相通信，还可以连接网络</p>
-</li>
-<li><p>配置静态ip的原因是防止每次开启虚拟机，linux系统中的IP地址变换</p>
-</li>
-<li><p>多节点Linux操作系统环境打造，基于Linux CentOS操作系统（Linux操作系统安装配置教程）（Ubuntu操作系统安装也基本类似）。这也将是后续学Linux、用Linux、Linux环境编程、项目部署、工具实验等等一系列学习和实践的基石</p>
-<a id="more"></a>
-</li>
-<li><p>用VM虚拟机的原因是可以实现多节点，win自带的WSL只能单节点</p>
-</li>
-</ul>
-<hr>
-<h2 id="进入linux系统的终端"><a href="#进入linux系统的终端" class="headerlink" title="进入linux系统的终端"></a>进入linux系统的终端</h2><p>网络适配用桥接模式<br>刚开始时：ping <a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a> 或者ping 宿主机 都是不可达的<br>既网络不可用与宿主机之间也不连通</p>
-<p>1、查看网络</p>
-<ul>
-<li>查看网络输入<code>ifconfig</code><br>有些版本是<code>ip addr</code><br>可以看到 ens33中没有ip地址与掩码等<br><img src="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/%E8%99%9A%E6%8B%9F%E6%9C%BA%E9%9D%99%E6%80%81ip/1.png" alt="1.jpg"></li>
-</ul>
-<p>2、利用dhclient分配可用的ip地址</p>
-<ul>
-<li><p>输入 <code>su</code>切换到 root模式</p>
-</li>
-<li><p>输入<code>dhclient</code> 为虚拟机自动分配网络类可用的ip地址</p>
-</li>
-<li><p>输入<code>ip addr</code>查看分配的ip 和掩码 ，记住ip</p>
-<p>可以看到分配的是 192.168.124.10</p>
-</li>
-</ul>
-<p>  <img src="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/%E8%99%9A%E6%8B%9F%E6%9C%BA%E9%9D%99%E6%80%81ip/2.png" alt="2.jpg"></p>
-<p>3、把ip地址固定成静态ip</p>
-<ul>
-<li>输入<code>ls /etc/sysconfig/network-scripts</code>查看该虚拟机的网络信息<br><img src="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/%E8%99%9A%E6%8B%9F%E6%9C%BA%E9%9D%99%E6%80%81ip/3.png" alt="3.jpg"><br>可以看到 ifcfg-ens33 每个人的不一定一样</li>
-<li>输入 <code>vi /etc/sysconfig/network-scripts/ifcfg-ensXXXX</code><br>有些版本是输入<code>vim /etc/sysconfig/network-scripts/ifcfg-ensXXXX</code></li>
-</ul>
-<p>4、改成如下内容<br><img src="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/%E8%99%9A%E6%8B%9F%E6%9C%BA%E9%9D%99%E6%80%81ip/4.png" alt="4.jpg" style="zoom: 67%;"></p>
-<ul>
-<li>i 开启编辑模式<br>改成以下内容<br>BOOTPROTO=static<br>ONBOOT=YES<br>添加<br>IPADDR=192.168.124.10   即刚才或取得ip地址<br>NETMASK=255.255.255.0  配置子网掩码<br>GATEWAY=192.168.124.1  网关<br>DNS1=119.29.29.29  这是个知名的公网dns 好像腾讯的</li>
-<li>ESC退出编辑  输入冒号 ：再输入wq 保存并退出</li>
-</ul>
-<p>5、重启网卡服务</p>
-<ul>
-<li>输入<code>service network restart</code><br>有些版本是输入 <code>systemctl restart network.service</code></li>
-</ul>
-<p>6、检查安装配置的结果</p>
-<ul>
-<li>查看网络输入<code>ifconfig</code><br>有些版本是<code>ip addr</code></li>
-</ul>
-<p>7、测试与外网和宿主机的连通性</p>
-<ul>
-<li>输入<code>ping www.baidu.com</code></li>
-<li>输入<code>ping 宿主机ip地址</code></li>
-</ul>
-<h2 id="使用xshell使宿主机与linux连通"><a href="#使用xshell使宿主机与linux连通" class="headerlink" title="使用xshell使宿主机与linux连通"></a>使用xshell使宿主机与linux连通</h2><p>1、即在新建连接处的主机处填写你在虚拟机建立的ip地址(如我上面创的192.168.24.10)</p>
-<p>2、创建并连接好后，右击会话处你创建的会话，点击–&gt;用fxtp打开，这时就可以管理你虚拟机里的系统了</p>
-<p>要想能上传和下载文件到虚拟机需要下载一个插件</p>
-<ul>
-<li>yum安装一款工具<code>yum install  lrzsz -y</code></li>
-<li>检查是否安装成功 <code>rpm -qa |grep lrzsz</code></li>
-<li>上传到虚拟机 <code>rz</code></li>
-<li>如果想上传到虚拟机并覆盖原文件<code>rz -y</code></li>
-<li>下载到宿主机<code>sz</code></li>
-</ul>
-]]></content>
-      <categories>
-        <category>-Linux</category>
-      </categories>
-      <tags>
-        <tag>-安装配置</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>遇到的坑爹的坑</title>
-    <url>/2020/05/11/%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%E7%88%B9%E7%9A%84%E5%9D%91/</url>
-    <content><![CDATA[<h3 id="1-idea-maven项目中pom-xml文件中包导入不进来"><a href="#1-idea-maven项目中pom-xml文件中包导入不进来" class="headerlink" title="1. idea maven项目中pom.xml文件中包导入不进来"></a>1. idea maven项目中pom.xml文件中包导入不进来</h3><p>问题：在父maven下建立子maven项目，但是父类pom.xml架包却导入不进来</p>
-<ul>
-<li>在排除父类pom.xml是否引用子model项目的情况下</li>
-<li>发现右边菜单子maven虽然存在架包，但是呈现灰色   </li>
-</ul>
-<a id="more"></a>
-
-<div align="left"><img src="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/maven/1.png"></div>
-
-<!--more-->
-
-
-<ul>
-<li><p>经过百度发现设置中 maven的ignored files被勾选上了</p>
-<div align="left"><img src="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/maven/2.png"></div>
-</li>
-<li><p>取消勾选后 重启或者 File-&gt;invalidate catchs/restart 重启和清理缓冲</p>
-</li>
-<li><p>如果还有问题就在右边maven菜单点击重新导入(第一张图片的第二个图标)</p>
-</li>
-</ul>
-<h3 id="2、idea中建立webapp项目"><a href="#2、idea中建立webapp项目" class="headerlink" title="2、idea中建立webapp项目"></a>2、idea中建立webapp项目</h3><ul>
-<li>继承javax.servlet-api依赖任然报错</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Error:(<span class="number">3</span>, <span class="number">21</span>) java: 程序包javax.servlet不存在</span><br><span class="line">Error:(<span class="number">4</span>, <span class="number">26</span>) java: 程序包javax.servlet.http不存在</span><br><span class="line">Error:(<span class="number">5</span>, <span class="number">26</span>) java: 程序包javax.servlet.http不存在</span><br><span class="line">Error:(<span class="number">6</span>, <span class="number">26</span>) java: 程序包javax.servlet.http不存在</span><br></pre></td></tr></table></figure>
-
-<p>解决办法 :<a href="https://blog.csdn.net/feibendexiaoma/article/details/86233635" target="_blank" rel="noopener">解决办法</a></p>
-<p>即 project structure  –&gt;  Libraries–&gt; + (添加依赖 这个界面有两个+号 是右边那个)  –&gt; 添加tomcat/lib目录下的servlet-api.jar架包</p>
-<ul>
-<li>webapp文件没有小蓝点</li>
-</ul>
-<p>以文件  D:\IDEA\Code\javaweb-servlet\servlet-02  为例</p>
-<ol>
-<li>点击 project structuer -&gt; maven可以看到</li>
-</ol>
-<p><img src="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/problem/2.png" alt="2.jpg"></p>
-<ol start="2">
-<li>然后选中 servlet-02 再点击添加 web  </li>
-</ol>
-<p>需要修改两处路径 第一处</p>
-<p><img src="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/problem/3.png" alt="3.jpg"></p>
-<p><code>D:\IDEA\Code\javaweb-servlet\servlet-02\src\main\webapp\WEB-INF\web.xml</code></p>
-<p>第二处 修改 路径为就 ok 了</p>
-<p><code>D:\IDEA\Code\javaweb-servlet\servlet-02\src\main\webapp</code></p>
-<p><img src="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/problem/4.png" alt="4.jpg"></p>
-<ul>
-<li><p>tomcat找不到 servlet-02 的war</p>
-<ol>
-<li>点击 project structuer -&gt; Artifacts可以看到</li>
-</ol>
-<p><img src="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/problem/5.png" alt="5.jpg"></p>
-<ol start="2">
-<li>点击添加  Web application :Exploded  -&gt;from Modules</li>
-</ol>
-<p><img src="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/problem/6.png" alt="6.jpg"></p>
-<ol start="3">
-<li>修改 output directory 路径</li>
-</ol>
-<p><code>D:\IDEA\Code\javaweb-servlet\servlet-02\target\servlet-02</code></p>
-<p><img src="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/problem/7.png" alt="7.jpg"></p>
-<ol start="4">
-<li>点击添加  Web application :Archive  -&gt; from ‘servlet-02:war exploded’</li>
-</ol>
-<p><img src="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/problem/8.png" alt="8.jpg"></p>
-<ol start="5">
-<li><p>修改  output directory 路径</p>
-<p><code>D:\IDEA\Code\javaweb-servlet\servlet-02\target</code></p>
-</li>
-</ol>
-</li>
-</ul>
-<p>  应用后就可以在tomcat中配置war了</p>
-<h3 id="idea运行jsp项目中文乱码问题"><a href="#idea运行jsp项目中文乱码问题" class="headerlink" title="idea运行jsp项目中文乱码问题"></a>idea运行jsp项目中文乱码问题</h3><p> jsp里声明的编码（UTF-8和utf8是一样的） 在java项目的 index.jsp 最上面加上</p>
-<figure class="highlight"><table><tr><td class="code"><pre><span class="line">&lt;%@ page contentType=<span class="string">"text/html;charset=UTF-8"</span> language=<span class="string">"java"</span> %&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="tomcat运行时控制台乱码解决办法："><a href="#tomcat运行时控制台乱码解决办法：" class="headerlink" title="tomcat运行时控制台乱码解决办法："></a>tomcat运行时控制台乱码解决办法：</h3><p>在目录tomcat/conf/logging.properties修改配置</p>
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">java.util.logging.ConsoleHandler.encoding = GBK</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>解决问题</category>
-      </categories>
-      <tags>
-        <tag>idean 的死坑</tag>
       </tags>
   </entry>
   <entry>
@@ -651,5 +491,168 @@
 <p>②arr为原始数组，从最低位开始取每个位组成radix数组； </p>
 <p>③对radix进行计数排序（利用计数排序适用于小范围数的特点）；</p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>多节点Linux操作系统环境</title>
+    <url>/2020/04/23/%E5%A4%9A%E8%8A%82%E7%82%B9Linux%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E7%8E%AF%E5%A2%83/</url>
+    <content><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ul>
+<li><p>主要内容在Linux系统配置静态ip，利用xshell实现与宿主机的互相通信，还可以连接网络</p>
+</li>
+<li><p>配置静态ip的原因是防止每次开启虚拟机，linux系统中的IP地址变换</p>
+</li>
+<li><p>多节点Linux操作系统环境打造，基于Linux CentOS操作系统（Linux操作系统安装配置教程）（Ubuntu操作系统安装也基本类似）。这也将是后续学Linux、用Linux、Linux环境编程、项目部署、工具实验等等一系列学习和实践的基石</p>
+<a id="more"></a>
+</li>
+<li><p>用VM虚拟机的原因是可以实现多节点，win自带的WSL只能单节点</p>
+</li>
+</ul>
+<hr>
+<h2 id="进入linux系统的终端"><a href="#进入linux系统的终端" class="headerlink" title="进入linux系统的终端"></a>进入linux系统的终端</h2><p>网络适配用桥接模式<br>刚开始时：ping <a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a> 或者ping 宿主机 都是不可达的<br>既网络不可用与宿主机之间也不连通</p>
+<p>1、查看网络</p>
+<ul>
+<li>查看网络输入<code>ifconfig</code><br>有些版本是<code>ip addr</code><br>可以看到 ens33中没有ip地址与掩码等<br><img src="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/%E8%99%9A%E6%8B%9F%E6%9C%BA%E9%9D%99%E6%80%81ip/1.png" alt="1.jpg"></li>
+</ul>
+<p>2、利用dhclient分配可用的ip地址</p>
+<ul>
+<li><p>输入 <code>su</code>切换到 root模式</p>
+</li>
+<li><p>输入<code>dhclient</code> 为虚拟机自动分配网络类可用的ip地址</p>
+</li>
+<li><p>输入<code>ip addr</code>查看分配的ip 和掩码 ，记住ip</p>
+<p>可以看到分配的是 192.168.124.10</p>
+</li>
+</ul>
+<p>  <img src="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/%E8%99%9A%E6%8B%9F%E6%9C%BA%E9%9D%99%E6%80%81ip/2.png" alt="2.jpg"></p>
+<p>3、把ip地址固定成静态ip</p>
+<ul>
+<li>输入<code>ls /etc/sysconfig/network-scripts</code>查看该虚拟机的网络信息<br><img src="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/%E8%99%9A%E6%8B%9F%E6%9C%BA%E9%9D%99%E6%80%81ip/3.png" alt="3.jpg"><br>可以看到 ifcfg-ens33 每个人的不一定一样</li>
+<li>输入 <code>vi /etc/sysconfig/network-scripts/ifcfg-ensXXXX</code><br>有些版本是输入<code>vim /etc/sysconfig/network-scripts/ifcfg-ensXXXX</code></li>
+</ul>
+<p>4、改成如下内容<br><img src="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/%E8%99%9A%E6%8B%9F%E6%9C%BA%E9%9D%99%E6%80%81ip/4.png" alt="4.jpg" style="zoom: 67%;"></p>
+<ul>
+<li>i 开启编辑模式<br>改成以下内容<br>BOOTPROTO=static<br>ONBOOT=YES<br>添加<br>IPADDR=192.168.124.10   即刚才或取得ip地址<br>NETMASK=255.255.255.0  配置子网掩码<br>GATEWAY=192.168.124.1  网关<br>DNS1=119.29.29.29  这是个知名的公网dns 好像腾讯的</li>
+<li>ESC退出编辑  输入冒号 ：再输入wq 保存并退出</li>
+</ul>
+<p>5、重启网卡服务</p>
+<ul>
+<li>输入<code>service network restart</code><br>有些版本是输入 <code>systemctl restart network.service</code></li>
+</ul>
+<p>6、检查安装配置的结果</p>
+<ul>
+<li>查看网络输入<code>ifconfig</code><br>有些版本是<code>ip addr</code></li>
+</ul>
+<p>7、测试与外网和宿主机的连通性</p>
+<ul>
+<li>输入<code>ping www.baidu.com</code></li>
+<li>输入<code>ping 宿主机ip地址</code></li>
+</ul>
+<h2 id="使用xshell使宿主机与linux连通"><a href="#使用xshell使宿主机与linux连通" class="headerlink" title="使用xshell使宿主机与linux连通"></a>使用xshell使宿主机与linux连通</h2><p>1、即在新建连接处的主机处填写你在虚拟机建立的ip地址(如我上面创的192.168.24.10)</p>
+<p>2、创建并连接好后，右击会话处你创建的会话，点击–&gt;用fxtp打开，这时就可以管理你虚拟机里的系统了</p>
+<p>要想能上传和下载文件到虚拟机需要下载一个插件</p>
+<ul>
+<li>yum安装一款工具<code>yum install  lrzsz -y</code></li>
+<li>检查是否安装成功 <code>rpm -qa |grep lrzsz</code></li>
+<li>上传到虚拟机 <code>rz</code></li>
+<li>如果想上传到虚拟机并覆盖原文件<code>rz -y</code></li>
+<li>下载到宿主机<code>sz</code></li>
+</ul>
+]]></content>
+      <categories>
+        <category>-Linux</category>
+      </categories>
+      <tags>
+        <tag>-安装配置</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>遇到的坑爹的坑</title>
+    <url>/2020/05/11/%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%E7%88%B9%E7%9A%84%E5%9D%91/</url>
+    <content><![CDATA[<h3 id="1-idea-maven项目中pom-xml文件中包导入不进来"><a href="#1-idea-maven项目中pom-xml文件中包导入不进来" class="headerlink" title="1. idea maven项目中pom.xml文件中包导入不进来"></a>1. idea maven项目中pom.xml文件中包导入不进来</h3><p>问题：在父maven下建立子maven项目，但是父类pom.xml架包却导入不进来</p>
+<ul>
+<li>在排除父类pom.xml是否引用子model项目的情况下</li>
+<li>发现右边菜单子maven虽然存在架包，但是呈现灰色   </li>
+</ul>
+<a id="more"></a>
+
+<div align="left"><img src="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/maven/1.png"></div>
+
+<!--more-->
+
+
+<ul>
+<li><p>经过百度发现设置中 maven的ignored files被勾选上了</p>
+<div align="left"><img src="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/maven/2.png"></div>
+</li>
+<li><p>取消勾选后 重启或者 File-&gt;invalidate catchs/restart 重启和清理缓冲</p>
+</li>
+<li><p>如果还有问题就在右边maven菜单点击重新导入(第一张图片的第二个图标)</p>
+</li>
+</ul>
+<h3 id="2、idea中建立webapp项目"><a href="#2、idea中建立webapp项目" class="headerlink" title="2、idea中建立webapp项目"></a>2、idea中建立webapp项目</h3><ul>
+<li>继承javax.servlet-api依赖任然报错</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Error:(<span class="number">3</span>, <span class="number">21</span>) java: 程序包javax.servlet不存在</span><br><span class="line">Error:(<span class="number">4</span>, <span class="number">26</span>) java: 程序包javax.servlet.http不存在</span><br><span class="line">Error:(<span class="number">5</span>, <span class="number">26</span>) java: 程序包javax.servlet.http不存在</span><br><span class="line">Error:(<span class="number">6</span>, <span class="number">26</span>) java: 程序包javax.servlet.http不存在</span><br></pre></td></tr></table></figure>
+
+<p>解决办法 :<a href="https://blog.csdn.net/feibendexiaoma/article/details/86233635" target="_blank" rel="noopener">解决办法</a></p>
+<p>即 project structure  –&gt;  Libraries–&gt; + (添加依赖 这个界面有两个+号 是右边那个)  –&gt; 添加tomcat/lib目录下的servlet-api.jar架包</p>
+<ul>
+<li>webapp文件没有小蓝点</li>
+</ul>
+<p>以文件  D:\IDEA\Code\javaweb-servlet\servlet-02  为例</p>
+<ol>
+<li>点击 project structuer -&gt; maven可以看到</li>
+</ol>
+<p><img src="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/problem/2.png" alt="2.jpg"></p>
+<ol start="2">
+<li>然后选中 servlet-02 再点击添加 web  </li>
+</ol>
+<p>需要修改两处路径 第一处</p>
+<p><img src="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/problem/3.png" alt="3.jpg"></p>
+<p><code>D:\IDEA\Code\javaweb-servlet\servlet-02\src\main\webapp\WEB-INF\web.xml</code></p>
+<p>第二处 修改 路径为就 ok 了</p>
+<p><code>D:\IDEA\Code\javaweb-servlet\servlet-02\src\main\webapp</code></p>
+<p><img src="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/problem/4.png" alt="4.jpg"></p>
+<ul>
+<li><p>tomcat找不到 servlet-02 的war</p>
+<ol>
+<li>点击 project structuer -&gt; Artifacts可以看到</li>
+</ol>
+<p><img src="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/problem/5.png" alt="5.jpg"></p>
+<ol start="2">
+<li>点击添加  Web application :Exploded  -&gt;from Modules</li>
+</ol>
+<p><img src="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/problem/6.png" alt="6.jpg"></p>
+<ol start="3">
+<li>修改 output directory 路径</li>
+</ol>
+<p><code>D:\IDEA\Code\javaweb-servlet\servlet-02\target\servlet-02</code></p>
+<p><img src="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/problem/7.png" alt="7.jpg"></p>
+<ol start="4">
+<li>点击添加  Web application :Archive  -&gt; from ‘servlet-02:war exploded’</li>
+</ol>
+<p><img src="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/problem/8.png" alt="8.jpg"></p>
+<ol start="5">
+<li><p>修改  output directory 路径</p>
+<p><code>D:\IDEA\Code\javaweb-servlet\servlet-02\target</code></p>
+</li>
+</ol>
+</li>
+</ul>
+<p>  应用后就可以在tomcat中配置war了</p>
+<h3 id="idea运行jsp项目中文乱码问题"><a href="#idea运行jsp项目中文乱码问题" class="headerlink" title="idea运行jsp项目中文乱码问题"></a>idea运行jsp项目中文乱码问题</h3><p> jsp里声明的编码（UTF-8和utf8是一样的） 在java项目的 index.jsp 最上面加上</p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">&lt;%@ page contentType=<span class="string">"text/html;charset=UTF-8"</span> language=<span class="string">"java"</span> %&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;title&gt;Title&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="tomcat运行时控制台乱码解决办法："><a href="#tomcat运行时控制台乱码解决办法：" class="headerlink" title="tomcat运行时控制台乱码解决办法："></a>tomcat运行时控制台乱码解决办法：</h3><p>在目录tomcat/conf/logging.properties修改配置</p>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line">java.util.logging.ConsoleHandler.encoding = GBK</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>解决问题</category>
+      </categories>
+      <tags>
+        <tag>idean 的死坑</tag>
+      </tags>
   </entry>
 </search>
