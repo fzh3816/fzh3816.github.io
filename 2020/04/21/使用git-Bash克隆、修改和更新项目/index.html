@@ -287,7 +287,7 @@
 
       
         <h1 id="可分为两种情况"><a href="#可分为两种情况" class="headerlink" title="可分为两种情况"></a>可分为两种情况</h1><p>使用git-Bash操作gitee和gituub原理是一样的</p>
-<p><font size=4.5>1. 第一次建立本地仓库并上传内容到空白gitee仓库中</font><br><font size=4.5>2. 克隆gitee仓库项目到本地仓库并进行管理再上传</font></p>
+<p><font size="4.5">1. 第一次建立本地仓库并上传内容到空白gitee仓库中</font><br><font size="4.5">2. 克隆gitee仓库项目到本地仓库并进行管理再上传</font></p>
 <hr>
 <a id="more"></a>
 
@@ -299,13 +299,13 @@
 <p>这里省略了建立文件夹过程，直接进入了GiteePhotos2<br>-git init 初始化本地仓库</p>
 <h3 id="3-在本地仓库建立README-md-并上传到指定gitee仓库"><a href="#3-在本地仓库建立README-md-并上传到指定gitee仓库" class="headerlink" title="3.在本地仓库建立README.md,并上传到指定gitee仓库"></a>3.在本地仓库建立README.md,并上传到指定gitee仓库</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">asus@LAPTOP-78V1DGVI MINGW64 &#x2F;d&#x2F;project&#x2F;GiteePhotos2 (master)</span><br><span class="line">$ touch README.md</span><br></pre></td></tr></table></figure>
 <p>touch README.md 建立 READNME.md文件 可以写一些注释之类的东西，或者是类似列表的东西<br>gitee要求项目最好有这个</p>
-<p><font color=red>在修改文件之后一般会紧跟着 git status<br>查看项目状态 是否添加或者删除了文件，在对项目进行了操作时最好查看查看</font></p>
+<p><font color="red">在修改文件之后一般会紧跟着 git status<br>查看项目状态 是否添加或者删除了文件，在对项目进行了操作时最好查看查看</font></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">asus@LAPTOP-78V1DGVI MINGW64 &#x2F;d&#x2F;project&#x2F;GiteePhotos2 (master)</span><br><span class="line">$ git add README.md</span><br></pre></td></tr></table></figure>
-<p>git add README.md  将文件修改提交到本地暂存区<br>当修改很多文件时可以直接使用 git add .  <font color=red>注意add与 . 之间有空格</font></p>
+<p>git add README.md  将文件修改提交到本地暂存区<br>当修改很多文件时可以直接使用 git add .  <font color="red">注意add与 . 之间有空格</font></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">asus@LAPTOP-78V1DGVI MINGW64 &#x2F;d&#x2F;project&#x2F;GiteePhotos2 (master)</span><br><span class="line">$ git commit -m &quot;添加README和图片&quot;</span><br><span class="line">[master (root-commit) dcf5299] 添加README和图片</span><br><span class="line"> 2 files changed, 0 insertions(+), 0 deletions(-)</span><br><span class="line"> create mode 100644 README.md</span><br><span class="line"> create mode 100644 images&#x2F;MdImage&#x2F;1.png</span><br></pre></td></tr></table></figure>
 <p>git commit -m “添加README和图片”  记录修改的日志 并给日志取名</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">asus@LAPTOP-78V1DGVI MINGW64 &#x2F;d&#x2F;project&#x2F;GiteePhotos2 (master)</span><br><span class="line">$ git remote add origin https:&#x2F;&#x2F;gitee.com&#x2F;fzh3816&#x2F;photos.git</span><br></pre></td></tr></table></figure>
-<p>连接gitee仓库 连接为ssh<br><img src="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/git-bash/1.png" alt="1.jpg" style="zoom: 67%;" /><br>当上传文件以后链接会出现在 服务-&gt;gitee pages-&gt;</p>
+<p>连接gitee仓库 连接为ssh<br><img src="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/git-bash/1.png" alt="1.jpg" style="zoom: 67%;"><br>当上传文件以后链接会出现在 服务-&gt;gitee pages-&gt;</p>
 <p>点击更新就会出来图片地址</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">asus@LAPTOP-78V1DGVI MINGW64 &#x2F;d&#x2F;project&#x2F;GiteePhotos2 (master)</span><br><span class="line">$ git push -u origin master</span><br></pre></td></tr></table></figure>
 
@@ -315,7 +315,7 @@
 
 <p>显示推送成功的结果</p>
 <p>下面是整个操作的过程</p>
-<img src="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/git-bash/3.png" alt="3.jpg" style="zoom:50%;" />
+<img src="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/git-bash/3.png" alt="3.jpg" style="zoom:50%;">
 
 
 
@@ -363,7 +363,7 @@
 
 <p>上传成功的结果</p>
 <p>下面是整个操作过程，但是我这里克隆的是我自己的远程仓库，所以并不需要进行修改配置文件</p>
-<img src="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/git-bash/4.png" alt="4.jpg" style="zoom:50%;" />
+<img src="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/git-bash/4.png" alt="4.jpg" style="zoom:50%;">
 
 
 
@@ -482,7 +482,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-count">7</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

@@ -314,7 +314,7 @@
 <li>输入<code>ls /etc/sysconfig/network-scripts</code>查看该虚拟机的网络信息<br><img src="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/%E8%99%9A%E6%8B%9F%E6%9C%BA%E9%9D%99%E6%80%81ip/3.png" alt="3.jpg"><br>可以看到 ifcfg-ens33 每个人的不一定一样</li>
 <li>输入 <code>vi /etc/sysconfig/network-scripts/ifcfg-ensXXXX</code><br>有些版本是输入<code>vim /etc/sysconfig/network-scripts/ifcfg-ensXXXX</code></li>
 </ul>
-<p>4、改成如下内容<br><img src="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/%E8%99%9A%E6%8B%9F%E6%9C%BA%E9%9D%99%E6%80%81ip/4.png" alt="4.jpg" style="zoom: 67%;" /></p>
+<p>4、改成如下内容<br><img src="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/%E8%99%9A%E6%8B%9F%E6%9C%BA%E9%9D%99%E6%80%81ip/4.png" alt="4.jpg" style="zoom: 67%;"></p>
 <ul>
 <li>i 开启编辑模式<br>改成以下内容<br>BOOTPROTO=static<br>ONBOOT=YES<br>添加<br>IPADDR=192.168.124.10   即刚才或取得ip地址<br>NETMASK=255.255.255.0  配置子网掩码<br>GATEWAY=192.168.124.1  网关<br>DNS1=119.29.29.29  这是个知名的公网dns 好像腾讯的</li>
 <li>ESC退出编辑  输入冒号 ：再输入wq 保存并退出</li>
@@ -456,7 +456,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-count">7</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>

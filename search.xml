@@ -1,6 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>idea重装不同版本后打不开问题</title>
+    <url>/2020/06/08/idea%E9%87%8D%E8%A3%85%E4%B8%8D%E5%90%8C%E7%89%88%E6%9C%AC%E5%90%8E%E6%89%93%E4%B8%8D%E5%BC%80%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<blockquote>
+<p>原创</p>
+</blockquote>
+<h2 id="两个解决方法，本质是一样的"><a href="#两个解决方法，本质是一样的" class="headerlink" title="两个解决方法，本质是一样的"></a>两个解决方法，本质是一样的</h2><p>idea重装后打不开的原因是 破解 jar包位置改变了，而C盘原idea配置文件扔然指向原来的jar包</p>
+<p>如我的 idea2020.1.1更新到idea2020.1.2就经历了闪退打不开问题</p>
+<h3 id="方法一、"><a href="#方法一、" class="headerlink" title="方法一、"></a>方法一、</h3><p>Windows系统 不同系统文件位置不一样</p>
+<p>idea2020+版本    C盘的配置文件位置发生了改变 </p>
+<blockquote>
+<p>C:\Users\用户名\AppData\Roaming\JetBrains\IntelliJIdea2020.1</p>
+</blockquote>
+<p>首先就应该找到idea64.exe.vmoptions 你会发现在IntelliJIdea2020.1文件夹下找不到</p>
+<p>而是应该直接在文件夹框直接搜索打开</p>
+<blockquote>
+<p>C:\Users\用户名\AppData\Roaming\JetBrains\IntelliJIdea2020.1\idea64.exe.vmoptions</p>
+</blockquote>
+<p>打开文件修改你新版本破解 jar 包的位置</p>
+<blockquote>
+<p>-javaagent:D:\IDEA\IntelliJ IDEA 2020.1.2\bin\jetbrains-agent.jar</p>
+</blockquote>
+<p>或者直接把这里原先添加的一行直接删除，进入idea后在 help-&gt;edit custom vm options里添加</p>
+<p>这时你就能进入idea了</p>
+<h3 id="方法二、"><a href="#方法二、" class="headerlink" title="方法二、"></a>方法二、</h3><p>适用于记得原先破解 jar 包位置在哪里的食用</p>
+<p>一般情况下jar包都放在idea的bin目录下 ，直接卸载idea时也会剩下bin目录和仅有的破解jar包</p>
+<p>这种情况打不开就是因为你把卸载idea删除后，文件目录也被手动删除   ，idea通过C盘的配置文件找不到破解jar包</p>
+<p>这时你就应该把文件目录建立 再把jar包放回 如图</p>
+<div align="left"><img src="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/problem/1.png"></div>
+
+<p>做好这些后你就能打开idea了 ，当然方法二不仅鸡肋且麻烦 ，建议使用方法一</p>
+<p>进入idea后在 help-&gt;edit custom vm options里添加你架包的位置</p>
+<p>同时给喜欢更新idea的小伙伴一些建议 把设置导出 以备不测</p>
+<p>file-&gt;manage ide settings–&gt;exprot settings</p>
+<p>==如果文章有错请小伙伴指正 马上更改==</p>
+]]></content>
+      <categories>
+        <category>解决问题</category>
+      </categories>
+      <tags>
+        <tag>idean</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>hexo搭建博客并部署到github</title>
     <url>/2020/04/20/hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E5%B9%B6%E9%83%A8%E7%BD%B2%E5%88%B0github/</url>
     <content><![CDATA[<h2 id="环境要求"><a href="#环境要求" class="headerlink" title="环境要求"></a>环境要求</h2><ul>
@@ -61,46 +104,130 @@
       </tags>
   </entry>
   <entry>
-    <title>idea重装不同版本后打不开问题</title>
-    <url>/2020/06/08/idea%E9%87%8D%E8%A3%85%E4%B8%8D%E5%90%8C%E7%89%88%E6%9C%AC%E5%90%8E%E6%89%93%E4%B8%8D%E5%BC%80%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<blockquote>
-<p>原创</p>
-</blockquote>
-<h2 id="两个解决方法，本质是一样的"><a href="#两个解决方法，本质是一样的" class="headerlink" title="两个解决方法，本质是一样的"></a>两个解决方法，本质是一样的</h2><p>idea重装后打不开的原因是 破解 jar包位置改变了，而C盘原idea配置文件扔然指向原来的jar包</p>
-<p>如我的 idea2020.1.1更新到idea2020.1.2就经历了闪退打不开问题</p>
-<h3 id="方法一、"><a href="#方法一、" class="headerlink" title="方法一、"></a>方法一、</h3><p>Windows系统 不同系统文件位置不一样</p>
-<p>idea2020+版本    C盘的配置文件位置发生了改变 </p>
-<blockquote>
-<p>C:\Users\用户名\AppData\Roaming\JetBrains\IntelliJIdea2020.1</p>
-</blockquote>
-<p>首先就应该找到idea64.exe.vmoptions 你会发现在IntelliJIdea2020.1文件夹下找不到</p>
-<p>而是应该直接在文件夹框直接搜索打开</p>
-<blockquote>
-<p>C:\Users\用户名\AppData\Roaming\JetBrains\IntelliJIdea2020.1\idea64.exe.vmoptions</p>
-</blockquote>
-<p>打开文件修改你新版本破解 jar 包的位置</p>
-<blockquote>
-<p>-javaagent:D:\IDEA\IntelliJ IDEA 2020.1.2\bin\jetbrains-agent.jar</p>
-</blockquote>
-<p>或者直接把这里原先添加的一行直接删除，进入idea后在 help-&gt;edit custom vm options里添加</p>
-<p>这时你就能进入idea了</p>
-<h3 id="方法二、"><a href="#方法二、" class="headerlink" title="方法二、"></a>方法二、</h3><p>适用于记得原先破解 jar 包位置在哪里的食用</p>
-<p>一般情况下jar包都放在idea的bin目录下 ，直接卸载idea时也会剩下bin目录和仅有的破解jar包</p>
-<p>这种情况打不开就是因为你把卸载idea删除后，文件目录也被手动删除   ，idea通过C盘的配置文件找不到破解jar包</p>
-<p>这时你就应该把文件目录建立 再把jar包放回 如图</p>
-<div  align="left"><img src="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/problem/1.png"></div>
+    <title>Hexo-添加分类及标签</title>
+    <url>/2020/04/20/Hexo-%E6%B7%BB%E5%8A%A0%E5%88%86%E7%B1%BB%E5%8F%8A%E6%A0%87%E7%AD%BE/</url>
+    <content><![CDATA[<h1 id="hexo添加分类及标签"><a href="#hexo添加分类及标签" class="headerlink" title="hexo添加分类及标签"></a>hexo添加分类及标签</h1><hr>
+<h2 id="1-创建“分类”选项"><a href="#1-创建“分类”选项" class="headerlink" title="1. 创建“分类”选项"></a>1. 创建“分类”选项</h2><p>生成“分类”页并添加tpye属性,进入博客目录。执行命令下方命令</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo new page categories</span><br></pre></td></tr></table></figure>
+<p>会在source文件下生成categories文件，<br>categories文件夹下会有index.md这个文件，打开后默认内容是这样的：</p>
+<a id="more"></a>
 
-<p>做好这些后你就能打开idea了 ，当然方法二不仅鸡肋且麻烦 ，建议使用方法一</p>
-<p>进入idea后在 help-&gt;edit custom vm options里添加你架包的位置</p>
-<p>同时给喜欢更新idea的小伙伴一些建议 把设置导出 以备不测</p>
-<p>file-&gt;manage ide settings–&gt;exprot settings</p>
-<p>==如果文章有错请小伙伴指正 马上更改==</p>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: categories</span><br><span class="line">date: 2019-04-22 14:47:40</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<p>添加type: “categories”到内容中，添加后是这样的：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">--</span><br><span class="line">title: 分类</span><br><span class="line">date: 2019-04-24 15:30:30</span><br><span class="line">type: categories</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<p>保存并关闭文件。</p>
+<p>给文章添加“categories”属性</p>
+<p>打开需要添加分类的文章，为其添加categories属性。下方的categories:Hexo表示这篇文章添加到到“Hexo”这个分类。注意：一篇文章只会添加到一个分类中，如果是多个默认放到第一个分类中。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hexo 添加分类及标签</span><br><span class="line">date: 2017-05-26 12:12:57</span><br><span class="line">categories: Hexo</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<h2 id="2-创建“标签”选项"><a href="#2-创建“标签”选项" class="headerlink" title="2. 创建“标签”选项"></a>2. 创建“标签”选项</h2><p>生成“标签”页并添加tpye属性</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo new page tags</span><br></pre></td></tr></table></figure>
+<p>在tags文件夹下，找到index.md这个文件，打开后默认内容是这样的：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 标签</span><br><span class="line">date: 2019-04-22 14:22:08</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<p>添加type: “tags”到内容中，添加后是这样的：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 标签</span><br><span class="line">date: 2019-04-24 15:40:24</span><br><span class="line">type: tags</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<p>保存并关闭文件。</p>
+<p>给文章添加“tags”属性,打开需要添加标签的文章，为其添加tags属性。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hexo 添加分类及标签</span><br><span class="line">date: 2019-04-24 15:40:24</span><br><span class="line">categories: </span><br><span class="line">          - Hexo</span><br><span class="line">tags:</span><br><span class="line">          - 博客</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<hr>
+]]></content>
+      <tags>
+        <tag>-md</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>使用git-Bash克隆、修改和更新项目</title>
+    <url>/2020/04/21/%E4%BD%BF%E7%94%A8git-Bash%E5%85%8B%E9%9A%86%E3%80%81%E4%BF%AE%E6%94%B9%E5%92%8C%E6%9B%B4%E6%96%B0%E9%A1%B9%E7%9B%AE/</url>
+    <content><![CDATA[<h1 id="可分为两种情况"><a href="#可分为两种情况" class="headerlink" title="可分为两种情况"></a>可分为两种情况</h1><p>使用git-Bash操作gitee和gituub原理是一样的</p>
+<p><font size="4.5">1. 第一次建立本地仓库并上传内容到空白gitee仓库中</font><br><font size="4.5">2. 克隆gitee仓库项目到本地仓库并进行管理再上传</font></p>
+<hr>
+<a id="more"></a>
+
+<h2 id="如题第一种情况"><a href="#如题第一种情况" class="headerlink" title="如题第一种情况"></a>如题第一种情况</h2><h3 id="1-打开git-bash"><a href="#1-打开git-bash" class="headerlink" title="1.打开git-bash"></a>1.打开git-bash</h3><p>输入个人信息(代码提交者)</p>
+<p>git config –global user.name “xxxx” </p>
+<p>git config –global user.email <a href="mailto:xxxxx@qq.com">xxxxx@qq.com</a><br>注意：提交到github是输入用户名和密码<br>嫌每次都需要输入用户名和密码可以使用公匙连接gitee和github这里就不啰嗦了</p>
+<hr>
+<h3 id="2-在本地建立一个文件夹-并初始化"><a href="#2-在本地建立一个文件夹-并初始化" class="headerlink" title="2.在本地建立一个文件夹 并初始化"></a>2.在本地建立一个文件夹 并初始化</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">asus@LAPTOP-78V1DGVI MINGW64 &#x2F;</span><br><span class="line">$ cd D:&#x2F;project&#x2F;GiteePhotos2</span><br><span class="line"></span><br><span class="line">asus@LAPTOP-78V1DGVI MINGW64 &#x2F;d&#x2F;project&#x2F;GiteePhotos2</span><br><span class="line">$ git init</span><br><span class="line">Initialized empty Git repository in D:&#x2F;project&#x2F;GiteePhotos2&#x2F;.git&#x2F;</span><br></pre></td></tr></table></figure>
+<p>这里省略了建立文件夹过程，直接进入了GiteePhotos2<br>-git init 初始化本地仓库</p>
+<h3 id="3-在本地仓库建立README-md-并上传到指定gitee仓库"><a href="#3-在本地仓库建立README-md-并上传到指定gitee仓库" class="headerlink" title="3.在本地仓库建立README.md,并上传到指定gitee仓库"></a>3.在本地仓库建立README.md,并上传到指定gitee仓库</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">asus@LAPTOP-78V1DGVI MINGW64 &#x2F;d&#x2F;project&#x2F;GiteePhotos2 (master)</span><br><span class="line">$ touch README.md</span><br></pre></td></tr></table></figure>
+<p>touch README.md 建立 READNME.md文件 可以写一些注释之类的东西，或者是类似列表的东西<br>gitee要求项目最好有这个</p>
+<p><font color="red">在修改文件之后一般会紧跟着 git status<br>查看项目状态 是否添加或者删除了文件，在对项目进行了操作时最好查看查看</font></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">asus@LAPTOP-78V1DGVI MINGW64 &#x2F;d&#x2F;project&#x2F;GiteePhotos2 (master)</span><br><span class="line">$ git add README.md</span><br></pre></td></tr></table></figure>
+<p>git add README.md  将文件修改提交到本地暂存区<br>当修改很多文件时可以直接使用 git add .  <font color="red">注意add与 . 之间有空格</font></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">asus@LAPTOP-78V1DGVI MINGW64 &#x2F;d&#x2F;project&#x2F;GiteePhotos2 (master)</span><br><span class="line">$ git commit -m &quot;添加README和图片&quot;</span><br><span class="line">[master (root-commit) dcf5299] 添加README和图片</span><br><span class="line"> 2 files changed, 0 insertions(+), 0 deletions(-)</span><br><span class="line"> create mode 100644 README.md</span><br><span class="line"> create mode 100644 images&#x2F;MdImage&#x2F;1.png</span><br></pre></td></tr></table></figure>
+<p>git commit -m “添加README和图片”  记录修改的日志 并给日志取名</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">asus@LAPTOP-78V1DGVI MINGW64 &#x2F;d&#x2F;project&#x2F;GiteePhotos2 (master)</span><br><span class="line">$ git remote add origin https:&#x2F;&#x2F;gitee.com&#x2F;fzh3816&#x2F;photos.git</span><br></pre></td></tr></table></figure>
+<p>连接gitee仓库 连接为ssh<br><img src="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/git-bash/1.png" alt="1.jpg" style="zoom: 67%;"><br>当上传文件以后链接会出现在 服务-&gt;gitee pages-&gt;</p>
+<p>点击更新就会出来图片地址</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">asus@LAPTOP-78V1DGVI MINGW64 &#x2F;d&#x2F;project&#x2F;GiteePhotos2 (master)</span><br><span class="line">$ git push -u origin master</span><br></pre></td></tr></table></figure>
+
+<p> git push -u origin master 将本地仓库项目推送到连接的gitee仓库<br><code>git pull --rebase origin master</code>     // 合并<br><code>git status</code>         //状态查询</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Enumerating objects: 6, done.</span><br><span class="line">Counting objects: 100% (6&#x2F;6), done.</span><br><span class="line">Delta compression using up to 4 threads</span><br><span class="line">Compressing objects: 100% (3&#x2F;3), done.</span><br><span class="line">Writing objects: 100% (6&#x2F;6), 79.44 KiB | 19.86 MiB&#x2F;s, done.</span><br><span class="line">Total 6 (delta 0), reused 0 (delta 0), pack-reused 0</span><br><span class="line">remote: Powered by GITEE.COM [GNK-5.0]</span><br><span class="line">To https:&#x2F;&#x2F;gitee.com&#x2F;fzh3816&#x2F;photos.git</span><br><span class="line"></span><br><span class="line"> * [new branch]      master -&gt; master</span><br><span class="line">   Branch &#39;master&#39; set up to track remote branch &#39;master&#39; from &#39;origin&#39;.</span><br><span class="line"></span><br><span class="line">asus@LAPTOP-78V1DGVI MINGW64 &#x2F;d&#x2F;project&#x2F;GiteePhotos2 (master)</span><br><span class="line">$</span><br></pre></td></tr></table></figure>
+
+
+<p>显示推送成功的结果</p>
+<p>下面是整个操作的过程</p>
+<img src="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/git-bash/3.png" alt="3.jpg" style="zoom:50%;">
+
+
+
+<hr>
+<h2 id="第二种情况"><a href="#第二种情况" class="headerlink" title="第二种情况"></a>第二种情况</h2><h3 id="1-打开git-bash-1"><a href="#1-打开git-bash-1" class="headerlink" title="1.打开git-bash"></a>1.打开git-bash</h3><p>输入个人信息(代码提交者)</p>
+<p>git config –global user.name “xxxx” </p>
+<p>git config –global user.email <a href="mailto:xxxxx@qq.com">xxxxx@qq.com</a><br>注意：提交到github是输入用户名和密码<br>嫌每次都需要输入用户名和密码可以使用公匙连接gitee和github这里就不啰嗦了</p>
+<h3 id="2-在本地建立一个文件夹"><a href="#2-在本地建立一个文件夹" class="headerlink" title="2.在本地建立一个文件夹"></a>2.在本地建立一个文件夹</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ cd D:&#x2F;project</span><br><span class="line">$ mkdir GiteePhotos2</span><br><span class="line">asus@LAPTOP-78V1DGVI MINGW64 &#x2F;</span><br><span class="line">$ cd D:&#x2F;project&#x2F;GiteePhotos2</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-克隆项目进行修改"><a href="#3-克隆项目进行修改" class="headerlink" title="3.克隆项目进行修改"></a>3.克隆项目进行修改</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">asus@LAPTOP-78V1DGVI MINGW64 &#x2F;d&#x2F;project&#x2F;GiteePhotos2 </span><br><span class="line">$ git clone https:&#x2F;&#x2F;gitee.com&#x2F;fzh3816&#x2F;photos.git</span><br></pre></td></tr></table></figure>
+
+<p>git clone <a href="https://gitee.com/fzh3816/photos.git" target="_blank" rel="noopener">https://gitee.com/fzh3816/photos.git</a> 克隆gitee项目</p>
+<p>下面是显示的结果</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Cloning into &#39;photos&#39;...</span><br><span class="line">remote: Enumerating objects: 6, done.</span><br><span class="line">remote: Counting objects: 100% (6&#x2F;6), done.</span><br><span class="line">remote: Compressing objects: 100% (3&#x2F;3), done.</span><br><span class="line">remote: Total 6 (delta 0), reused 0 (delta 0), pack-reused 0</span><br><span class="line">Receiving objects: 100% (6&#x2F;6), 79.44 KiB | 968.00 KiB&#x2F;s, done.</span><br></pre></td></tr></table></figure>
+
+<hr>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">asus@LAPTOP-78V1DGVI MINGW64 &#x2F;d&#x2F;project&#x2F;GiteePhotos2 (master)</span><br><span class="line">$ ls</span><br><span class="line">photos&#x2F;</span><br><span class="line"></span><br><span class="line">asus@LAPTOP-78V1DGVI MINGW64 &#x2F;d&#x2F;project&#x2F;GiteePhotos2 (master)</span><br><span class="line">$ cd photos</span><br></pre></td></tr></table></figure>
+
+<p>cd photos   ls  mac/linux指令打开photos文件 查看里面的文件有哪些</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">asus@LAPTOP-78V1DGVI MINGW64 &#x2F;d&#x2F;project&#x2F;GiteePhotos2&#x2F;photos (master)</span><br><span class="line">$ git status</span><br><span class="line">On branch master</span><br><span class="line">Your branch is up to date with &#39;origin&#x2F;master&#39;.</span><br><span class="line"></span><br><span class="line">Untracked files:</span><br><span class="line">  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)</span><br><span class="line">        images&#x2F;MdImage&#x2F;2.png</span><br><span class="line"></span><br><span class="line">nothing added to commit but untracked files present (use &quot;git add&quot; to track)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">asus@LAPTOP-78V1DGVI MINGW64 &#x2F;d&#x2F;project&#x2F;GiteePhotos2&#x2F;photos (master)</span><br><span class="line">$ git add .</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">asus@LAPTOP-78V1DGVI MINGW64 &#x2F;d&#x2F;project&#x2F;GiteePhotos2&#x2F;photos (master)</span><br><span class="line">$ git commit -m &quot;添加了图片2.png&quot;</span><br><span class="line">[master fd9599a] 添加了图片2.png</span><br><span class="line"> 1 file changed, 0 insertions(+), 0 deletions(-)</span><br><span class="line"> create mode 100644 images&#x2F;MdImage&#x2F;2.png</span><br></pre></td></tr></table></figure>
+<h3 id="4-修改配置文件-连接项目仓库"><a href="#4-修改配置文件-连接项目仓库" class="headerlink" title="4.修改配置文件,连接项目仓库"></a>4.修改配置文件,连接项目仓库</h3><p>因为你克隆的是别人的仓库，所以你需要修改config文件 修改方法</p>
+<blockquote>
+<p>两种方法：</p>
+<blockquote>
+<ol>
+<li>进入项目中的隐藏文件.git，打开config文件修改 URL的值为你的项目仓库文件</li>
+<li>在项目路径下输入 <code>cd .git</code>    <code>vim  config</code> 然后修改URL</li>
+</ol>
+</blockquote>
+</blockquote>
+<h3 id="5-把本地项目推送到远程仓库"><a href="#5-把本地项目推送到远程仓库" class="headerlink" title="5.把本地项目推送到远程仓库"></a>5.把本地项目推送到远程仓库</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">asus@LAPTOP-78V1DGVI MINGW64 &#x2F;d&#x2F;project&#x2F;GiteePhotos2&#x2F;photos (master)</span><br><span class="line">$ git push</span><br></pre></td></tr></table></figure>
+
+<p>$ git push origin</p>
+<p>上面命令表示，将当前分支推送到origin主机的对应分支。 </p>
+<p>如果当前分支只有一个追踪分支，那么主机名都可以省略。 </p>
+<p>$ git push 如果当前分支与多个主机存在追踪关系，那么这个时候-u选项会指定一个默认主机，这样后面就可以不加任何参数使用git push。</p>
+<p>$ git push -u origin master 上面命令将本地的master分支推送到origin主机，同时指定origin为默认主机，后面就可以不加任何参数使用git push了。</p>
+<p>不带任何参数的git push，默认只推送当前分支，这叫做simple方式。此外，还有一种matching方式，会推送所有有对应的远程分支的本地分支。Git 2.0版本之前，默认采用matching方法，现在改为默认采用simple方式。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Enumerating objects: 8, done.</span><br><span class="line">Counting objects: 100% (8&#x2F;8), done.</span><br><span class="line">Delta compression using up to 4 threads</span><br><span class="line">Compressing objects: 100% (4&#x2F;4), done.</span><br><span class="line">Writing objects: 100% (5&#x2F;5), 43.30 KiB | 14.43 MiB&#x2F;s, done.</span><br><span class="line">Total 5 (delta 0), reused 0 (delta 0), pack-reused 0</span><br><span class="line">remote: Powered by GITEE.COM [GNK-5.0]</span><br><span class="line">To https:&#x2F;&#x2F;gitee.com&#x2F;fzh3816&#x2F;photos.git</span><br><span class="line">   dcf5299..fd9599a  master -&gt; master</span><br><span class="line"></span><br><span class="line">asus@LAPTOP-78V1DGVI MINGW64 &#x2F;d&#x2F;project&#x2F;GiteePhotos2&#x2F;photos (master)</span><br><span class="line">$</span><br></pre></td></tr></table></figure>
+
+<p>上传成功的结果</p>
+<p>下面是整个操作过程，但是我这里克隆的是我自己的远程仓库，所以并不需要进行修改配置文件</p>
+<img src="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/git-bash/4.png" alt="4.jpg" style="zoom:50%;">
+
+
+
+<hr>
 ]]></content>
       <categories>
-        <category>解决问题</category>
+        <category>-教程</category>
       </categories>
       <tags>
-        <tag>idean</tag>
+        <tag>-git—Bash</tag>
       </tags>
   </entry>
   <entry>
@@ -139,7 +266,7 @@
 <li>输入<code>ls /etc/sysconfig/network-scripts</code>查看该虚拟机的网络信息<br><img src="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/%E8%99%9A%E6%8B%9F%E6%9C%BA%E9%9D%99%E6%80%81ip/3.png" alt="3.jpg"><br>可以看到 ifcfg-ens33 每个人的不一定一样</li>
 <li>输入 <code>vi /etc/sysconfig/network-scripts/ifcfg-ensXXXX</code><br>有些版本是输入<code>vim /etc/sysconfig/network-scripts/ifcfg-ensXXXX</code></li>
 </ul>
-<p>4、改成如下内容<br><img src="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/%E8%99%9A%E6%8B%9F%E6%9C%BA%E9%9D%99%E6%80%81ip/4.png" alt="4.jpg" style="zoom: 67%;" /></p>
+<p>4、改成如下内容<br><img src="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/%E8%99%9A%E6%8B%9F%E6%9C%BA%E9%9D%99%E6%80%81ip/4.png" alt="4.jpg" style="zoom: 67%;"></p>
 <ul>
 <li>i 开启编辑模式<br>改成以下内容<br>BOOTPROTO=static<br>ONBOOT=YES<br>添加<br>IPADDR=192.168.124.10   即刚才或取得ip地址<br>NETMASK=255.255.255.0  配置子网掩码<br>GATEWAY=192.168.124.1  网关<br>DNS1=119.29.29.29  这是个知名的公网dns 好像腾讯的</li>
 <li>ESC退出编辑  输入冒号 ：再输入wq 保存并退出</li>
@@ -176,12 +303,232 @@
       </tags>
   </entry>
   <entry>
+    <title>八大排序算法</title>
+    <url>/2020/06/18/%E5%85%AB%E5%A4%A7%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</url>
+    <content><![CDATA[<h3 id="一、概述"><a href="#一、概述" class="headerlink" title="一、概述"></a>一、概述</h3><p>​       所谓排序，即将原本无序的序列重新排列成有序序列的过程。</p>
+<h3 id="二、算法复杂度"><a href="#二、算法复杂度" class="headerlink" title="二、算法复杂度"></a>二、算法复杂度</h3><p><img src="/2020/06/18/%E5%85%AB%E5%A4%A7%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/1.png" alt="image-20200618195136341"></p>
+<a id="more"></a>
+
+<p><img src="/2020/06/18/%E5%85%AB%E5%A4%A7%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/2.png" alt="image-20200618195324163">    </p>
+<h4 id="复杂度总结："><a href="#复杂度总结：" class="headerlink" title="复杂度总结："></a>复杂度总结：</h4><p>(1)时间复杂度：平均情况下，“快些以速度归队”，其中“快”指快速排序，“些”指希尔排序，“归”指归并排序，“队”指堆排序，这四种排序的</p>
+<p>平均时间复杂度为O()，其他都是O()。</p>
+<p>(2)空间复杂度：快速排序为O()，归并排序为O(n)，基数排序为O()，其他都为O(1)。</p>
+<p>(3)初始序列已经有序，直接插入排序时间复杂度为O(n)，冒泡排序时间复杂度为O(n)。</p>
+<h4 id="算法稳定性总结："><a href="#算法稳定性总结：" class="headerlink" title="算法稳定性总结："></a>算法稳定性总结：</h4><p>一句话记忆，“记忆排序算法复杂度很容易遗忘，记的不稳定，快些选一堆容易记忆的把”，“快”指快速排序，“些”指希尔排序，“选”指简单选择排序，“堆”指堆排序。除这4种以外，其他都是稳定的。</p>
+<h4 id="排序原理总结："><a href="#排序原理总结：" class="headerlink" title="排序原理总结："></a>排序原理总结：</h4><p>(1)经过一趟排序，保证一个关键字到达最终位置的排序算法为交换类排序（冒泡排序、快速排序），选择类排序（简单选择排序、堆排序）。</p>
+<p>(2)关键字比较次数和原始序列无关的算法——简单选择排序和折半插入排序。</p>
+<p>(3)排序趟数和原始序列无关的算法——交换类排序。</p>
+<p>注：<br>稳定：当a与b相等时，如果a原本在b前面，排序之后a仍然在b的前面。<br>不稳定：当a与b相等时，如果a原本在b的前面，排序之后 a 可能会出现在 b 的后面。<br>时间复杂度：对排序数据的总的操作次数。反映当n变化时，操作次数呈现什么规律。<br>空间复杂度：是指算法在计算机内执行时所需存储空间的度量，它也是数据规模n的函数。</p>
+<h3 id="三、插入类排序"><a href="#三、插入类排序" class="headerlink" title="三、插入类排序"></a>三、插入类排序</h3><h4 id="1-直接插入排序"><a href="#1-直接插入排序" class="headerlink" title="1.直接插入排序"></a>1.直接插入排序</h4><p><strong>(1)基本思想</strong></p>
+<p>将待插入元素依次跟前面已经排好的元素相比较，如果选择的待插入元素比已排序的元素小，则已排序元素后移，待插入元素继续与前一个元素比较，直到找到合适插入位置插入。<br>使用直接插入排序方法为一列数字进行排序过程</p>
+<p><img src="/2020/06/18/%E5%85%AB%E5%A4%A7%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/3.gif" alt="img3"></p>
+<p><strong>(2)算法描述</strong></p>
+<p>具体算法描述如下：</p>
+<p>①从第一个元素开始，该元素可以认为已经被排好序；</p>
+<p>②取出下一个元素，在已经排好序的元素序列中从后向前扫描；</p>
+<p>③如果该元素（已排好序中元素）大于新元素(待插入元素)，则将该元素移到下一位置；</p>
+<p>④重复步骤③，直到找到已排好序的元素小于或者等于新元素的位置；</p>
+<p>⑤将新元素插入到该位置；</p>
+<p>⑥重复步骤②~⑤。</p>
+<p>直接插入排序演示</p>
+<p><img src="/2020/06/18/%E5%85%AB%E5%A4%A7%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/4.gif" alt="img4"></p>
+<p><strong>(3)代码实现</strong></p>
+<p>直接插入排序——C语言实现</p>
+<p>本算法中使用了监视哨，主要是为了避免数据在后移时丢失。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">insort</span><span class="params">(<span class="keyword">int</span> s[], <span class="keyword">int</span> n)</span>    <span class="comment">/* 自定义函数 insort()*/</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i,j;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">2</span>;i&lt;=n;i++)    <span class="comment">//数组下标从2开始，s[0]做监视哨，s[1]一个数据无可比性</span></span><br><span class="line">    &#123;</span><br><span class="line">        s[<span class="number">0</span>]=s[i];    <span class="comment">//给监视哨陚值</span></span><br><span class="line">        j=i<span class="number">-1</span>;    <span class="comment">//确定要比较元素的最右边位黄</span></span><br><span class="line">        <span class="keyword">while</span>(s[<span class="number">0</span>]&lt;s[j])</span><br><span class="line">        &#123;</span><br><span class="line">            s[j+<span class="number">1</span>]=s[j];    <span class="comment">//数据右移</span></span><br><span class="line">            j--;    <span class="comment">//产移向左边一个未比较的数</span></span><br><span class="line">        &#125;</span><br><span class="line">        s[j+<span class="number">1</span>]=s[<span class="number">0</span>];    <span class="comment">//在确定的位置插入s[i]</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a[<span class="number">11</span>],i;    <span class="comment">//定义数组及变量为基木整甩</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"请输入10个数据：\n"</span>);</span><br><span class="line">    <span class="keyword">for</span> (i =<span class="number">1</span>;i&lt;=<span class="number">10</span>;i++)</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a[i]);    <span class="comment">//接收从键盘输入的10个数据到数组a中</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"原始顺序：\n"</span>);</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;<span class="number">11</span>;i++)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%5d"</span>,a[i]);    <span class="comment">//将未排序前的顺序输出</span></span><br><span class="line">    insort(a,<span class="number">10</span>);    <span class="comment">//调用自定义函数 insort()</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"\n 插入数据排序后顺序：\n"</span>);</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;<span class="number">11</span>;i++)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%5d"</span>,a[i]); <span class="comment">//将排序后的数组输出</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>请输入10个数据：<br>25 12 36 45 2 9 39 22 98 37<br>原始顺序：<br>   25   12   36   45    2    9   39   22   98   37<br>插入数据排序后顺序：<br>   2    9   12   22   25   36   37   39   45   98</p>
+<h4 id="2-折半插入排序"><a href="#2-折半插入排序" class="headerlink" title="2.折半插入排序"></a>2.折半插入排序</h4><p>(<strong>1)基本思想</strong></p>
+<p>折半插入排序的基本思想和直接插入排序类似，区别是查找插入位置的方法不同，折半插入排序是采用折半查找法来查找插入位置的。</p>
+<p><strong>(2)算法描述</strong> </p>
+<p> 举一趟排序为例：<br>   现在序列为 13  38  49  65  76  97       27 49<br>   将要插入27，此时序列在数组中的情况为：</p>
+<p><img src="/2020/06/18/%E5%85%AB%E5%A4%A7%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/5.png" alt="image-20200618204342761"></p>
+<p>   已经排序                 未排序<br>   关键字       13     38     49     65   76    97     27   49<br>   数组下标     0     1        2       3      4      5       6     7</p>
+<p>①low = 0，high = 5，m = (0+5)/2 = 2(向下取整)，下标为2的关键字为49,27 &lt; 49，所以27应该插入到49的低半区，改变high = m-1=1，low仍然为0。</p>
+<p>②low = 0，high = 1，m = (0+1)/2 = 0(向下取整)，下标为0的关键字为13,27 &gt; 13，所以27应该插入到13的高半区，改变low = m+1=1，high仍然为1。</p>
+<p>③low = 1，high = 1，m = (1+1)/2 = 1(向下取整)，下标为1的关键字为38,27 &lt; 38，所以27应该插入到38的低半区，改变high = m-1=0，low仍然为1。此时low &gt; high，折半查找结束，27的插入位置为下标为high的关键字之后，即13之后。</p>
+<p>④依次向后移动关键字97,76,65,49,38，然后将27插入，这一趟折半插入排序结束。执行完这一趟排序结果为：</p>
+<p>13  27  38  49  65  76  97    49</p>
+<p><strong>(3)代码实现</strong></p>
+<p>折半插入排序算——C语言实现</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">(<span class="keyword">int</span> a[], <span class="keyword">int</span> n ,<span class="keyword">int</span> i)</span></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d:"</span>,i);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>; j&lt;n; j++)&#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d"</span>,a[j]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">BInsertSort</span><span class="params">(<span class="keyword">int</span> a[],<span class="keyword">int</span> <span class="built_in">size</span>)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i,j,low = <span class="number">0</span>,high = <span class="number">0</span>,mid;</span><br><span class="line">    <span class="keyword">int</span> temp = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (i=<span class="number">1</span>; i&lt;<span class="built_in">size</span>; i++) &#123;</span><br><span class="line">        low=<span class="number">0</span>;</span><br><span class="line">        high=i<span class="number">-1</span>;</span><br><span class="line">        temp=a[i];</span><br><span class="line">        <span class="comment">//采用折半查找法判断插入位置，最终变量 low 表示插入位置</span></span><br><span class="line">        <span class="keyword">while</span> (low&lt;=high) &#123;</span><br><span class="line">            mid=(low+high)/<span class="number">2</span>;</span><br><span class="line">            <span class="keyword">if</span> (a[mid]&gt;temp) &#123;</span><br><span class="line">                high=mid<span class="number">-1</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                low=mid+<span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//有序表中插入位置后的元素统一后移</span></span><br><span class="line">        <span class="keyword">for</span> (j=i; j&gt;low; j--) &#123;</span><br><span class="line">            a[j]=a[j<span class="number">-1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        a[low]=temp;<span class="comment">//插入元素</span></span><br><span class="line">        <span class="built_in">print</span>(a, <span class="number">8</span>, i);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a[<span class="number">8</span>] = &#123;<span class="number">3</span>,<span class="number">1</span>,<span class="number">7</span>,<span class="number">5</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">9</span>,<span class="number">6</span>&#125;;</span><br><span class="line">    BInsertSort(a, <span class="number">8</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line">        运行结果：</span><br><span class="line"></span><br><span class="line"><span class="number">1</span>:<span class="number">13752496</span></span><br><span class="line"><span class="number">2</span>:<span class="number">13752496</span></span><br><span class="line"><span class="number">3</span>:<span class="number">13572496</span></span><br><span class="line"><span class="number">4</span>:<span class="number">12357496</span></span><br><span class="line"><span class="number">5</span>:<span class="number">12345796</span></span><br><span class="line"><span class="number">6</span>:<span class="number">12345796</span></span><br><span class="line"><span class="number">7</span>:<span class="number">12345679</span></span><br></pre></td></tr></table></figure>
+<h4 id="3-希尔排序"><a href="#3-希尔排序" class="headerlink" title="3.希尔排序"></a>3.希尔排序</h4><p><strong>(1)基本思想</strong></p>
+<p>希尔排序演示</p>
+<p><img src="/2020/06/18/%E5%85%AB%E5%A4%A7%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/7.jpg" alt="img7"></p>
+<p> 希尔排序又叫缩小增量排序，其本质还是插入排序，只不过将待排序列按某种规则分为几个子序列，分别对这几个子序列进行直接插入</p>
+<p>排序。这个规则的体现就是增量的选取，将待排序数组按照增量进行分组，然后将每组的元素利用直接插入排序的方法进行排序；每次再</p>
+<p>将增量折半减小，循环上述操作；当增量等于1时，利用直接插入，完成排序。</p>
+<p>可以看到增量的选择是希尔排序的重要部分。只要最终增量为1任何步长序列都可以工作。一般来说最简单的增量取值是初次取数组长度</p>
+<p>的一半为增量，之后每次再减半，直到增量为1。</p>
+<p><strong>(2)算法描述</strong></p>
+<p>具体算法描述如下：</p>
+<p>①选择一个增量序列t1，t2，…ti，tj，…tk，其中ti&gt;tj，tk=1；（一般初次取数组半长，之后每次再减半，直到增量为1）</p>
+<p>②按增量序列个数k，对序列进行k 趟排序；</p>
+<p>③每趟排序，根据对应的增量ti，将待排序列分割成若干长度为m 的子序列，分别对各子序列进行直接插入排序。仅当增量为1 时，整个</p>
+<p>序列作为一个表来处理，表长度即为整个序列的长度。</p>
+<p><strong>(3)代码实现</strong></p>
+<p>希尔排序——C语言实现</p>
+<p>自定义函数 shsort()，实现希尔排序。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">shsort</span><span class="params">(<span class="keyword">int</span> s[], <span class="keyword">int</span> n)</span>    <span class="comment">/* 自定义函数 shsort()*/</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i,j,d;</span><br><span class="line">    d=n/<span class="number">2</span>;    <span class="comment">/*确定固定增虽值*/</span></span><br><span class="line">    <span class="keyword">while</span>(d&gt;=<span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span>(i=d+<span class="number">1</span>;i&lt;=n;i++)    <span class="comment">/*数组下标从d+1开始进行直接插入排序*/</span></span><br><span class="line">        &#123;</span><br><span class="line">            s[<span class="number">0</span>]=s[i];    <span class="comment">/*设置监视哨*/</span></span><br><span class="line">            j=i-d;    <span class="comment">/*确定要进行比较的元素的最右边位置*/</span></span><br><span class="line">            <span class="keyword">while</span>((j&gt;<span class="number">0</span>)&amp;&amp;(s[<span class="number">0</span>]&lt;s[j]))</span><br><span class="line">            &#123;</span><br><span class="line">                s[j+d]=s[j];    <span class="comment">/*数据右移*/</span></span><br><span class="line">                j=j-d;    <span class="comment">/*向左移d个位置V*/</span></span><br><span class="line">            &#125;</span><br><span class="line">            s[j + d]=s[<span class="number">0</span>];    <span class="comment">/*在确定的位罝插入s[i]*/</span></span><br><span class="line">        &#125;</span><br><span class="line">        d = d/<span class="number">2</span>;    <span class="comment">/*增里变为原来的一半*/</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a[<span class="number">11</span>],i;    <span class="comment">/*定义数组及变量为基本整型*/</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"请输入 10 个数据：\n"</span>);</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=<span class="number">10</span>;i++)</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a[i]);    <span class="comment">/*从键盘中输入10个数据*/</span></span><br><span class="line">    shsort(a, <span class="number">10</span>);    <span class="comment">/* 调用 shsort()函数*/</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"排序后的顺序是：\n"</span>);</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=<span class="number">10</span>;i++)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%5d"</span>,a[i]);    <span class="comment">/*输出排序后的数组*/</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果：</p>
+<p>请输入 10 个数据：</p>
+<p>69 56 12 136 3 55 46 99 88 25</p>
+<p>排序后的顺序是：</p>
+<p>3   12   25   46   55   56   69   88   99  136</p>
+<h3 id="四、交换类排序"><a href="#四、交换类排序" class="headerlink" title="四、交换类排序"></a>四、交换类排序</h3><h4 id="1-冒泡排序"><a href="#1-冒泡排序" class="headerlink" title="1.冒泡排序"></a>1.冒泡排序</h4><p><strong>(1)基本思想</strong></p>
+<p>冒泡排序是通过一系列的“交换”动作完成的，首先第一个关键字和第二个关键字比较，如果第一个大，则二者交换，否则不交换；然后第</p>
+<p>二个关键字和第三个关键字比较，如果第二个大，则二者交换，否则不交换……一直按照这种方式进行下去，最终最大的那个关键字被交</p>
+<p>换到最后，一趟冒泡排序完成。经过多趟这样的排序，最终使得整个序列有序。</p>
+<p>冒泡排序演示</p>
+<p><img src="/2020/06/18/%E5%85%AB%E5%A4%A7%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/6.gif" alt="img6"></p>
+<p><strong>(2)算法描述</strong>   </p>
+<p>具体算法描述如下：</p>
+<p>①比较相邻的元素。如果第一个比第二个大，就交换他们两个。</p>
+<p>②对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对。这步做完后，最后的元素会是最大的数。</p>
+<p>③针对所有的元素重复以上的步骤，除了最后一个。</p>
+<p>④重复上面的步骤①~③对未排序元素排序，直到在一趟排序过程中没有发生关键字交换。</p>
+<p><strong>(3)代码实现</strong></p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//冒泡排序——C语言实现</span></span><br><span class="line"><span class="comment">//通过两个 for 循环实现冒泡排序的全过程，外层 for 循环决定冒泡排序的趟数，内层 for 循环决定每趟所进行两两比较的次数。</span></span><br><span class="line"><span class="comment">/*冒泡法的基本思路是，如果要对 n 个数进行冒泡排序，那么要进行 n-1 趟比较，在第 1 趟比较中要进行 n-1 次两两比较，在第 j 趟比较中要进行 n-j 次两两比较。从这个基本思路中就会发现，趟数决定了两两比较的次数，这样就很容易将两个 for 循环联系起来了。*/</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i,j,t,a[<span class="number">11</span>];    <span class="comment">//定义变量及数组为基本整型</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"请输入10个数：\n"</span>);</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;<span class="number">11</span>;i++)</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a[i]);    <span class="comment">//从键盘中输入10个数</span></span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;<span class="number">10</span>;i++)    <span class="comment">//变量i代表比较的趟数</span></span><br><span class="line">        <span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;<span class="number">11</span>-i;j++)    <span class="comment">//变最j代表每趟两两比较的次数</span></span><br><span class="line">            <span class="keyword">if</span>(a[j]&gt;a[j+<span class="number">1</span>])</span><br><span class="line">            &#123;</span><br><span class="line">                t=a[j];    <span class="comment">//产利用中间变童实现两值互换</span></span><br><span class="line">                a[j]=a[j+<span class="number">1</span>];</span><br><span class="line">                a[j+<span class="number">1</span>]=t;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"排序后的顺序是：\n"</span>);</span><br><span class="line">            <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=<span class="number">10</span>;i++)</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">"%5d"</span>,a[i]);    <span class="comment">//将胃泡排序后的顺序输出</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果：</p>
+<p>请输入10个数：<br>66 32 23 45 25 5 15 69 46 37<br>排序后的顺序是：<br>5   15   23   25   32   37   45   46   66   69</p>
+<h4 id="2-快速排序"><a href="#2-快速排序" class="headerlink" title="2.快速排序"></a>2.快速排序</h4><p><strong>(1)基本思想</strong></p>
+<p>快速排序的基本思想：挖坑填数+分治法。</p>
+<p>每一趟选择当前所有子序列中的一个关键字（通常是第一个）作为枢轴，将子序列中比枢轴小的移到枢轴前边，比枢轴大的移到枢轴后</p>
+<p>边；当本趟所有子序列都被枢轴以上述规则划分完毕后会得到新的一组更短的子序列，他们成为下一趟划分的初始序列集。分别对这两部</p>
+<p>分子序列继续进行排序，以达到整个序列有序。</p>
+<p>快速排序演示</p>
+<p><img src="/2020/06/18/%E5%85%AB%E5%A4%A7%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/8.gif" alt="img8"></p>
+<p><strong>(2)算法描述</strong>   </p>
+<p>具体算法描述如下：</p>
+<p>①i = L; j = R; 将基准数挖出形成第一个坑a[i]。<br>②j–，由后向前找比它小的数，找到后挖出此数填前一个坑a[i]中。<br>③i++，由前向后找比它大的数，找到后也挖出此数填到前一个坑a[j]中。<br>④再重复执行②，③二步，直到i==j，将基准数填入a[i]中。</p>
+<p>(<strong>3)代码实现</strong></p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//快速排序——C语言实现</span></span><br><span class="line"><span class="comment">/*自定义一个函数 qusort()，实现快速排序。</span></span><br><span class="line"><span class="comment">快速排序是冒泡排序的一种改进，主要的算法思想是在待排序的 n 个数据中取第一个数据作为基准值，将所有记录分为 3 组，使第一组中各数据值均小于或等于基准值，第二组做基准值的数琚，第三组中各数据值均大于或等于基准值。这便实现了第一趟分割，然后再对第二组和第兰组分别重复上述方法，依次类推，直到每组中只有一个记录为止。*/</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">qusort</span><span class="params">(<span class="keyword">int</span> s[],<span class="keyword">int</span> start,<span class="keyword">int</span> <span class="built_in">end</span>)</span>    <span class="comment">//自定义函数 qusort()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i,j;    <span class="comment">//定义变量为基本整型</span></span><br><span class="line">    i=start;    <span class="comment">//将每组首个元素赋给i</span></span><br><span class="line">    j = <span class="built_in">end</span>;    <span class="comment">//将每组末尾元素赋给j</span></span><br><span class="line">    s[<span class="number">0</span>]=s[start];    <span class="comment">//设置基准值</span></span><br><span class="line">    <span class="keyword">while</span>(i&lt;j)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">while</span>(i&lt;j&amp;&amp;s[<span class="number">0</span>]&lt;s[j])</span><br><span class="line">            j--;    <span class="comment">//位置左移</span></span><br><span class="line">        <span class="keyword">if</span>(i&lt;j)</span><br><span class="line">        &#123;</span><br><span class="line">            s[i]=s[j];    <span class="comment">//将s[j]放到s[i]的位置上</span></span><br><span class="line">            i++;    <span class="comment">//位置右移</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(i&lt;j&amp;&amp;s[i]&lt;=s[<span class="number">0</span>])</span><br><span class="line">            i++;    <span class="comment">//位置左移</span></span><br><span class="line">        <span class="keyword">if</span>(i&lt;j)</span><br><span class="line">        &#123;</span><br><span class="line">            s[j]=s[i];    <span class="comment">//将大于基准值的s[j]放到s[i]位置</span></span><br><span class="line">            j--;    <span class="comment">//位置左移</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    s[i]=s[<span class="number">0</span>];    <span class="comment">//将基准值放入指定位置</span></span><br><span class="line">    <span class="keyword">if</span> (start&lt;i)</span><br><span class="line">        qusort(s,start,j<span class="number">-1</span>);    <span class="comment">//对分割出的部分递归调用qusort()函数</span></span><br><span class="line">    <span class="keyword">if</span> (i&lt;<span class="built_in">end</span>)</span><br><span class="line">        qusort(s,j+<span class="number">1</span>,<span class="built_in">end</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a[<span class="number">11</span>], i;    <span class="comment">//定义数组及变量为基本整型</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"请输入10个数：\n"</span>);</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=<span class="number">10</span>;i++)</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a[i]);    <span class="comment">//从键盘中输入10个要进行排序的数</span></span><br><span class="line">    qusort(a,<span class="number">1</span>,<span class="number">10</span>);    <span class="comment">//调用qusort()函数进行排序</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"排序后的顺序是：\n"</span>);</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=<span class="number">10</span>;i++)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%5d"</span>,a[i]);    <span class="comment">//输出排好序的数组</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果：</p>
+<p>请输入10个数：<br>99 45 12 36 69 22 62 796 4 696</p>
+<p>排序后的顺序是：</p>
+<p>4   12   22   36   45   62   69   99  696  796</p>
+<h3 id="五、选择类排序"><a href="#五、选择类排序" class="headerlink" title="五、选择类排序"></a>五、选择类排序</h3><h4 id="1-简单选择排序"><a href="#1-简单选择排序" class="headerlink" title="1.简单选择排序"></a>1.简单选择排序</h4><p><strong>(1)基本思想</strong></p>
+<p>选择排序的基本思想：比较 + 交换。</p>
+<p>简单选择排序采用最简单的选择方式，从头至尾顺序扫描序列，找出最小的一个关键字，和第一个关键字交换，接着从剩下的关键字中继</p>
+<p>续这种选择和交换，最终使得序列有序。</p>
+<p>简单选择排序演示，红色表示当前最小值，黄色表示已排序序列，蓝色表示当前位置。</p>
+<p><img src="/2020/06/18/%E5%85%AB%E5%A4%A7%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/9.jpg" alt="img9"></p>
+<p><strong>(2)算法描述</strong>   </p>
+<p>具体算法描述如下：</p>
+<p>①从待排序序列中，找到关键字最小的元素；</p>
+<p>②如果最小元素不是待排序序列的第一个元素，将其和第一个元素互换；</p>
+<p>③从余下的 N - 1 个元素中，找出关键字最小的元素，重复①、②步，直到排序结束。</p>
+<p><strong>(3)代码实现</strong></p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//选择排序——C语言实现</span></span><br><span class="line"><span class="comment">/*选择排序的基本算法是从待排序的区间中经过选择和交换后选出最小的数值存放到 a[0] 中，再从剩余的未排序区间中经过选择和交换后选出最小的数值存放到 a[1] 中，a[1] 中的数字仅大于 a[0]，依此类推，即可实现排序。</span></span><br><span class="line"><span class="comment">程序中用到T两个 for 循环语句。第一个 for 循环是确定位置的，该位置是存放每次从待排序数列中经选择和交换后所选出的最小数。第二个 for 循环是实现将确定位置上的数与后面待排序区间中的数进行比较的。*/</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i,j,t,a[<span class="number">11</span>];    <span class="comment">//定义变量及数组为基本整型</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"请输入10个数：\n"</span>);</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;<span class="number">11</span>;i++)</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a[i]);    <span class="comment">//从键盘中输入要排序的10个数字</span></span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=<span class="number">9</span>;i++)</span><br><span class="line">        <span class="keyword">for</span> (j=i+<span class="number">1</span>;j&lt;=<span class="number">10</span>;j++)</span><br><span class="line">            <span class="keyword">if</span>(a[i]&gt;a[j])    <span class="comment">//如果前一个数比后一个数大，则利用中间变量t实现两值互换</span></span><br><span class="line">            &#123;</span><br><span class="line">                t=a[i];</span><br><span class="line">                a[i]=a[j];</span><br><span class="line">                a[j]=t;</span><br><span class="line">            &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"排序后的顺序是：\n"</span>);</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=<span class="number">10</span>;i++)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%5d"</span>, a[i]);    <span class="comment">//输出排序后的数组</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p> 运行结果：</p>
+<p>请输入10个数：</p>
+<p>526 36 2 369 56 45 78 92 125 52</p>
+<p>排序后的顺序是：</p>
+<p>2   36   45   52   56   78   92  125  369  526</p>
+<h4 id="2-堆排序"><a href="#2-堆排序" class="headerlink" title="2.堆排序"></a>2.堆排序</h4><p><strong>(1)基本思想</strong></p>
+<p>堆是一种数据结构，可以把堆看成一颗完全二叉树，这颗完全二叉树满足：任何一个非叶子结点的值都小于等于(或大于等于)其左右孩子</p>
+<p>结点的值。若父亲大孩子小，则这样的堆叫作大顶堆；若父亲小孩子大，则这样的堆叫作小顶堆。</p>
+<p>根据堆的定义知道，代表堆的这棵完全二叉树的根节点的值是最大(或最小)的，因此将一个无序的序列调整为一个堆，就可以找出这个序</p>
+<p>列的最大（或最小）值，然后将找出的这个值交换到序列的最后（或最前），这样，有序序列的关键字增加1个，无序序列中关键字减少1</p>
+<p>个，对新的无序序列重复这样的操作，就实现了排序。这就是堆排序的思想。</p>
+<p>堆排序中最关键的操作就是将序列调整为堆。整个序列的过程就是通过不断的调整，使得不符合堆定义的完全二叉树变为符合堆定义的完</p>
+<p>全二叉树。</p>
+<p>大顶堆排序演示</p>
+<p><img src="/2020/06/18/%E5%85%AB%E5%A4%A7%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/10.gif" alt="img10"></p>
+<p><strong>(2)算法描述</strong>   </p>
+<p>举一趟排序为例： </p>
+<p>原始序列：49  38  65  97  76  13  27  49</p>
+<ol>
+<li><strong>建堆</strong></li>
+</ol>
+<p>现将这个序列调整为一个大顶堆，原始序列对应的完全二叉树如下图所示，在这个完全二叉树中，结点76、13、27、49是叶子结点，他</p>
+<p>们没有左右孩子，所以他们满足堆的定义。从97开始，按97、65、38、49的顺序依次调整。</p>
+<p><img src="/2020/06/18/%E5%85%AB%E5%A4%A7%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/11.png" alt="img11"></p>
+<p>①调整97。97&gt;49，所以97和它的孩子49 满足堆的定义，不需要调整。</p>
+<p>②调整65。65&gt;13，65&gt;27，所以65和它的孩子13、27满足堆的定义，不需要调整。</p>
+<p>③调整38。97&gt;38，76&gt;38，不满足堆的定义，需要调整。在这里，38的两个孩子结点值都比38大，应该和哪个交换呢？显然应该是和两</p>
+<p>者中最大的交换啊。如果和76交换，则76&lt;97仍然不满足堆的定义。因此，将38和97交换，交换后38成了49的根结点，49&gt;38，仍然不</p>
+<p>满足，需要继续调整，将38和49交换，结果如下图</p>
+<p><img src="/2020/06/18/%E5%85%AB%E5%A4%A7%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/12.png" alt="img11"></p>
+<p>④调整49。49&lt;97，49&lt;65不满足定义，需要调整。因此和97交换，交换后49&lt;76仍不满足堆的定义，继续调整，将49和76交换，结果如下图</p>
+<p><img src="/2020/06/18/%E5%85%AB%E5%A4%A7%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/13.png" alt="img11"></p>
+<ol start="2">
+<li><strong>排序</strong></li>
+</ol>
+<p>可以看到，此时已经建立好了一个大顶堆。对应的序列为：97  76  65  49  49  13  27  38。将堆顶记录97和序列最后一个记录38交换。第</p>
+<p>一趟堆排序完成。97到达其最终的位置。将除97外的序列38  76  65  49  49  13  27重新调整为大顶堆。现在这个堆只有38不满足堆的定</p>
+<p>义，其他的记录都满足，所以只需要调整一个38就足够了。调整38，结果如下图</p>
+<p><img src="/2020/06/18/%E5%85%AB%E5%A4%A7%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/14.png" alt="img11"></p>
+<p>现在的序列为76  49  65  38  49  13  27  97。将堆顶记录76和最后一个记录27交换，第二趟堆排序完成，76到达其最终位置，此时序列如</p>
+<p>下：27 49  65  38  49  13  76  97。然后对除76和97的序列依照上面的方法继续处理，直到树中只剩下1个结点时排序完成。</p>
+<p><strong>堆排序算法过程描述：</strong></p>
+<p>①从无序序列所确定的完全二叉树的第一个非叶子结点开始，从右至左，从下至上，对每个结点进行调整，最终将得到一个大顶堆；</p>
+<p>对结点的调整方法： 当前节点的值（假设为a）与其孩子结点进行比较，如果存在大于a的孩子结点，则从中选出最大的一个与a交换。当</p>
+<p>a来到下一层的时候重复上述操作，直到a的孩子结点值都小于a的值为止。</p>
+<p>②将当前无序序列中第一个元素，反映在树中是根结点（假设为a）与无需序列中最后一个元素交换（假设为b）。a进入有序序列，到达</p>
+<p>最终位置。无序序列中元素减少1个，有序序列中元素增加1个。此时只有结点b可能不满足堆的定义，对其进行调整。</p>
+<p>③重复②中过程，直到无序序列中的元素剩下1个时排序结束。</p>
+<p><strong>(3)代码实现</strong></p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="comment">//堆排序——c++实现</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*该函数完成对在数组R[low]到R[high]范围内，对在low上的结点进行调整（大堆）*/</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">heapAdjust</span><span class="params">(<span class="keyword">int</span> R[], <span class="keyword">int</span> low, <span class="keyword">int</span> high)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i = low;</span><br><span class="line">	<span class="keyword">int</span> j = i *<span class="number">2</span>+<span class="number">1</span>;          <span class="comment">//R[j]是R[i]的左孩子节点 （此时对应数组从0开始，若从1开始则 j=i*2）</span></span><br><span class="line">	<span class="keyword">int</span> temp = R[i];</span><br><span class="line">	<span class="keyword">while</span> (j &lt; high)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (j &lt; high&amp;&amp;R[j] &lt; R[j + <span class="number">1</span>])                 </span><br><span class="line">			++j;                                   <span class="comment">//若右孩子较大，则把 j 指向右孩子</span></span><br><span class="line">		<span class="keyword">if</span> (temp &lt; R[j])</span><br><span class="line">		&#123;</span><br><span class="line">			R[i] = R[j];                           <span class="comment">//将 R[j] 调整到双亲节点的位置上</span></span><br><span class="line">			i = j;                                 <span class="comment">//修改 i 和 j 的值，以便继续向下调整</span></span><br><span class="line">			j = <span class="number">2</span> * i+<span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	R[i] = temp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*堆排序函数*/</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">heapSort</span><span class="params">(<span class="keyword">int</span> R[], <span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	<span class="keyword">int</span> temp;</span><br><span class="line">	<span class="keyword">for</span> (i = n / <span class="number">2</span><span class="number">-1</span>; i &gt;= <span class="number">0</span>; --i)             <span class="comment">//建立初始堆（大顶堆）（此时对应的数组下标从0开始，若从1开始第一个非叶子结点为 i=n/2）</span></span><br><span class="line">		heapAdjust(R, i, n<span class="number">-1</span>);</span><br><span class="line">	<span class="keyword">for</span> (i = n<span class="number">-1</span>; i &gt;= <span class="number">1</span>; --i)                  <span class="comment">//进行 n-1 次循环，完成堆排序</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">/*此交换将根结点元素刚入最终的位置上*/</span></span><br><span class="line">		temp = R[<span class="number">0</span>];</span><br><span class="line">		R[<span class="number">0</span>] = R[i];</span><br><span class="line">		R[i] = temp;</span><br><span class="line">		heapAdjust(R, <span class="number">0</span>, i - <span class="number">1</span>);            <span class="comment">//在较少了 1 个元素的无序序列中进行调整</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> R[<span class="number">8</span>] = &#123;<span class="number">49</span>,<span class="number">38</span>,<span class="number">65</span>,<span class="number">97</span>,<span class="number">76</span>,<span class="number">13</span>,<span class="number">27</span>,<span class="number">49</span> &#125;;</span><br><span class="line">	heapSort(R, <span class="number">8</span>);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">8</span>; i++)</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; R[i] &lt;&lt; <span class="string">" "</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p> 运行结果：</p>
+<p>13 27 38 49 49 65 76 97</p>
+<h3 id="六、归并排序"><a href="#六、归并排序" class="headerlink" title="六、归并排序"></a>六、归并排序</h3><h4 id="1-二路归并排序"><a href="#1-二路归并排序" class="headerlink" title="1.二路归并排序"></a>1.二路归并排序</h4><p><strong>(1)基本思想</strong></p>
+<p>归并排序算法是将两个（或两个以上）有序表合并成一个新的有序表，即把待排序序列分为若干个子序列，每个子序列是有序的。然后再</p>
+<p>把有序子序列合并为整体有序序列。</p>
+<p>二路归并演示</p>
+<p><img src="/2020/06/18/%E5%85%AB%E5%A4%A7%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/15.gif" alt="img11"></p>
+<p><strong>(2)算法描述</strong> </p>
+<p>归并排序可通过两种方式实现：</p>
+<p>自上而下的递归<br>自下而上的迭代</p>
+<ol>
+<li>递归法（假设序列共有n个元素）：</li>
+</ol>
+<p>①将序列每相邻两个数字进行归并操作，形成 floor(n/2)个序列，排序后每个序列包含两个元素；</p>
+<p>②将上述序列再次归并，形成 floor(n/4)个序列，每个序列包含四个元素；</p>
+<p>③重复步骤②，直到所有元素排序完毕。</p>
+<p><img src="/2020/06/18/%E5%85%AB%E5%A4%A7%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/16.gif" alt="img11"></p>
+<ol start="2">
+<li>迭代法</li>
+</ol>
+<p>①申请空间，使其大小为两个已经排序序列之和，该空间用来存放合并后的序列</p>
+<p>②设定两个指针，最初位置分别为两个已经排序序列的起始位置</p>
+<p>③比较两个指针所指向的元素，选择相对小的元素放入到合并空间，并移动指针到下一位置</p>
+<p>④重复步骤③直到某一指针到达序列尾</p>
+<p>⑤将另一序列剩下的所有元素直接复制到合并序列尾</p>
+<p><strong>(3)代码实现</strong></p>
+<p>归并排序——C语言实现</p>
+<p>归并是将两个或多个存序记录序列合并成一个有序序列。归并方法有多种，一次对两个有序记录序列进行归并，称为路归并排序，也有三</p>
+<p>路归并排序及多路归并排序。本代码是二路归并排序，基本方法如下：</p>
+<p>(1) 将 n 个记录看成是 n 个长度为 1 的有序子表。</p>
+<p>(2) 将两两相邻时有序无表进行归并。</p>
+<p>(3) 重复执行步骤 (2) 直到归并成一个长度为 n 的有序表。</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">merge</span><span class="params">(<span class="keyword">int</span> r[],<span class="keyword">int</span> s[],<span class="keyword">int</span> x1,<span class="keyword">int</span> x2,<span class="keyword">int</span> x3)</span>    <span class="comment">//自定义实现一次归并样序的函数</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> i,j,k;</span><br><span class="line">    i=x1;    <span class="comment">//第一部分的开始位置</span></span><br><span class="line">    j=x2+<span class="number">1</span>;  <span class="comment">//第二部分的开始位置</span></span><br><span class="line">    k=x1;</span><br><span class="line">    <span class="keyword">while</span>((i&lt;=x2)&amp;&amp;(j&lt;=x3))    <span class="comment">//当i和j都在两个要合并的部分中时</span></span><br><span class="line">        <span class="keyword">if</span>(r[i]&lt;=r[j])    <span class="comment">//筛选两部分中较小的元素放到数组s中</span></span><br><span class="line">        &#123;</span><br><span class="line">            s[k] = r[i];</span><br><span class="line">            i++;</span><br><span class="line">            k++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            s[k]=r[j];</span><br><span class="line">            j++;</span><br><span class="line">            k++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(i&lt;=x2)    <span class="comment">//将x1〜x2范围内未比较的数顺次加到数组r中</span></span><br><span class="line">            s[k++]=r[i++];</span><br><span class="line">        <span class="keyword">while</span>(j&lt;=x3) <span class="comment">//将x2+l〜x3范围内未比较的数顺次加到数组r中</span></span><br><span class="line">            s[k++]=r[j++];</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">merge_sort</span><span class="params">(<span class="keyword">int</span> r[],<span class="keyword">int</span> s[],<span class="keyword">int</span> m,<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> p;</span><br><span class="line">    <span class="keyword">int</span> t[<span class="number">20</span>];</span><br><span class="line">    <span class="keyword">if</span>(m==n)</span><br><span class="line">        s[m]=r[m];</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        p=(m+n)/<span class="number">2</span>;</span><br><span class="line">        merge_sort(r,t,m,p);    <span class="comment">//递归调用merge_soit()函数将r[m]〜r[p]归并成有序的t[m]〜t[p]</span></span><br><span class="line">        merge_sort(r,t,p+<span class="number">1</span>,n);    <span class="comment">//递归一调用merge_sort()函数将r[p+l]〜r[n]归并成有序的t[p+l]〜t[n]</span></span><br><span class="line">        merge(t,s,m,p,n);    <span class="comment">//调用函数将前两部分归并到s[m]〜s[n】*/</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a[<span class="number">11</span>];</span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"请输入10个数：\n"</span>);</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=<span class="number">10</span>;i++)</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a[i]);    <span class="comment">//从键盘中输入10个数</span></span><br><span class="line">    merge_sort(a,a,<span class="number">1</span>,<span class="number">10</span>);    <span class="comment">//调用merge_sort()函数进行归并排序</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"排序后的顺序是：\n"</span>);</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=<span class="number">10</span>;i++)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%5d"</span>,a[i]);    <span class="comment">//输出排序后的数据</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果：</p>
+<p>请输入10个数：<br>695 458 362 789 12 15 163 23 2 986<br>排序后的顺序是：<br>2   12   15   23  163  362  458  695  789  986</p>
+<h3 id="七、基数排序"><a href="#七、基数排序" class="headerlink" title="七、基数排序"></a>七、基数排序</h3><h4 id="1-基数排序"><a href="#1-基数排序" class="headerlink" title="1.基数排序"></a>1.基数排序</h4><p><strong>(1)基本思想</strong></p>
+<p>它是这样实现的：将所有待比较数值（正整数）统一为同样的数位长度，数位较短的数前面补零。然后，从最低位开始，依次进行一次排</p>
+<p>序。这样从最低位排序一直到最高位排序完成以后，数列就变成一个有序序列。</p>
+<p>基数排序按照优先从高位或低位来排序有两种实现方案：</p>
+<p>MSD（Most significant digital） 从最左侧高位开始进行排序。先按k1排序分组, 同一组中记录，关键码k1相等，再对各组按k2排序分成</p>
+<p>子组，之后，对后面的关键码继续这样的排序分组，直到按最次位关键码kd对各子组排序后，再将各组连接起来，便得到一个有序序列。</p>
+<p>MSD方式适用于位数多的序列。</p>
+<p>LSD （Least significant digital）从最右侧低位开始进行排序。先从kd开始排序，再对kd-1进行排序，依次重复，直到对k1排序后便得到</p>
+<p>一个有序序列。LSD方式适用于位数少的序列。</p>
+<p><img src="/2020/06/18/%E5%85%AB%E5%A4%A7%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/17.gif" alt="img11"></p>
+<p>基数排序从最右侧低位开始进行排序(LSD)演示</p>
+<p><strong>(2)算法描述</strong></p>
+<p>我们以LSD为例，从最低位开始，具体算法描述如下：</p>
+<p>①取得数组中的最大数，并取得位数；</p>
+<p>②arr为原始数组，从最低位开始取每个位组成radix数组； </p>
+<p>③对radix进行计数排序（利用计数排序适用于小范围数的特点）；</p>
+]]></content>
+  </entry>
+  <entry>
     <title>遇到的坑爹的坑</title>
     <url>/2020/05/11/%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91%E7%88%B9%E7%9A%84%E5%9D%91/</url>
     <content><![CDATA[<h3 id="1-idea-maven项目中pom-xml文件中包导入不进来"><a href="#1-idea-maven项目中pom-xml文件中包导入不进来" class="headerlink" title="1. idea maven项目中pom.xml文件中包导入不进来"></a>1. idea maven项目中pom.xml文件中包导入不进来</h3><p>问题：在父maven下建立子maven项目，但是父类pom.xml架包却导入不进来</p>
 <ul>
 <li>在排除父类pom.xml是否引用子model项目的情况下</li>
-<li>发现右边菜单子maven虽然存在架包，但是呈现灰色   <div align=left ><img  src="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/maven/1.png" /></div>
+<li>发现右边菜单子maven虽然存在架包，但是呈现灰色   <div align="left"><img src="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/maven/1.png"></div>
 
 </li>
 </ul>
@@ -190,7 +537,7 @@
 
 <ul>
 <li><p>经过百度发现设置中 maven的ignored files被勾选上了</p>
-<div align=left><img  src="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/maven/2.png"/></div>
+<div align="left"><img src="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/maven/2.png"></div>
 </li>
 <li><p>取消勾选后 重启或者 File-&gt;invalidate catchs/restart 重启和清理缓冲</p>
 </li>
@@ -262,133 +609,6 @@
       </categories>
       <tags>
         <tag>idean 的死坑</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>使用git-Bash克隆、修改和更新项目</title>
-    <url>/2020/04/21/%E4%BD%BF%E7%94%A8git-Bash%E5%85%8B%E9%9A%86%E3%80%81%E4%BF%AE%E6%94%B9%E5%92%8C%E6%9B%B4%E6%96%B0%E9%A1%B9%E7%9B%AE/</url>
-    <content><![CDATA[<h1 id="可分为两种情况"><a href="#可分为两种情况" class="headerlink" title="可分为两种情况"></a>可分为两种情况</h1><p>使用git-Bash操作gitee和gituub原理是一样的</p>
-<p><font size=4.5>1. 第一次建立本地仓库并上传内容到空白gitee仓库中</font><br><font size=4.5>2. 克隆gitee仓库项目到本地仓库并进行管理再上传</font></p>
-<hr>
-<a id="more"></a>
-
-<h2 id="如题第一种情况"><a href="#如题第一种情况" class="headerlink" title="如题第一种情况"></a>如题第一种情况</h2><h3 id="1-打开git-bash"><a href="#1-打开git-bash" class="headerlink" title="1.打开git-bash"></a>1.打开git-bash</h3><p>输入个人信息(代码提交者)</p>
-<p>git config –global user.name “xxxx” </p>
-<p>git config –global user.email <a href="mailto:xxxxx@qq.com">xxxxx@qq.com</a><br>注意：提交到github是输入用户名和密码<br>嫌每次都需要输入用户名和密码可以使用公匙连接gitee和github这里就不啰嗦了</p>
-<hr>
-<h3 id="2-在本地建立一个文件夹-并初始化"><a href="#2-在本地建立一个文件夹-并初始化" class="headerlink" title="2.在本地建立一个文件夹 并初始化"></a>2.在本地建立一个文件夹 并初始化</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">asus@LAPTOP-78V1DGVI MINGW64 &#x2F;</span><br><span class="line">$ cd D:&#x2F;project&#x2F;GiteePhotos2</span><br><span class="line"></span><br><span class="line">asus@LAPTOP-78V1DGVI MINGW64 &#x2F;d&#x2F;project&#x2F;GiteePhotos2</span><br><span class="line">$ git init</span><br><span class="line">Initialized empty Git repository in D:&#x2F;project&#x2F;GiteePhotos2&#x2F;.git&#x2F;</span><br></pre></td></tr></table></figure>
-<p>这里省略了建立文件夹过程，直接进入了GiteePhotos2<br>-git init 初始化本地仓库</p>
-<h3 id="3-在本地仓库建立README-md-并上传到指定gitee仓库"><a href="#3-在本地仓库建立README-md-并上传到指定gitee仓库" class="headerlink" title="3.在本地仓库建立README.md,并上传到指定gitee仓库"></a>3.在本地仓库建立README.md,并上传到指定gitee仓库</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">asus@LAPTOP-78V1DGVI MINGW64 &#x2F;d&#x2F;project&#x2F;GiteePhotos2 (master)</span><br><span class="line">$ touch README.md</span><br></pre></td></tr></table></figure>
-<p>touch README.md 建立 READNME.md文件 可以写一些注释之类的东西，或者是类似列表的东西<br>gitee要求项目最好有这个</p>
-<p><font color=red>在修改文件之后一般会紧跟着 git status<br>查看项目状态 是否添加或者删除了文件，在对项目进行了操作时最好查看查看</font></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">asus@LAPTOP-78V1DGVI MINGW64 &#x2F;d&#x2F;project&#x2F;GiteePhotos2 (master)</span><br><span class="line">$ git add README.md</span><br></pre></td></tr></table></figure>
-<p>git add README.md  将文件修改提交到本地暂存区<br>当修改很多文件时可以直接使用 git add .  <font color=red>注意add与 . 之间有空格</font></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">asus@LAPTOP-78V1DGVI MINGW64 &#x2F;d&#x2F;project&#x2F;GiteePhotos2 (master)</span><br><span class="line">$ git commit -m &quot;添加README和图片&quot;</span><br><span class="line">[master (root-commit) dcf5299] 添加README和图片</span><br><span class="line"> 2 files changed, 0 insertions(+), 0 deletions(-)</span><br><span class="line"> create mode 100644 README.md</span><br><span class="line"> create mode 100644 images&#x2F;MdImage&#x2F;1.png</span><br></pre></td></tr></table></figure>
-<p>git commit -m “添加README和图片”  记录修改的日志 并给日志取名</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">asus@LAPTOP-78V1DGVI MINGW64 &#x2F;d&#x2F;project&#x2F;GiteePhotos2 (master)</span><br><span class="line">$ git remote add origin https:&#x2F;&#x2F;gitee.com&#x2F;fzh3816&#x2F;photos.git</span><br></pre></td></tr></table></figure>
-<p>连接gitee仓库 连接为ssh<br><img src="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/git-bash/1.png" alt="1.jpg" style="zoom: 67%;" /><br>当上传文件以后链接会出现在 服务-&gt;gitee pages-&gt;</p>
-<p>点击更新就会出来图片地址</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">asus@LAPTOP-78V1DGVI MINGW64 &#x2F;d&#x2F;project&#x2F;GiteePhotos2 (master)</span><br><span class="line">$ git push -u origin master</span><br></pre></td></tr></table></figure>
-
-<p> git push -u origin master 将本地仓库项目推送到连接的gitee仓库<br><code>git pull --rebase origin master</code>     // 合并<br><code>git status</code>         //状态查询</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Enumerating objects: 6, done.</span><br><span class="line">Counting objects: 100% (6&#x2F;6), done.</span><br><span class="line">Delta compression using up to 4 threads</span><br><span class="line">Compressing objects: 100% (3&#x2F;3), done.</span><br><span class="line">Writing objects: 100% (6&#x2F;6), 79.44 KiB | 19.86 MiB&#x2F;s, done.</span><br><span class="line">Total 6 (delta 0), reused 0 (delta 0), pack-reused 0</span><br><span class="line">remote: Powered by GITEE.COM [GNK-5.0]</span><br><span class="line">To https:&#x2F;&#x2F;gitee.com&#x2F;fzh3816&#x2F;photos.git</span><br><span class="line"></span><br><span class="line"> * [new branch]      master -&gt; master</span><br><span class="line">   Branch &#39;master&#39; set up to track remote branch &#39;master&#39; from &#39;origin&#39;.</span><br><span class="line"></span><br><span class="line">asus@LAPTOP-78V1DGVI MINGW64 &#x2F;d&#x2F;project&#x2F;GiteePhotos2 (master)</span><br><span class="line">$</span><br></pre></td></tr></table></figure>
-
-
-<p>显示推送成功的结果</p>
-<p>下面是整个操作的过程</p>
-<img src="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/git-bash/3.png" alt="3.jpg" style="zoom:50%;" />
-
-
-
-<hr>
-<h2 id="第二种情况"><a href="#第二种情况" class="headerlink" title="第二种情况"></a>第二种情况</h2><h3 id="1-打开git-bash-1"><a href="#1-打开git-bash-1" class="headerlink" title="1.打开git-bash"></a>1.打开git-bash</h3><p>输入个人信息(代码提交者)</p>
-<p>git config –global user.name “xxxx” </p>
-<p>git config –global user.email <a href="mailto:xxxxx@qq.com">xxxxx@qq.com</a><br>注意：提交到github是输入用户名和密码<br>嫌每次都需要输入用户名和密码可以使用公匙连接gitee和github这里就不啰嗦了</p>
-<h3 id="2-在本地建立一个文件夹"><a href="#2-在本地建立一个文件夹" class="headerlink" title="2.在本地建立一个文件夹"></a>2.在本地建立一个文件夹</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ cd D:&#x2F;project</span><br><span class="line">$ mkdir GiteePhotos2</span><br><span class="line">asus@LAPTOP-78V1DGVI MINGW64 &#x2F;</span><br><span class="line">$ cd D:&#x2F;project&#x2F;GiteePhotos2</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-克隆项目进行修改"><a href="#3-克隆项目进行修改" class="headerlink" title="3.克隆项目进行修改"></a>3.克隆项目进行修改</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">asus@LAPTOP-78V1DGVI MINGW64 &#x2F;d&#x2F;project&#x2F;GiteePhotos2 </span><br><span class="line">$ git clone https:&#x2F;&#x2F;gitee.com&#x2F;fzh3816&#x2F;photos.git</span><br></pre></td></tr></table></figure>
-
-<p>git clone <a href="https://gitee.com/fzh3816/photos.git" target="_blank" rel="noopener">https://gitee.com/fzh3816/photos.git</a> 克隆gitee项目</p>
-<p>下面是显示的结果</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Cloning into &#39;photos&#39;...</span><br><span class="line">remote: Enumerating objects: 6, done.</span><br><span class="line">remote: Counting objects: 100% (6&#x2F;6), done.</span><br><span class="line">remote: Compressing objects: 100% (3&#x2F;3), done.</span><br><span class="line">remote: Total 6 (delta 0), reused 0 (delta 0), pack-reused 0</span><br><span class="line">Receiving objects: 100% (6&#x2F;6), 79.44 KiB | 968.00 KiB&#x2F;s, done.</span><br></pre></td></tr></table></figure>
-
-<hr>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">asus@LAPTOP-78V1DGVI MINGW64 &#x2F;d&#x2F;project&#x2F;GiteePhotos2 (master)</span><br><span class="line">$ ls</span><br><span class="line">photos&#x2F;</span><br><span class="line"></span><br><span class="line">asus@LAPTOP-78V1DGVI MINGW64 &#x2F;d&#x2F;project&#x2F;GiteePhotos2 (master)</span><br><span class="line">$ cd photos</span><br></pre></td></tr></table></figure>
-
-<p>cd photos   ls  mac/linux指令打开photos文件 查看里面的文件有哪些</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">asus@LAPTOP-78V1DGVI MINGW64 &#x2F;d&#x2F;project&#x2F;GiteePhotos2&#x2F;photos (master)</span><br><span class="line">$ git status</span><br><span class="line">On branch master</span><br><span class="line">Your branch is up to date with &#39;origin&#x2F;master&#39;.</span><br><span class="line"></span><br><span class="line">Untracked files:</span><br><span class="line">  (use &quot;git add &lt;file&gt;...&quot; to include in what will be committed)</span><br><span class="line">        images&#x2F;MdImage&#x2F;2.png</span><br><span class="line"></span><br><span class="line">nothing added to commit but untracked files present (use &quot;git add&quot; to track)</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">asus@LAPTOP-78V1DGVI MINGW64 &#x2F;d&#x2F;project&#x2F;GiteePhotos2&#x2F;photos (master)</span><br><span class="line">$ git add .</span><br></pre></td></tr></table></figure>
-
-
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">asus@LAPTOP-78V1DGVI MINGW64 &#x2F;d&#x2F;project&#x2F;GiteePhotos2&#x2F;photos (master)</span><br><span class="line">$ git commit -m &quot;添加了图片2.png&quot;</span><br><span class="line">[master fd9599a] 添加了图片2.png</span><br><span class="line"> 1 file changed, 0 insertions(+), 0 deletions(-)</span><br><span class="line"> create mode 100644 images&#x2F;MdImage&#x2F;2.png</span><br></pre></td></tr></table></figure>
-<h3 id="4-修改配置文件-连接项目仓库"><a href="#4-修改配置文件-连接项目仓库" class="headerlink" title="4.修改配置文件,连接项目仓库"></a>4.修改配置文件,连接项目仓库</h3><p>因为你克隆的是别人的仓库，所以你需要修改config文件 修改方法</p>
-<blockquote>
-<p>两种方法：</p>
-<blockquote>
-<ol>
-<li>进入项目中的隐藏文件.git，打开config文件修改 URL的值为你的项目仓库文件</li>
-<li>在项目路径下输入 <code>cd .git</code>    <code>vim  config</code> 然后修改URL</li>
-</ol>
-</blockquote>
-</blockquote>
-<h3 id="5-把本地项目推送到远程仓库"><a href="#5-把本地项目推送到远程仓库" class="headerlink" title="5.把本地项目推送到远程仓库"></a>5.把本地项目推送到远程仓库</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">asus@LAPTOP-78V1DGVI MINGW64 &#x2F;d&#x2F;project&#x2F;GiteePhotos2&#x2F;photos (master)</span><br><span class="line">$ git push</span><br></pre></td></tr></table></figure>
-
-<p>$ git push origin</p>
-<p>上面命令表示，将当前分支推送到origin主机的对应分支。 </p>
-<p>如果当前分支只有一个追踪分支，那么主机名都可以省略。 </p>
-<p>$ git push 如果当前分支与多个主机存在追踪关系，那么这个时候-u选项会指定一个默认主机，这样后面就可以不加任何参数使用git push。</p>
-<p>$ git push -u origin master 上面命令将本地的master分支推送到origin主机，同时指定origin为默认主机，后面就可以不加任何参数使用git push了。</p>
-<p>不带任何参数的git push，默认只推送当前分支，这叫做simple方式。此外，还有一种matching方式，会推送所有有对应的远程分支的本地分支。Git 2.0版本之前，默认采用matching方法，现在改为默认采用simple方式。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Enumerating objects: 8, done.</span><br><span class="line">Counting objects: 100% (8&#x2F;8), done.</span><br><span class="line">Delta compression using up to 4 threads</span><br><span class="line">Compressing objects: 100% (4&#x2F;4), done.</span><br><span class="line">Writing objects: 100% (5&#x2F;5), 43.30 KiB | 14.43 MiB&#x2F;s, done.</span><br><span class="line">Total 5 (delta 0), reused 0 (delta 0), pack-reused 0</span><br><span class="line">remote: Powered by GITEE.COM [GNK-5.0]</span><br><span class="line">To https:&#x2F;&#x2F;gitee.com&#x2F;fzh3816&#x2F;photos.git</span><br><span class="line">   dcf5299..fd9599a  master -&gt; master</span><br><span class="line"></span><br><span class="line">asus@LAPTOP-78V1DGVI MINGW64 &#x2F;d&#x2F;project&#x2F;GiteePhotos2&#x2F;photos (master)</span><br><span class="line">$</span><br></pre></td></tr></table></figure>
-
-<p>上传成功的结果</p>
-<p>下面是整个操作过程，但是我这里克隆的是我自己的远程仓库，所以并不需要进行修改配置文件</p>
-<img src="https://gitee.com/fzh3816/MyGiteeFile/raw/master/files/Images/git-bash/4.png" alt="4.jpg" style="zoom:50%;" />
-
-
-
-<hr>
-]]></content>
-      <categories>
-        <category>-教程</category>
-      </categories>
-      <tags>
-        <tag>-git—Bash</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo-添加分类及标签</title>
-    <url>/2020/04/20/Hexo-%E6%B7%BB%E5%8A%A0%E5%88%86%E7%B1%BB%E5%8F%8A%E6%A0%87%E7%AD%BE/</url>
-    <content><![CDATA[<h1 id="hexo添加分类及标签"><a href="#hexo添加分类及标签" class="headerlink" title="hexo添加分类及标签"></a>hexo添加分类及标签</h1><hr>
-<h2 id="1-创建“分类”选项"><a href="#1-创建“分类”选项" class="headerlink" title="1. 创建“分类”选项"></a>1. 创建“分类”选项</h2><p>生成“分类”页并添加tpye属性,进入博客目录。执行命令下方命令</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo new page categories</span><br></pre></td></tr></table></figure>
-<p>会在source文件下生成categories文件，<br>categories文件夹下会有index.md这个文件，打开后默认内容是这样的：</p>
-<a id="more"></a>
-
-
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: categories</span><br><span class="line">date: 2019-04-22 14:47:40</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-
-<p>添加type: “categories”到内容中，添加后是这样的：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">--</span><br><span class="line">title: 分类</span><br><span class="line">date: 2019-04-24 15:30:30</span><br><span class="line">type: categories</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-<p>保存并关闭文件。</p>
-<p>给文章添加“categories”属性</p>
-<p>打开需要添加分类的文章，为其添加categories属性。下方的categories:Hexo表示这篇文章添加到到“Hexo”这个分类。注意：一篇文章只会添加到一个分类中，如果是多个默认放到第一个分类中。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hexo 添加分类及标签</span><br><span class="line">date: 2017-05-26 12:12:57</span><br><span class="line">categories: Hexo</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-<h2 id="2-创建“标签”选项"><a href="#2-创建“标签”选项" class="headerlink" title="2. 创建“标签”选项"></a>2. 创建“标签”选项</h2><p>生成“标签”页并添加tpye属性</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo new page tags</span><br></pre></td></tr></table></figure>
-<p>在tags文件夹下，找到index.md这个文件，打开后默认内容是这样的：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 标签</span><br><span class="line">date: 2019-04-22 14:22:08</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-<p>添加type: “tags”到内容中，添加后是这样的：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: 标签</span><br><span class="line">date: 2019-04-24 15:40:24</span><br><span class="line">type: tags</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-<p>保存并关闭文件。</p>
-<p>给文章添加“tags”属性,打开需要添加标签的文章，为其添加tags属性。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hexo 添加分类及标签</span><br><span class="line">date: 2019-04-24 15:40:24</span><br><span class="line">categories: </span><br><span class="line">          - Hexo</span><br><span class="line">tags:</span><br><span class="line">          - 博客</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-
-<hr>
-]]></content>
-      <tags>
-        <tag>-md</tag>
       </tags>
   </entry>
 </search>
